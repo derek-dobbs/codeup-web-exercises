@@ -77,7 +77,8 @@
      */
 
     function calculateTip(bill, tip) {
-        return bill * tip;
+        let convertPercent = tip / 100;
+        return bill * convertPercent;
     }
 
 
@@ -88,7 +89,7 @@
      * then display the dollar amount they should tip
      */
     let billAmount = prompt("What is the amount of the bill?");
-    let tipPercentage = prompt("What percentage of the bill \(expressed in decimal form\) would you like to tip?");
+    let tipPercentage = prompt("What percentage of the bill would you like to tip?");
     alert("The amount of the tip is: $" + calculateTip(billAmount, tipPercentage));
 
     /**
@@ -107,12 +108,13 @@
      */
 
     function applyDiscount(beforePrice, discount) {
-        let discountAmount = beforePrice * discount;
+        let convertPercent = discount / 100;
+        let discountAmount = beforePrice * convertPercent;
         return beforePrice - discountAmount;
     }
 
     let price = prompt("What is the price?");
-    let discountPercentage = prompt("What is the discount percentage \(expressed as a decimal\)?");
+    let discountPercentage = prompt("What is the discount percentage?");
 
     alert("Your price after the discount was applied is: $" + applyDiscount(price, discountPercentage));
 
