@@ -88,9 +88,9 @@
      * prompt the user for the bill total and a percentage they would like to tip,
      * then display the dollar amount they should tip
      */
-    let billAmount = prompt("What is the amount of the bill?");
-    let tipPercentage = prompt("What percentage of the bill would you like to tip?");
-    alert("The amount of the tip is: $" + calculateTip(billAmount, tipPercentage));
+    let billAmount = parseFloat(prompt("What is the amount of the bill?"));
+    let tipPercentage = parseFloat(prompt("What percentage of the bill would you like to tip?"));
+    alert("The amount of the tip is: $" + calculateTip(billAmount, tipPercentage).toFixed(2));
 
     /**
      * TODO:
@@ -113,9 +113,9 @@
         return beforePrice - discountAmount;
     }
 
-    let price = prompt("What is the price?");
-    let discountPercentage = prompt("What is the discount percentage?");
+    let price = parseFloat(prompt("What is the price?"));
+    let discountPercentage = parseFloat(prompt("What is the discount percentage?"));
 
-    alert("Your price after the discount was applied is: $" + applyDiscount(price, discountPercentage));
+    alert("Your price after the discount was applied is: $" + applyDiscount(price, discountPercentage).toFixed(2));
 
 })();
