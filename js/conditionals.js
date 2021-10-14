@@ -238,9 +238,32 @@
                 numberInfo();
             }
         }
+
         //Need to fix: when selecting CANCEL at the number prompt ("Please enter a number"),
         //it goes to the else statement and calls it again. I need a way to exit if I choose cancel.
         //Presently, I believe that since is being parseInt-ed, it treats CANCEL as NaN.
+
+        //function numberInfo () {
+            //     let number = prompt("Please enter a number:");
+            //     if (typeof number === 'number') {
+            //         if(number) {
+            //             let parsedNumber = Number(number);
+            //             alert(isEvenOrOdd(parsedNumber));
+            //             alert(plusOneHundred(parsedNumber));
+            //             alert(isPositiveOrNegative(parsedNumber));
+            //             let runAnotherNumber = confirm("Would you like to enter another number?");
+            //             if(runAnotherNumber){
+            //                 numberInfo();
+            //             }else {
+            //                 alert("Exiting...");
+            //             }
+            //         }
+            //     }else {
+            //         alert("You did not enter a number. Please try again");
+            //         numberInfo();
+            //     }
+            // }
+            // //The above code does not run properly
     })();
 
 })();
