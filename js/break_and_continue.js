@@ -8,7 +8,7 @@
      */
     // console.log("Correction Needed \(see above comments\ in source code)");
 
-    let skipNumber = prompt("Enter an odd number between 1 and 50.");
+    let skipNumber = parseInt(prompt("Enter an odd number between 1 and 50."));
 
     console.log("Number to skip is: " + skipNumber);
     console.log("");
@@ -22,4 +22,5 @@
             }
         }
         console.log("------------------------------------------------------------------------------------------------");
+
 })();
