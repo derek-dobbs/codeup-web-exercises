@@ -29,4 +29,32 @@
 
     console.log("----------------------------------------------------------------------------------------------------")
 
+    /*
+    * Warmup - 15 OCT 21
+    *
+    *Write a function called ‘typeCheck’ that takes an input and returns a string of the data type entered.
+    * If the data type is a string, return the string “Haha, it’s a string of string!”
+
+        Tests:
+        typeCheck(‘’)
+        typeCheck(isNaN());
+        typeCheck(!false * 3);
+        typeCheck(4 + ‘4’);
+
+    * */
+    function typeCheck (input) {
+        if(typeof input === 'string') {
+            return "Haha, it's a string of a string! " + input
+        }else {
+            let message = input.toString();
+            return message;
+        }
+    }
+
+    console.log(typeCheck('Hello'));
+    console.log(typeCheck(4));
+    console.log("----------------------------------------------------------------------------------------------------")
+
+    //Warmup - October 18, 2021
+
 })();
