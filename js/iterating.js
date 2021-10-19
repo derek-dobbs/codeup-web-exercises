@@ -59,7 +59,7 @@
     }
 
     function last (array) {
-        return array[arr.length - 1];
+        return array[array.length - 1];
     }
 
     console.log(first(names));
