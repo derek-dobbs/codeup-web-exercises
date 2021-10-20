@@ -23,10 +23,12 @@
      * list. You will need an opening AND closing <ul> tags around the entire
      * string, and <li> tags around each planet.
      */
-    let brPlanetsString = "Mercury<br>Venus<br>Earth<br>Mars<br>Jupiter<br>Saturn<br>Uranus<br>Neptune";
+    // let brPlanetsString = "Mercury<br>Venus<br>Earth<br>Mars<br>Jupiter<br>Saturn<br>Uranus<br>Neptune";
+    let brPlanetsString = planetsArray.join("<br>");
     console.log(brPlanetsString);
 
-    let ulPlanetsString = "<ul><li>Mercury</li><li>Venus</li><li>Earth</li><li>Mars</li><li>Jupiter</li><li>Saturn</li><li>Uranus</li><li>Neptune</li></ul>";
+    // let ulPlanetsString = "<ul><li>Mercury</li><li>Venus</li><li>Earth</li><li>Mars</li><li>Jupiter</li><li>Saturn</li><li>Uranus</li><li>Neptune</li></ul>";
+    let ulPlanetsString = "<ul><li>" + planetsArray.join("</li><li>") + "</li></ul>";
     console.log(ulPlanetsString);
 
     document.write(brPlanetsString);
