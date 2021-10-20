@@ -75,5 +75,15 @@
         }
     }
     console.log("----------------------------------------------------------------------------------------------------")
+    //Warmup - October 20, 2021
+    // Create a function named secondToLast that accepts an array as an argument
+    // and will return the second to last element of the array.
+    let numArray = [1, 2, 3, 4, 5];
+    console.log("Here is the array: " + numArray);
+    function secondToLast (array) {
+        return array[array.length - 2];
+    }
+
+    console.log("The second to last element in the array is: " + secondToLast(numArray));
 
 })();
