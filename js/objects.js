@@ -48,11 +48,42 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    let discount = function (total) {
+        if(total > 200){
+            return "The price before discount is: " + total + "." + "The price after the discount is: " +  total - (total * .12) + ".";
+        }else {
+            return "Sorry, you do not qualify for a discount. Your total price is: " + total + ".";
+        }
+    };
+
+
+    // shoppers.forEach(function(shopper) {
+    //     console.log(shoppers.total());
+    // });
+
+    shoppers.forEach(function(shopper) {
+        console.log(discount(shopper.amount));
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
