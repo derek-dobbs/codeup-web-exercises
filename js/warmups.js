@@ -85,5 +85,19 @@
     }
 
     console.log("The second to last element in the array is: " + secondToLast(numArray));
+    console.log("----------------------------------------------------------------------------------------------------")
+    //Warmup - October 21, 2021
+    // Write a function named ‘moveToEnd’ that takes in an array, and returns the array with the
+    // original first index moved to the last index of the array.
+    function moveToEnd(array) {
+        //remove the first element from the array with shift() and store it in a variable
+        let removedElement = array.shift();
+        //add the stored variable to the end of the array with push()
+        array.push(removedElement);
+        //return the array
+        return array;
+    }
+
+    console.log(moveToEnd([1, 2, 3, 4, 5]));
 
 })();
