@@ -55,13 +55,11 @@
     ];
     shoppers.forEach(function (shopper) {
         if(shopper.amount > 200){
-            console.log(shopper.name + "'s total before discount is: $" + shopper.amount.toFixed(2) + ". After the discount is applied, their total is: $" + (shopper.amount - (shopper.amount * 0.12)).toFixed(2) + ".");
+            console.log(shopper.name + "'s total before discount is: $" + shopper.amount.toFixed(2) + ". After the 12% discount is applied, their total is: $" + (shopper.amount - (shopper.amount * 0.12)).toFixed(2) + ".");
         }else {
             console.log(shopper.name + " did not qualify for the discount. Their total is: $" + shopper.amount.toFixed(2) + ".");
         }
     });
-
-
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -165,8 +163,6 @@
     console.log(createBook("Title 1", "Author 1"));
     console.log(createBook("Title 2", "Author 2"));
     console.log(createBook("Title 3", "Author 3"));
-
-
 
     /* - Create a function named `showBookInfo` that accepts a book object and
     *   outputs the information described above. Refactor your loop to use your
