@@ -154,9 +154,23 @@
      *   name and returns a book object with the properties described
      *   previously. Refactor your code that creates the books array to instead
      *   use your function.
-     * - Create a function named `showBookInfo` that accepts a book object and
-     *   outputs the information described above. Refactor your loop to use your
-     *   `showBookInfo` function.
      */
+    function createBook(title, author) {
+        let booksArray = new Object();
+       booksArray.title = title;
+       booksArray.author = author;
+       return booksArray;
+    }
+
+    console.log(createBook("Title 1", "Author 1"));
+    console.log(createBook("Title 2", "Author 2"));
+    console.log(createBook("Title 3", "Author 3"));
+
+
+
+    /* - Create a function named `showBookInfo` that accepts a book object and
+    *   outputs the information described above. Refactor your loop to use your
+    *   `showBookInfo` function.
+    */
 
 })();
