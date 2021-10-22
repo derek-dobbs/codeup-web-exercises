@@ -172,5 +172,15 @@
     *   outputs the information described above. Refactor your loop to use your
     *   `showBookInfo` function.
     */
+    function showBookInfo (object) {
+        object.forEach(function (element, index) {
+            let bookNumber = index + 1;
+            console.log("Book #: " + bookNumber);
+            console.log("Title: " + element.title);
+            console.log("Author: " + element.author.firstName + " " + element.author.lastName);
+        });
+    }
+
+    console.log(showBookInfo(books));
 
 })();
