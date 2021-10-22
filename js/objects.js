@@ -55,9 +55,9 @@
     ];
     shoppers.forEach(function (shopper) {
         if(shopper.amount > 200){
-            console.log("Your total before discount is: " + shopper.amount.toFixed(2) + ". After the discount is applied, your total is: " + (shopper.amount - (shopper.amount * 0.12)).toFixed(2) + ".");
+            console.log(shopper.name + "'s total before discount is: " + shopper.amount.toFixed(2) + ". After the discount is applied, their total is: " + (shopper.amount - (shopper.amount * 0.12)).toFixed(2) + ".");
         }else {
-            console.log("Sorry, you did not qualify for the discount. Your total is: " + shopper.amount.toFixed(2) + ".");
+            console.log(shopper.name + " did not qualify for the discount. Their total is: " + shopper.amount.toFixed(2) + ".");
         }
     });
 
