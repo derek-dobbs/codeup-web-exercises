@@ -75,6 +75,48 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+    let books = [
+        {
+            title: "A Book About Nothing",
+            author: {
+                firstName: "Notta",
+                lastName: "Zilch"
+            }
+        },
+        {
+            title: "The Yellow River",
+            author: {
+                firstName: "I.P.",
+                lastName: "Freely"
+            }
+        },
+        {
+            title: "Under the Bleachers",
+            author: {
+                firstName: "Seymour",
+                lastName: "Butts"
+            }
+        },
+        {
+            title: "The Art of Beard-Fu",
+            author: {
+                firstName: "Chuck",
+                lastName: "Norris"
+            }
+        },
+        {
+            title: "Life of a Coding Duck",
+            author: {
+                firstName: "Codey",
+                lastName: "Theduck"
+            }
+        }
+
+
+    ];
+    console.log(books[1].title);
+    console.log(books[0].author.firstName);
+    console.log(books[3].author.lastName);
 
     /**
      * TODO:
@@ -100,7 +142,12 @@
      *      ---
      *      ...
      */
-
+    books.forEach(function (book, index) {
+        let bookNumber = index + 1;
+        console.log("Book #: " + bookNumber);
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+    });
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
