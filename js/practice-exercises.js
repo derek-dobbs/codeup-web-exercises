@@ -12,14 +12,17 @@
         integer = integer.toString();
         let splitArray = integer.split('');
         for(let i = 0; i < splitArray.length; i++) {
-            console.log(splitArray[i]);
+            splitArray[i] = (splitArray[i] * splitArray[i]);
         }
+        splitArray = splitArray.join('');
+        splitArray = parseInt(splitArray);
+        return splitArray;
     }
-    squareDigits(12345);
-    // console.log("Should return 9119: " + squareDigits(811181));
-    // console.log("Should return 9416: " + squareDigits(324));
-
+    //squareDigits(12345);
+    console.log("Should return 811181: " + squareDigits(9119));
+    console.log("Should return 9416: " + squareDigits(324));
 
     console.log("----------------------------------------------------------------------------------------------------");
+
 
 })();
