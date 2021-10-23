@@ -32,19 +32,42 @@
     // uniqueInOrder('AAAABBBCCDAABBB') == ['A', 'B', 'C', 'D', 'A', 'B']
     // uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
     // uniqueInOrder([1,2,2,3,3])       == [1,2,3]
-    var uniqueInOrder = function(iterable){ ////10/23/21, 1:20PM: Code isn't working properly, need to fix.
-        let newArray = [];
-            iterable = iterable.split('');
-        for (let i = 0; i < iterable.length ; i++) {
-            if(iterable[i] === iterable[i] + 1) {
-                continue;
+    // var uniqueInOrder = function(iterable){ ////10/23/21, 1:20PM: Code isn't working properly, need to fix.
+    //     let newArray = [];
+    //         iterable = iterable.split('');
+    //     for (let i = 0; i < iterable.length ; i++) {
+    //         if(iterable[i] === iterable[i] + 1) {
+    //             continue;
+    //         }else {
+    //             newArray.unshift(iterable[i]);
+    //         }
+    //     }
+    //     return newArray;
+    // }
+    // console.log(uniqueInOrder("AAAABBBCCDAABBB"));
+    function isIdentical (str) {
+        for (let i = 1; i < str.length; i++) {
+            if(str[i] === str[i - 1]) {
+                console.log("Is Identical");
             }else {
-                newArray.unshift(iterable[i]);
+                console.log("Is not identical");
             }
         }
-        return newArray;
     }
-    console.log(uniqueInOrder("AAAABBBCCDAABBB"));
+    let sampleArray = ['A', 'A', 'B', 'b', 'b', 'C'];
+    isIdentical(sampleArray);
+
+
+    function removeIdenticals (str) {
+        str = str.split('');
+        for (let i = 0; i < str.length; i++) {
+            if (isVowel(str[i])) {
+                str.splice(i, 1);
+            }
+        }
+        str = str.join('');
+        return str;
+    }
 
 
 })();
