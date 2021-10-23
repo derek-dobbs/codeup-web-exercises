@@ -32,6 +32,7 @@
     // uniqueInOrder('AAAABBBCCDAABBB') == ['A', 'B', 'C', 'D', 'A', 'B']
     // uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
     // uniqueInOrder([1,2,2,3,3])       == [1,2,3]
+    console.log("Unique in Order Exercise");
     function uniqueInOrder (str) {
         if(!Array.isArray(str)) {
             str = str.split('');
@@ -49,5 +50,7 @@
     console.log("Input: AAAABBBCCDAABBB, Expected: ['A', 'B', 'C', 'D', 'A', 'B'], Output: " + uniqueInOrder('AAAABBBCCDAABBB'));
     console.log("Input: ABBCcAD, Expected: ['A', 'B', 'C', 'c', 'A', 'D'], Output: " + uniqueInOrder('ABBCcAD'));
     console.log("Input: [1,2,2,3,3], Expected: ['1', '2', '3'], Output: " + uniqueInOrder([1,2,2,3,3]));
+    //additional solutions: https://www.codewars.com/kata/54e6533c92449cc251001667/solutions/javascript
+    console.log("----------------------------------------------------------------------------------------------------");
 
 })();
