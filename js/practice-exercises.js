@@ -46,28 +46,23 @@
     // }
     // console.log(uniqueInOrder("AAAABBBCCDAABBB"));
     function isIdentical (str) {
-        for (let i = 1; i < str.length; i++) {
-            if(str[i] === str[i - 1]) {
-                console.log("Is Identical");
-            }else {
-                console.log("Is not identical");
-            }
-        }
+        return str === str[i - 1];
     }
-    let sampleArray = ['A', 'A', 'B', 'b', 'b', 'C'];
-    isIdentical(sampleArray);
+    // let sampleArray = ['A', 'A', 'B', 'b', 'b', 'C'];
+    // isIdentical(sampleArray);
 
 
     function removeIdenticals (str) {
-        str = str.split('');
+        str = str.split(''); //this took str and made it into an array
         for (let i = 0; i < str.length; i++) {
-            if (isVowel(str[i])) {
+            if (isIdentical(str[i])) {
                 str.splice(i, 1);
             }
         }
-        str = str.join('');
+       str = str.join('');
         return str;
     }
 
+    console.log("Input: AAAABBBCCDAABBB, Expected: ['A', 'B', 'C', 'D', 'A', 'B'], Output: " + removeIdenticals('AAAABBBCCDAABBB'));
 
 })();
