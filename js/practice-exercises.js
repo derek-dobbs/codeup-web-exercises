@@ -32,9 +32,19 @@
     // uniqueInOrder('AAAABBBCCDAABBB') == ['A', 'B', 'C', 'D', 'A', 'B']
     // uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
     // uniqueInOrder([1,2,2,3,3])       == [1,2,3]
-    var uniqueInOrder = iterable => {
-        //your code here - remember iterable can be a string or an array
+    var uniqueInOrder = function(iterable){ ////10/23/21, 1:20PM: Code isn't working properly, need to fix.
+        let newArray = [];
+            iterable = iterable.split('');
+        for (let i = 0; i < iterable.length ; i++) {
+            if(iterable[i] === iterable[i] + 1) {
+                continue;
+            }else {
+                newArray.unshift(iterable[i]);
+            }
+        }
+        return newArray;
     }
+    console.log(uniqueInOrder("AAAABBBCCDAABBB"));
 
 
 })();
