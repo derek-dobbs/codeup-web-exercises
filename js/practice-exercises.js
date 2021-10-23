@@ -45,8 +45,8 @@
     //     return newArray;
     // }
     // console.log(uniqueInOrder("AAAABBBCCDAABBB"));
-    function isIdentical (str) {
-        return str === str[i - 1];
+    function isIdentical (input1, input2) {
+        return input1 === input2;
     }
     // let sampleArray = ['A', 'A', 'B', 'b', 'b', 'C'];
     // isIdentical(sampleArray);
