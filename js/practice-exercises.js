@@ -76,7 +76,7 @@
 
     function twoSum(array, target) {
         for (let i = 0; i < array.length ; i++) {
-            for (let j = 1; j < array.length; i++) {
+            for (let j = 1; j < array.length; j++) {
                 if((array[i] + array[j]) === target) {
                     return [i, j];
                 }//end if
@@ -88,6 +88,7 @@
     console.log("Expected output: [1,2] or [2,1], Output: " + twoSum([3,2,4], 6));
     console.log("Expected output: [0,1] or [1,0] Output: " + twoSum([3,3], 6));
     console.log("Expected output: [0,2] or [2,0] Output: " + twoSum([3, 2, 3], 6));
+    console.log("Expected output: [1,2] or [2,1] Output: " + twoSum([2, 5, 5, 11], 6));//not getting the correct result, need to fix code
     console.log("----------------------------------------------------------------------------------------------------");
 
 })();
