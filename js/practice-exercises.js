@@ -83,6 +83,10 @@
             }
         }
     }
+    //create a nested for loop that compares i in the first loop with j in the second loop
+    //if array[i] === array[j]
+    //return [i, j]
+    //I may be able to refactor my code to instead use this through all of the array instead of the first if statement
 
     console.log("Expected output: [0,1], Output: " + twoSum([2,7,11,15], 9));
     console.log("Expected output: [1,2], Output: " + twoSum([3,2,4], 6));
