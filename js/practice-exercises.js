@@ -74,14 +74,20 @@
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     console.log("Two Sum Exercise");
     function twoSum(array, target) {
-
+        //create a for loop that iterates through array
+        for (let i = 0; i < array.length; i++) {
+            //if the element added to the element after it equals target,
+            if(array[i] + array[i + 1] === target) {
+                //return the indexes of the two numbers in an array
+                return [i, (i + 1)];
+            }
+        }
     }
 
     console.log("Expected output: [0,1], Output: " + twoSum([2,7,11,15], 9));
     console.log("Expected output: [1,2], Output: " + twoSum([3,2,4], 6));
     console.log("Expected output: [0,1], Output: " + twoSum([3,3], 6));
+    console.log("Expected output: [0,2], Output: " + twoSum([3, 2, 3], 6));//Not getting expected output, previous three tests passed
     console.log("----------------------------------------------------------------------------------------------------");
-
-
 
 })();
