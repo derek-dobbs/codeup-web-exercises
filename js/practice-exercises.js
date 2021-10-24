@@ -73,20 +73,29 @@
     // Output: [0,1]
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     console.log("Two Sum Exercise");
-    function twoSum(array, target) {
-        //create a for loop that iterates through array
-        for (let i = 0; i < array.length; i++) {
-            //if the element added to the element after it equals target,
-            if(array[i] + array[i + 1] === target) {
-                //return the indexes of the two numbers in an array
-                return [i, (i + 1)];
-            }
-        }
-    }
+    // function twoSum(array, target) {
+    //     //create a for loop that iterates through array
+    //     for (let i = 0; i < array.length; i++) {
+    //         //if the element added to the element after it equals target,
+    //         if(array[i] + array[i + 1] === target) {
+    //             //return the indexes of the two numbers in an array
+    //             return [i, (i + 1)];
+    //         }
+    //     }
+    // }
     //create a nested for loop that compares i in the first loop with j in the second loop
     //if array[i] === array[j]
     //return [i, j]
     //I may be able to refactor my code to instead use this through all of the array instead of the first if statement
+    function twoSum(array, target) {
+        for (let i = 0; i < array.length ; i++) {
+            for (let j = 0; j < array.length; i++) {
+                if((array[i] + array[j]) !== target) {
+                    return [i, j];
+                }//end if
+            }//end second for loop
+        }//end first for loop
+    }//end function twoSum
 
     console.log("Expected output: [0,1], Output: " + twoSum([2,7,11,15], 9));
     console.log("Expected output: [1,2], Output: " + twoSum([3,2,4], 6));
