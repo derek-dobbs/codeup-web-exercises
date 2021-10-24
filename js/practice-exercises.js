@@ -77,18 +77,22 @@
     function twoSum(array, target) {
         for (let i = 0; i < array.length ; i++) {
             for (let j = 1; j < array.length; j++) {
+                if(array[i] + array[i + 1] === target) {
+                    return [i, (i + 1)];
+                }
                 if((array[i] + array[j]) === target) {
                     return [i, j];
-                }//end if
-            }//end second for loop
-        }//end first for loop
-    }//end function twoSum
+                }
+            }
+        }
+    }
 
-    console.log("Expected output: [0,1] or [1,0], Output: " + twoSum([2,7,11,15], 9));
-    console.log("Expected output: [1,2] or [2,1], Output: " + twoSum([3,2,4], 6));
-    console.log("Expected output: [0,1] or [1,0] Output: " + twoSum([3,3], 6));
-    console.log("Expected output: [0,2] or [2,0] Output: " + twoSum([3, 2, 3], 6));
-    console.log("Expected output: [1,2] or [2,1] Output: " + twoSum([2, 5, 5, 11], 6));//not getting the correct result, need to fix code
+    console.log("Expected output: [0,1], Output: " + twoSum([2,7,11,15], 9));
+    console.log("Expected output: [1,2], Output: " + twoSum([3,2,4], 6));
+    console.log("Expected output: [0,1], Output: " + twoSum([3,3], 6));
+    console.log("Expected output: [0,2], Output: " + twoSum([3, 2, 3], 6));
+    console.log("Expected output: [1,2], Output: " + twoSum([2, 5, 5, 11], 10));
+    console.log("Expected output: [2,3], Output: " + twoSum([1, 3, 4, 2], 6));
     console.log("----------------------------------------------------------------------------------------------------");
 
 })();
