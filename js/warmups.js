@@ -104,7 +104,11 @@
     console.log("Morning Warmup - October 25, 2021");
     let pokemon = {
         name: "Charmander",
-        height: "2\' 00\"",
+        description: "It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.",
+        height: {
+            feet: 2,
+            inches: 0
+        },
         weight: "18.7 lbs",
         category: "Lizard",
         abilities: "Blaze"
