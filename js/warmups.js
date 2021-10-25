@@ -99,5 +99,20 @@
     }
 
     console.log(moveToEnd([1, 2, 3, 4, 5]));
+    console.log("----------------------------------------------------------------------------------------------------")
+    //Warmup - October 25, 2021
+    console.log("Morning Warmup - October 25, 2021");
+    let pokemon = {
+        name: "Charmander",
+        height: "2\' 00\"",
+        weight: "18.7 lbs",
+        category: "Lizard",
+        abilities: "Blaze"
+
+    };
+    console.log(pokemon);
+    console.log("----------------------------------------------------------------------------------------------------")
+
+
 
 })();
