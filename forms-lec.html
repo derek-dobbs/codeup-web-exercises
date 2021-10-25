@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms Lecture</title>
+</head>
+  <body>
+    <h1>Forms Lecture</h1>
+    <form method="POST" action="https://request-inspector.glitch.me/">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="user" value="username">
+      <br>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="pass" placeholder="Enter Your Password">
+      <br>
+      <br>
+      <label for="bio">Tell Me About Yourself</label>
+      <br>
+      <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
+      <br>
+      <input type="checkbox" name="emailSignup" checked>Would you like to sign up for our newsletter?
+      <hr>
+      <h2>Select all that are true:</h2>
+      <label for="quiz-1">Example question 1</label>
+      <input type="checkbox" id="quiz-1" name="quiz" value="A">
+      <br>
+      <label for="quiz-2">Example question 2</label>
+      <input type="checkbox" id="quiz-2" name="quiz" value="B">
+      <br>
+      <label for="quiz-3">Example question 3</label>
+      <input type="checkbox" id="quiz-3" name="quiz" value="C">
+      <br>
+      <label for="quiz-4">Example question 4</label>
+      <input type="checkbox" id="quiz-4" name="quiz" value="D">
+      <hr>
+      <h3>"Enter Sandman" is a song by the band _____.</h3>
+      <label for="rq-1">Metallica</label>
+      <input type="radio" name="radioQuestion" id="rq-1" value="Metallica">
+      <label for="rq-2">Billy Ray Cyrus</label>
+      <input type="radio" name="radioQuestion" id="rq-2" value="Billy Ray Cyrus">
+      <label for="rq-3">Pantera</label>
+      <input type="radio" name="radioQuestion" id="rq-3" value="Pantera">
+      <label for="rq-4">Frank Sinatra</label>
+      <input type="radio" name="radioQuestion" id="rq-4" value="Frank Sinatra">
+      <hr>
+      <label for="select">What is your favorite video game console?</label>
+      <select name="vg-console" id="select">
+        <option value="Atari">Atari</option>
+        <option value="Nintendo">Nintendo</option>
+        <option value="X-box">X-box</option>
+      </select>
+      <hr>
+      <input type="hidden" name="secret-user-id" value="13">
+      <br>
+      <hr>
+      <label for="gender">Are you male or female?</label>
+      <input disabled id="gender" name="gender" type="text">
+      <hr>
+      <button type="submit">Submit Your Information</button>
+    </form>
+  </body>
+</html>
