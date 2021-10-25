@@ -5,20 +5,48 @@
     <title>HTML Elements</title>
 </head>
 <body>
-    <h1>Charmander</h1>
-    <br>
-    <hr>
-    <input type="text">
-    <p>Number: <span class="red-font"><strong>004</strong></span></p>
-    <section id="type">
-        <h2>Type</h2>
-        <ul>
-            <li>Fire</li>
-        </ul>
+    <header>
+        <h1>Charmander</h1>
+        <br>
+        <nav>
+            <a href="https://www.pokemon.com/us/pokedex/charmander">Learn more about Charmander</a>
+            <a href="https://www.google.com">Google</a>
+        </nav>
+        <hr>
+    </header>
+    <section id="main-image">
+        <img src="img/charmander-image.png" alt="Picture of Charmander">
     </section>
-    <a href="https://www.pokemon.com/us/pokedex/charmander">Learn more about Charmander</a>
+    <main>
+        <p>Number: <span class="red-font"><strong>004</strong></span></p>
+        <section id="type">
+            <h2>Type</h2>
+            <ul>
+                <li>Fire</li>
+            </ul>
+        </section>
+        <table>
+            <tr>
+                <th>Height</th>
+                <th>Weight</th>
+                <th>Gender</th>
+                <th>Category</th>
+                <th>Abilities</th>
 
-
+            </tr>
+            <tr>
+                <td>2' 00"</td>
+                <td>18.7 lbs</td>
+                <td>neutral</td>
+                <td>Lizard</td>
+                <td>Blaze</td>
+            </tr>
+        </table>
+    </main>
+    <!--Hyperlink to take me to section with the ID of type-->
+   <footer>
+       <a href="#top">Back to Top</a>
+   </footer>
     <script src="js/html-elements-lec.js"></script>
 </body>
 </html>
