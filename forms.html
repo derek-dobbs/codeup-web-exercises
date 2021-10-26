@@ -7,18 +7,20 @@
     <body>
     <form method="POST" action="https://request-inspector.glitch.me/">
 <!--        Create text fields for email and password with appropriate placeholder values-->
-        <label for="email">Email</label>
-        <input id="email" type="text" name="email" placeholder="Enter your email address">
-        <br>
+        <section>
+            <label for="email">Email</label>
+            <input id="email" type="text" name="email" placeholder="Enter your email address">
+            <br>
 
-        <label for="password">Password</label>
-        <input id="password" type="password" name="password" placeholder="Enter your password">
-        <br>
-        <br>
-<!--        Create a textarea named "bio". This is for the user to fill out a short description of themselves.-->
-        <label for="bio">Please fill out a short description about yourself.</label>
-        <br>
-        <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Enter your description here."></textarea>
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" placeholder="Enter your password">
+            <br>
+            <br>
+    <!--        Create a textarea named "bio". This is for the user to fill out a short description of themselves.-->
+            <label for="bio">Please fill out a short description about yourself.</label>
+            <br>
+            <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Enter your description here."></textarea>
+        </section>
         <br>
 <!--        Create a "How did you hear about us" section that contains radio buttons.
             The values should be "billboard", "radio advertisement", "internet advertisement", and "other".
@@ -41,7 +43,17 @@
             <input type="radio" id="rq-4" name="radioQuestion" value="other">
         </section>
         <br>
-
+<!--        Create a dropdown that asks the user what web browser they are using.-->
+        <section>
+            <label for="browserSelect">Which web browser are you using?</label>
+            <select name="webBrowser" id="browserSelect">
+                <option value="chrome">Chrome</option>
+                <option value="internetExplorer">Internet Explorer</option>
+                <option value="firefox">Firefox</option>
+                <option value="safari">Safari</option>
+                <option value="other">Other</option>
+            </select>
+        </section>
     </form>
     </body>
 </html>
