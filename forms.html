@@ -6,6 +6,7 @@
     </head>
     <body>
     <form method="POST" action="https://request-inspector.glitch.me/">
+<!--        Create text fields for email and password with appropriate placeholder values-->
         <label for="email">Email</label>
         <input id="email" type="text" name="email" placeholder="Enter your email address">
         <br>
@@ -14,10 +15,17 @@
         <input id="password" type="password" name="password" placeholder="Enter your password">
         <br>
         <br>
-
-        <label for="bio">Please fill out a short description about yourself</label>
+<!--        Create a textarea named "bio". This is for the user to fill out a short description of themselves.-->
+        <label for="bio">Please fill out a short description about yourself.</label>
         <br>
-        <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Enter your description here"></textarea>
+        <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Enter your description here."></textarea>
+        <br>
+<!--        Create a "How did you hear about us" section that contains radio buttons.
+            The values should be "billboard", "radio advertisement", "internet advertisement", and "other".
+            Only one of the values should be allowed to be selected at a time.-->
+<!--        What happens if the inputs are given different name attributes?-->
+<!--        Change these inputs so that multiple answers are allowed to be selected.-->
+
     </form>
     </body>
 </html>
