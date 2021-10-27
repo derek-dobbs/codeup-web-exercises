@@ -1,0 +1,19 @@
+h1 {
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: #47b01c;
+    text-decoration: underline;
+}
+
+body {
+    background-color: #d9d9dc;
+    background-image: url("https://cdn.pixabay.com/photo/2018/05/14/16/54/cyber-3400789_960_720.jpg");
+    background-repeat: round;
+    color: #d9d9dc;
+
+}
+ul {
+    list-style-type: square;
+}
