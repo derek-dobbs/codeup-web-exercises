@@ -140,18 +140,37 @@
             nationality: "Canadian"
         }
     ];
-
-    function returnCanadian (array) {
+    // //Using a for loop
+    // function returnCanadian (array) {
+    //     let newArray = [];
+    //     for (let i = 0; i < array.length; i++) {
+    //         if(array[i].nationality === "Canadian") {
+    //             newArray.push(array[i]);
+    //         }
+    //     }
+    //     return newArray;
+    // }
+    //Using a forEach loop
+    function returnCanadian(array) {
         let newArray = [];
-        for (let i = 0; i < array.length; i++) {
-            if(array[i].nationality === "Canadian") {
-                newArray.push(array[i]);
+        array.forEach(function (element) {
+            if(element.nationality === "Canadian") {
+                newArray.push(element);
             }
         }
         return newArray;
-    }
+    });
+    /*
+    *
+    * */
     console.log(returnCanadian(wrestlers));
     console.log("----------------------------------------------------------------------------------------------------");
+    //Warmup - October 27, 2021
+    //Write a function named 'filterJunkFood' that takes in an array of foods
+    // and returns an array with only fruit and vegetable strings. Use the array above to test your output.
+
+    var foods = ['cookies', 'carrots', 'cake', 'brownies', 'bananas', 'apples', 'celery', 'pumpkin pie']
+
 
 
 
