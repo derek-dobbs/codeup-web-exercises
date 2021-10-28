@@ -8,44 +8,44 @@ body, html {
 
 .message-info {
     background-color: rgb(195, 218, 253);
-    margin: 5px;
+    margin: 10px;
     height: 40px;
     border-radius: 5px;
     width: 850px;
     color: rgb(67, 70, 153);
     line-height: 40px;
-    padding: 5px;
+    padding: .25px 5px;
 }
 
 .message-success {
     background-color: rgb(199, 241, 214);
-    margin: 5px;
+    margin: 10px;
     height: 40px;
     border-radius: 5px;
     width: 850px;
     color: rgb(0, 94, 47);
     line-height: 40px;
-    padding: 5px;
+    padding: .25px 5px;
 }
 
 .message-warning {
     background-color: rgb(255, 249, 197);
-    margin: 5px;
+    margin: 10px;
     height: 40px;
     border-radius: 5px;
     width: 850px;
     color: rgb(160, 139, 59);
     line-height: 40px;
-    padding: 5px;
+    padding: .25px 5px;
 }
 
 .message-error {
     background-color: rgb(252, 204, 210);
-    margin: 5px;
+    margin: 10px;
     height: 40px;
     border-radius: 5px;
     width: 850px;
     color: rgb(141, 42, 65);
     line-height: 40px;
-    padding: 5px;
+    padding: .25px 5px;
 }
