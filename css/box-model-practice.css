@@ -1,0 +1,35 @@
+/*body {*/
+/*    background-color: black;*/
+/*}*/
+
+/*#content-area-1 {*/
+/*    background-color: coral;*/
+/*    width: 100px;*/
+/*    height: 100px;*/
+/*}*/
+
+/*#content-area-2 {*/
+/*    background-color: darkcyan;*/
+/*    width: 100px;*/
+/*    height: 100px;*/
+/*}*/
+
+body {
+    background-color: black;
+    color: white;
+}
+
+p {
+
+    height: fit-content;
+    width: calc(100% - 20px);
+    background-color: green;
+    padding: 20px 10px ;
+
+}
+
+.recipe-container {
+    border: 2px solid red;
+    width: 30%;
+    margin: 10px auto;
+}
