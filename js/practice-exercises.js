@@ -107,12 +107,37 @@
         switch (numeral) {
             case "I":
                 numeral = 1;
+                break;
+            case "V":
+                numeral = 5;
+                break;
+            case "X":
+                numeral = 10;
+                break;
+            case "L":
+                numeral = 50;
+                break;
+            case "C":
+                numeral = 100;
+                break;
+            case "D":
+                numeral = 500;
+                break;
+            case "M":
+                numeral = 1000;
+                break;
         }
         return numeral;
     }
 
     console.log("Roman to Integer: ");
-    console.log(romanToInteger("I"));
+    console.log(romanToInteger("I")); //expected: 1
+    console.log(romanToInteger("V")); //expected: 5
+    console.log(romanToInteger("X")); //expected: 10
+    console.log(romanToInteger("L")); //expected: 50
+    console.log(romanToInteger("C")); //expected: 100
+    console.log(romanToInteger("D")); //expected: 500
+    console.log(romanToInteger("M")); //expected: 1000
     // console.log(romanToInteger("III")); //expected: 3
     // console.log(romanToInteger("IV")); //expected: 4
     // console.log(romanToInteger("IX")); //expected: 9
