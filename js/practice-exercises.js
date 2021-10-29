@@ -110,38 +110,49 @@
 
         //loop through each element in newArray
         for (let i = 0; i < newArray.length; i++) {
-
+            //assign numeric value to the passed in numeral
+            switch (newArray[i]) {
+                case "I":
+                    newArray[i] = 1;
+                    break;
+                case "II":
+                    newArray[i] = 2;
+                    break;
+                case "III":
+                    newArray[i] = 3;
+                    break;
+                case "V":
+                    newArray[i] = 5;
+                    break;
+                case "X":
+                    newArray[i] = 10;
+                    break;
+                case "L":
+                    newArray[i] = 50;
+                    break;
+                case "C":
+                    newArray[i] = 100;
+                    break;
+                case "D":
+                    newArray[i] = 500;
+                    break;
+                case "M":
+                    newArray[i] = 1000;
+                    break;
+            }
         }
-
-        //assign numeric value to the passed in numeral
-        switch (numeral) {
-            case "I":
-                numeral = 1;
-                break;
-            case "V":
-                numeral = 5;
-                break;
-            case "X":
-                numeral = 10;
-                break;
-            case "L":
-                numeral = 50;
-                break;
-            case "C":
-                numeral = 100;
-                break;
-            case "D":
-                numeral = 500;
-                break;
-            case "M":
-                numeral = 1000;
-                break;
-        }
-        // return numeral;
+        return newArray;
     }
+    // if the current number is smaller than the one in front of it, subtract the smaller number from the larger number
+    // if the current number is equal to the number in front of it, add those numbers together
+
 
     console.log("Roman to Integer: ");
-    // romanToInteger("III");
+    console.log(romanToInteger("I"));
+    console.log(romanToInteger("II"));
+    console.log(romanToInteger("III"));
+    console.log(romanToInteger("IV"));
+    console.log(romanToInteger("V"));
     // console.log(romanToInteger("I")); //expected: 1
     // console.log(romanToInteger("V")); //expected: 5
     // console.log(romanToInteger("X")); //expected: 10
