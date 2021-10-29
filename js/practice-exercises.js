@@ -103,6 +103,13 @@
     * Given a roman numeral, convert it to an integer.
     * */
     function romanToInteger(numeral) {
+        //create an array to store the new values in
+        let calculatedArray = [];
+
+        let subtractOne = 0;
+        let subractTwo = 0;
+        let addTwo = 0;
+        let addThree = 0;
 
         //turn the passed in value into an array
         let newArray = numeral.split('');
@@ -140,11 +147,31 @@
                     newArray[i] = 1000;
                     break;
             }
+
+
+
         }
-        return newArray;
+        for (let i = 0; i < newArray.length ; i++) {
+            if(newArray[i] === newArray[i + 1] && newArray[i] === newArray[i + 2]) { //if the current number is equal to the next number in the array and equal to the next number after that
+                addThree = newArray[i] + newArray[i + 1] + newArray[i + 2];
+                calculatedArray.push(addThree);
+            }
+            // if the current number is equal to the number in front of it, add those numbers together
+            if(newArray[i] === newArray[i + 1]) {
+                addTwo = newArray[i] + newArray[i + 1];
+                calculatedArray.push(addTwo);
+            }else if(newArray[i] < newArray[i + 1]) { // // if the current number is smaller than the one in front of it, subtract the smaller number from the larger number
+                subtractOne = newArray[i + 1] - newArray[i];
+                //add that number to the end of calculatedArray
+                calculatedArray.push(subtractOne);
+            }else {
+                calculatedArray.push(newArray[i]);
+            }
+        }
+        return calculatedArray;
     }
-    // if the current number is smaller than the one in front of it, subtract the smaller number from the larger number
-    // if the current number is equal to the number in front of it, add those numbers together
+
+
 
 
     console.log("Roman to Integer: ");
