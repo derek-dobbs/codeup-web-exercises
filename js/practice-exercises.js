@@ -155,22 +155,22 @@
             if(newArray[i] === newArray[i + 1] && newArray[i] === newArray[i + 2]) { //if the current number is equal to the next number in the array and equal to the next number after that
                 addThree = newArray[i] + newArray[i + 1] + newArray[i + 2];
                 calculatedArray.push(addThree);
+                break;
             }else if(newArray[i] === newArray[i + 1]) { // if the current number is equal to the number in front of it, add those numbers together
                 addTwo = newArray[i] + newArray[i + 1];
                 calculatedArray.push(addTwo);
+                break;
             }else if(newArray[i] < newArray[i + 1]) { // // if the current number is smaller than the one in front of it, subtract the smaller number from the larger number
                 subtractOne = newArray[i + 1] - newArray[i];
                 //add that number to the end of calculatedArray
                 calculatedArray.push(subtractOne);
+                break;
             }else {
                 calculatedArray.push(newArray[i]);
             }
         }
         return calculatedArray;
     }
-
-
-
 
     console.log("Roman to Integer: ");
     console.log(romanToInteger("I"));
