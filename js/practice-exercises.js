@@ -104,6 +104,16 @@
     * */
     function romanToInteger(numeral) {
 
+        //turn the passed in value into an array
+        let newArray = numeral.split('');
+        // console.log(newArray);
+
+        //loop through each element in newArray
+        for (let i = 0; i < newArray.length; i++) {
+
+        }
+
+        //assign numeric value to the passed in numeral
         switch (numeral) {
             case "I":
                 numeral = 1;
@@ -127,17 +137,18 @@
                 numeral = 1000;
                 break;
         }
-        return numeral;
+        // return numeral;
     }
 
     console.log("Roman to Integer: ");
-    console.log(romanToInteger("I")); //expected: 1
-    console.log(romanToInteger("V")); //expected: 5
-    console.log(romanToInteger("X")); //expected: 10
-    console.log(romanToInteger("L")); //expected: 50
-    console.log(romanToInteger("C")); //expected: 100
-    console.log(romanToInteger("D")); //expected: 500
-    console.log(romanToInteger("M")); //expected: 1000
+    // romanToInteger("III");
+    // console.log(romanToInteger("I")); //expected: 1
+    // console.log(romanToInteger("V")); //expected: 5
+    // console.log(romanToInteger("X")); //expected: 10
+    // console.log(romanToInteger("L")); //expected: 50
+    // console.log(romanToInteger("C")); //expected: 100
+    // console.log(romanToInteger("D")); //expected: 500
+    // console.log(romanToInteger("M")); //expected: 1000
     // console.log(romanToInteger("III")); //expected: 3
     // console.log(romanToInteger("IV")); //expected: 4
     // console.log(romanToInteger("IX")); //expected: 9
