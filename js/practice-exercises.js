@@ -7,7 +7,7 @@
     // Welcome. In this kata, you are asked to square every digit of a number and concatenate them.
     // For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1.
     // Note: The function accepts an integer and returns an integer
-    console.log("Square Every Digit Exercise");
+    // console.log("Square Every Digit Exercise");
     function squareDigits (integer) {
         integer = integer.toString();
         let splitArray = integer.split('');
@@ -19,11 +19,11 @@
         return splitArray;
     }
     //squareDigits(12345);
-    console.log("Should return 811181: " + squareDigits(9119));
-    console.log("Should return 9416: " + squareDigits(324));
-
-    //Additional solutions: https://www.codewars.com/kata/546e2562b03326a88e000020/solutions/javascript
-    console.log("----------------------------------------------------------------------------------------------------");
+    // console.log("Should return 811181: " + squareDigits(9119));
+    // console.log("Should return 9416: " + squareDigits(324));
+    //
+    // //Additional solutions: https://www.codewars.com/kata/546e2562b03326a88e000020/solutions/javascript
+    // console.log("----------------------------------------------------------------------------------------------------");
 
     //Source: codewars.com
     // Implement the function unique_in_order which takes as argument a sequence and returns a list of items without
@@ -32,7 +32,7 @@
     // uniqueInOrder('AAAABBBCCDAABBB') == ['A', 'B', 'C', 'D', 'A', 'B']
     // uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
     // uniqueInOrder([1,2,2,3,3])       == [1,2,3]
-    console.log("Unique in Order Exercise");
+    // console.log("Unique in Order Exercise");
     function uniqueInOrder (str) {
         if(!Array.isArray(str)) {
             str = str.split('');
@@ -47,11 +47,11 @@
         return str;
     }
 
-    console.log("Input: AAAABBBCCDAABBB, Expected: ['A', 'B', 'C', 'D', 'A', 'B'], Output: " + uniqueInOrder('AAAABBBCCDAABBB'));
-    console.log("Input: ABBCcAD, Expected: ['A', 'B', 'C', 'c', 'A', 'D'], Output: " + uniqueInOrder('ABBCcAD'));
-    console.log("Input: [1,2,2,3,3], Expected: ['1', '2', '3'], Output: " + uniqueInOrder([1,2,2,3,3]));
-    //additional solutions: https://www.codewars.com/kata/54e6533c92449cc251001667/solutions/javascript
-    console.log("----------------------------------------------------------------------------------------------------");
+    // console.log("Input: AAAABBBCCDAABBB, Expected: ['A', 'B', 'C', 'D', 'A', 'B'], Output: " + uniqueInOrder('AAAABBBCCDAABBB'));
+    // console.log("Input: ABBCcAD, Expected: ['A', 'B', 'C', 'c', 'A', 'D'], Output: " + uniqueInOrder('ABBCcAD'));
+    // console.log("Input: [1,2,2,3,3], Expected: ['1', '2', '3'], Output: " + uniqueInOrder([1,2,2,3,3]));
+    // //additional solutions: https://www.codewars.com/kata/54e6533c92449cc251001667/solutions/javascript
+    // console.log("----------------------------------------------------------------------------------------------------");
 
     //Source: leetcode.com
     // Two Sum
@@ -72,27 +72,53 @@
     // Input: nums = [3,3], target = 6
     // Output: [0,1]
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    console.log("Two Sum Exercise");
+    // console.log("Two Sum Exercise");
+    //
+    // function twoSum(array, target) {
+    //     for (let i = 0; i < array.length ; i++) {
+    //         for (let j = 1; j < array.length; j++) {
+    //             if(array[i] + array[i + 1] === target) {
+    //                 return [i, (i + 1)];
+    //             }
+    //             if((array[i] + array[j]) === target) {
+    //                 return [i, j];
+    //             }
+    //         }
+    //     }
+    // }
+    //
+    // console.log("Expected output: [0,1], Output: " + twoSum([2,7,11,15], 9));
+    // console.log("Expected output: [1,2], Output: " + twoSum([3,2,4], 6));
+    // console.log("Expected output: [0,1], Output: " + twoSum([3,3], 6));
+    // console.log("Expected output: [0,2], Output: " + twoSum([3, 2, 3], 6));
+    // console.log("Expected output: [1,2], Output: " + twoSum([2, 5, 5, 11], 10));
+    // console.log("Expected output: [2,3], Output: " + twoSum([1, 3, 4, 2], 6));
 
-    function twoSum(array, target) {
-        for (let i = 0; i < array.length ; i++) {
-            for (let j = 1; j < array.length; j++) {
-                if(array[i] + array[i + 1] === target) {
-                    return [i, (i + 1)];
-                }
-                if((array[i] + array[j]) === target) {
-                    return [i, j];
-                }
-            }
+    //////////////////////////////////////////////////////////////////////////////////////////////
+
+    console.log("----------------------------------------------------------------------------------------------------");
+    /*
+    * Problem: Roman to Integer
+    * Source: Leetcode, https://leetcode.com/problems/roman-to-integer/
+    * Given a roman numeral, convert it to an integer.
+    * */
+    function romanToInteger(numeral) {
+
+        switch (numeral) {
+            case "I":
+                numeral = 1;
         }
+        return numeral;
     }
 
-    console.log("Expected output: [0,1], Output: " + twoSum([2,7,11,15], 9));
-    console.log("Expected output: [1,2], Output: " + twoSum([3,2,4], 6));
-    console.log("Expected output: [0,1], Output: " + twoSum([3,3], 6));
-    console.log("Expected output: [0,2], Output: " + twoSum([3, 2, 3], 6));
-    console.log("Expected output: [1,2], Output: " + twoSum([2, 5, 5, 11], 10));
-    console.log("Expected output: [2,3], Output: " + twoSum([1, 3, 4, 2], 6));
-    console.log("----------------------------------------------------------------------------------------------------");
+    console.log("Roman to Integer: ");
+    console.log(romanToInteger("I"));
+    // console.log(romanToInteger("III")); //expected: 3
+    // console.log(romanToInteger("IV")); //expected: 4
+    // console.log(romanToInteger("IX")); //expected: 9
+    // console.log(romanToInteger("LVIII")); //expected: 58
+    // console.log(romanToInteger("MCMXCIV")); //expected: 1994
 
+
+    console.log("----------------------------------------------------------------------------------------------------");
 })();
