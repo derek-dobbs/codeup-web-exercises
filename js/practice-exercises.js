@@ -105,11 +105,13 @@
     function romanToInteger(numeral) {
         //create an array to store the new values in
         let calculatedArray = [];
+        let newCalulatedArray = [];
 
         let subtractOne = 0;
         let subractTwo = 0;
         let addTwo = 0;
         let addThree = 0;
+        let summedElement = 0;
 
         //turn the passed in value into an array
         let newArray = numeral.split('');
@@ -122,12 +124,12 @@
                 case "I":
                     newArray[i] = 1;
                     break;
-                case "II":
-                    newArray[i] = 2;
-                    break;
-                case "III":
-                    newArray[i] = 3;
-                    break;
+                // case "II":
+                //     newArray[i] = 2;
+                //     break;
+                // case "III":
+                //     newArray[i] = 3;
+                //     break;
                 case "V":
                     newArray[i] = 5;
                     break;
@@ -148,29 +150,40 @@
                     break;
             }
 
-
-
         }
         for (let i = 0; i < newArray.length ; i++) {
             if(newArray[i] === newArray[i + 1] && newArray[i] === newArray[i + 2]) { //if the current number is equal to the next number in the array and equal to the next number after that
                 addThree = newArray[i] + newArray[i + 1] + newArray[i + 2];
                 calculatedArray.push(addThree);
                 break;
-            }else if(newArray[i] === newArray[i + 1]) { // if the current number is equal to the number in front of it, add those numbers together
-                addTwo = newArray[i] + newArray[i + 1];
-                calculatedArray.push(addTwo);
-                break;
-            }else if(newArray[i] < newArray[i + 1]) { // // if the current number is smaller than the one in front of it, subtract the smaller number from the larger number
-                subtractOne = newArray[i + 1] - newArray[i];
+            }else if(newArray[i] < newArray[i + 1]) { //if the current number is smaller than the one in front of it,
+                subtractOne = newArray[i + 1] - newArray[i]; //subtract the smaller number from the larger number
                 //add that number to the end of calculatedArray
                 calculatedArray.push(subtractOne);
+                break;
+            }else if(newArray[i] === newArray[i + 1]) { // if the current number is equal to the number in front of it,
+                addTwo = newArray[i] + newArray[i + 1]; //add those numbers together
+                calculatedArray.push(addTwo);
                 break;
             }else {
                 calculatedArray.push(newArray[i]);
             }
         }
-        let joinedArray = calculatedArray.join(',');
-        return joinedArray;
+
+        if(calculatedArray.length !== 1) {
+            for (let i = 0; i < calculatedArray.length ; i++) {
+                summedElement = calculatedArray[i] + calculatedArray[i + 1];
+                newCalulatedArray.push(summedElement);
+            }
+            return newCalulatedArray.join(',');
+        }else {
+            return calculatedArray.join(',');
+        }
+
+
+        // // let joinedArray = calculatedArray.join(',');
+        // let joinedArray = newCalulatedArray.join(',');
+        // return joinedArray;
     }
 
     console.log("Roman to Integer: ");
