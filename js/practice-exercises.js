@@ -353,8 +353,8 @@
         return  address.split('.').join('[.]');
     }
 
-    console.log(defangIPaddr("1.1.1.1"));
-    console.log(defangIPaddr("255.100.50.0"));
+    // console.log(defangIPaddr("1.1.1.1"));
+    // console.log(defangIPaddr("255.100.50.0"));
     //all tests passed in leetcode
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //source: edabit: https://edabit.com/challenge/WrXmsGDGxqkjNCZtw
@@ -371,7 +371,56 @@
         There won't be any cases of punctuation in the tests.
      */
     function capLast(string) {
+        //turn the string into an array
+        string.split('');
+        //Store the capitalized version of the last character of the string into a variable
+        let x = string[string.length - 1].toUpperCase();
+        //Replace the last character in the string with the value stored in the variable
+        string = string.replace(string[string.length -1], x);
+        return string;
+
+        //turn the array back into a string separated by ''
+        //return the string
+
+        //create a loop to do all of the things listed above
+        for (let i = 0; i < string.length; i++) {
+
+        }
+
 
     }
+
+    // console.log(capLast("hi"));
+    // console.log(capLast("hello"));
+    // console.log(capLast("My Name Is Edabit"));
+    // console.log(capLast("HELp THe LASt LETTERs CAPITALISe"));
+
+    // function temp (string) {
+    //     for (let i = 0; i < string.length; i++) {
+    //         if(i !== string.length - 1){
+    //             continue;
+    //         }
+    //         let x = string[string.length - 1].toUpperCase();
+    //         //Replace the last character in the string with the value stored in the variable
+    //         string = string.replace(string[string.length -1], x);
+    //         // console.log(string[i]);
+    //
+    //     }
+    //     return console.log(string);
+    // }
+
+    function temp(string) {
+        string = string.split(' ');
+        for (let i = 0; i < string.length; i++) {
+            console.log(string[i]);
+        }
+
+        // return console.log(string);
+    }
+
+
+
+
+    temp("Hello World");
 
 })();
