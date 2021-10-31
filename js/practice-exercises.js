@@ -382,13 +382,13 @@
         //turn the array back into a string separated by ''
         //return the string
 
-        //create a loop to do all of the things listed above
-        for (let i = 0; i < string.length; i++) {
-
-        }
-
-
+        // //create a loop to do all of the things listed above
+        // for (let i = 0; i < string.length; i++) {
+        //
+        // }
     }
+
+    console.log(capLast("Hello"));
 
     // console.log(capLast("hi"));
     // console.log(capLast("hello"));
