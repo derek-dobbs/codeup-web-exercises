@@ -388,39 +388,20 @@
         // }
     }
 
-    console.log(capLast("Hello"));
-
+    // console.log(capLast("Hello"));
     // console.log(capLast("hi"));
     // console.log(capLast("hello"));
     // console.log(capLast("My Name Is Edabit"));
     // console.log(capLast("HELp THe LASt LETTERs CAPITALISe"));
-
-    // function temp (string) {
-    //     for (let i = 0; i < string.length; i++) {
-    //         if(i !== string.length - 1){
-    //             continue;
-    //         }
-    //         let x = string[string.length - 1].toUpperCase();
-    //         //Replace the last character in the string with the value stored in the variable
-    //         string = string.replace(string[string.length -1], x);
-    //         // console.log(string[i]);
-    //
-    //     }
-    //     return console.log(string);
-    // }
-
     function temp(string) {
-        string = string.split(' ');
+        string = string.split(" ");
         for (let i = 0; i < string.length; i++) {
-            console.log(string[i]);
+            console.log(string[i].charAt(string[i].length - 1));
         }
 
-        // return console.log(string);
+        // return string;
     }
 
-
-
-
+    // console.log(temp("Hello World"));
     temp("Hello World");
-
 })();
