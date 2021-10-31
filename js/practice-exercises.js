@@ -371,40 +371,18 @@
         There won't be any cases of punctuation in the tests.
      */
     function capLast(string) {
-        //turn the string into an array
-        string.split('');
-        //Store the capitalized version of the last character of the string into a variable
-        let x = string[string.length - 1].toUpperCase();
-        //Replace the last character in the string with the value stored in the variable
-        string = string.replace(string[string.length -1], x);
-        return string;
-
-        //turn the array back into a string separated by ''
-        //return the string
-
-        // //create a loop to do all of the things listed above
-        // for (let i = 0; i < string.length; i++) {
-        //
-        // }
-    }
-
-    // console.log(capLast("Hello"));
-    // console.log(capLast("hi"));
-    // console.log(capLast("hello"));
-    // console.log(capLast("My Name Is Edabit"));
-    // console.log(capLast("HELp THe LASt LETTERs CAPITALISe"));
-    function temp(string) {
         string = string.split(" ");
         for (let i = 0; i < string.length; i++) {
-            console.log(string[i]);
             let x = string[i].charAt(string[i].length - 1).toUpperCase();
-
-            console.log(x);
+            string [i] = string[i].replace(string[i].charAt(string[i].length - 1), x);
         }
-
-        // return string;
+        string = string.join(" ");
+        return string;
     }
 
-    // console.log(temp("Hello World"));
-    temp("Hello World");
+    console.log(capLast("hello"));
+    console.log(capLast("My Name Is Edabit"));
+    console.log(capLast("HELp THe LASt LETTERs CAPITALISe"));
+    console.log(capLast("hellooooo")); //This test failed, returned hellOoooo instead of hellooooO
+
 })();
