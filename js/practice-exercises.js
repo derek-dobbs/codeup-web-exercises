@@ -396,7 +396,10 @@
     function temp(string) {
         string = string.split(" ");
         for (let i = 0; i < string.length; i++) {
-            console.log(string[i].charAt(string[i].length - 1));
+            console.log(string[i]);
+            let x = string[i].charAt(string[i].length - 1).toUpperCase();
+
+            console.log(x);
         }
 
         // return string;
