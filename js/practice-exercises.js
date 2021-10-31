@@ -306,6 +306,26 @@
         }
         return startingArray;
     }
+    // Code is correctly creating the sequence but needs to stop before the current value reaches 255
+
+
+    // function fibonacciSequence() {
+    //     let startingArray = [0, 1];
+    //     let x = 0;
+    //     for (let i = 1; i < 100; i++) {
+    //
+    //         x = Number(startingArray[i + 1]);
+    //         if (x > 254) {
+    //             break;
+    //         }else {
+    //             startingArray.push(startingArray[i - 1] + startingArray[i]);
+    //         }
+    //         // if(parseInt(startingArray[i]) > 255){
+    //         //     break;
+    //         // }
+    //     }
+    //     // return startingArray;
+    // }
 
     console.log(fibonacciSequence());
     console.log("----------------------------------------------------------------------------------------------------");
