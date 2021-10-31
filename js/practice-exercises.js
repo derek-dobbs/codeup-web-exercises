@@ -263,7 +263,7 @@
     // console.log(triArea(7, 4));
     // console.log(triArea(10, 10));
     console.log("----------------------------------------------------------------------------------------------------");
-    //source: edabit
+    //source: edabit, https://edabit.com/challenge/Q3n42rEWanZSTmsJm
     /*
     * Create a function that takes an array of numbers and return both the minimum and maximum numbers, in that order.
 
@@ -278,15 +278,56 @@
     *
     * */
     function minMax (array) {
-        console.log(Math.min(...array));
+        return [Math.min(...array), Math.max(...array)];
     }
 
-    minMax([3, 1, 2, 5, 4]);
-    minMax([2334454, 5]);
     // console.log(minMax([1, 2, 3, 4, 5]));
     // console.log(minMax([2334454, 5]));
     // console.log(minMax([1]));
+    //All tests passed! - October 30, 2021
 
+    ///////////////////////////////////////////////////////////////////
+    // source: edabit, https://edabit.com/challenge/eYBNcjib3xHHrktZm
+    // Fibonacci Sequence
+    /*The Fibonacci Sequence is the sequence of numbers (Fibonacci Numbers) whose sum is the
+    two preceding numbers (e.g. 0, 1, 1, 2, 3, etc). Using 0 and 1 as the starting values, create a function that
+    returns an array containing all of the Fibonacci numbers less than 255.
+
+    Examples
+    On generating a Fibonacci number where input is the two preceding values starting from 0 and 1 [0, 1, ...].
+    fibonacciSequence(0, 1) ➞ 1
+    fibonacciSequence(1, 1) ➞ 2
+    fibonacciSequence(1, 2) ➞ 3
+    * */
+    function fibonacciSequence() {
+        let startingArray = [0, 1];
+        for (let i = 1; i < 255; i++) {
+            startingArray.push(startingArray[i - 1] + startingArray[i]);
+        }
+        return startingArray;
+    }
+    // Code is correctly creating the sequence but needs to stop before the current value reaches 255
+
+
+    // function fibonacciSequence() {
+    //     let startingArray = [0, 1];
+    //     let x = 0;
+    //     for (let i = 1; i < 100; i++) {
+    //
+    //         x = Number(startingArray[i + 1]);
+    //         if (x > 254) {
+    //             break;
+    //         }else {
+    //             startingArray.push(startingArray[i - 1] + startingArray[i]);
+    //         }
+    //         // if(parseInt(startingArray[i]) > 255){
+    //         //     break;
+    //         // }
+    //     }
+    //     // return startingArray;
+    // }
+
+    console.log(fibonacciSequence());
     console.log("----------------------------------------------------------------------------------------------------");
 
 
