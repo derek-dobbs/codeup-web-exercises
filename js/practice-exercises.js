@@ -96,7 +96,7 @@
 
     //////////////////////////////////////////////////////////////////////////////////////////////
 
-    console.log("----------------------------------------------------------------------------------------------------");
+    // console.log("----------------------------------------------------------------------------------------------------");
     /*
     * Problem: Roman to Integer
     * Source: Leetcode, https://leetcode.com/problems/roman-to-integer/
@@ -208,7 +208,7 @@
     // console.log(romanToInteger("MCMXCIV")); //expected: 1994
 
 
-    console.log("----------------------------------------------------------------------------------------------------");
+    // console.log("----------------------------------------------------------------------------------------------------");
     /*
     * source: edabit, https://edabit.com/challenge/bL7hSc6Zh4zZJzGmw
     * Convert Age to Days
@@ -236,7 +236,7 @@
     // console.log(calcAge(0));
     // console.log(calcAge(20));
 
-    console.log("----------------------------------------------------------------------------------------------------");
+    // console.log("----------------------------------------------------------------------------------------------------");
     //source: edabit, https://edabit.com/challenge/3CaszbdZYGN4otQD8
     /*Area of a Triangle
     *
@@ -262,7 +262,7 @@
     // console.log(triArea(3, 2));
     // console.log(triArea(7, 4));
     // console.log(triArea(10, 10));
-    console.log("----------------------------------------------------------------------------------------------------");
+    // console.log("----------------------------------------------------------------------------------------------------");
     //source: edabit, https://edabit.com/challenge/Q3n42rEWanZSTmsJm
     /*
     * Create a function that takes an array of numbers and return both the minimum and maximum numbers, in that order.
@@ -326,10 +326,32 @@
     //     }
     //     // return startingArray;
     // }
+    //The above code doesn't work
 
-    console.log(fibonacciSequence());
-    console.log("----------------------------------------------------------------------------------------------------");
+    // console.log(fibonacciSequence());
+    // console.log("----------------------------------------------------------------------------------------------------");
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //source: leetcode.com : https://leetcode.com/problems/defanging-an-ip-address/
+    /*
+        108. Defanging an IP Address
+        Given a valid (IPv4) IP address, return a defanged version of that IP address.
+        A defanged IP address replaces every period "." with "[.]".
 
+        Example 1:
+
+        Input: address = "1.1.1.1"
+        Output: "1[.]1[.]1[.]1"
+        Example 2:
+
+        Input: address = "255.100.50.0"
+        Output: "255[.]100[.]50[.]0"
+
+        Constraints:
+        The given address is a valid IPv4 address.
+     */
+    function defangIPaddr () {
+
+    }
 
 
 })();
