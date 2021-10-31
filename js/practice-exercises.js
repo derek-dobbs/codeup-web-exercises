@@ -263,7 +263,7 @@
     // console.log(triArea(7, 4));
     // console.log(triArea(10, 10));
     console.log("----------------------------------------------------------------------------------------------------");
-    //source: edabit
+    //source: edabit, https://edabit.com/challenge/Q3n42rEWanZSTmsJm
     /*
     * Create a function that takes an array of numbers and return both the minimum and maximum numbers, in that order.
 
@@ -278,15 +278,19 @@
     *
     * */
     function minMax (array) {
-        console.log(Math.min(...array));
+        return [Math.min(...array), Math.max(...array)];
     }
 
-    minMax([3, 1, 2, 5, 4]);
-    minMax([2334454, 5]);
     // console.log(minMax([1, 2, 3, 4, 5]));
     // console.log(minMax([2334454, 5]));
     // console.log(minMax([1]));
+    //All tests passed! - October 30, 2021
 
+    ///////////////////////////////////////////////////////////////////
+    // source: edabit, https://edabit.com/challenge/eYBNcjib3xHHrktZm
+    // Fibonacci Sequence
+    /*
+    * */
     console.log("----------------------------------------------------------------------------------------------------");
 
 
