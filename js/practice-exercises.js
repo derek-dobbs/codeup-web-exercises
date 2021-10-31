@@ -356,5 +356,22 @@
     console.log(defangIPaddr("1.1.1.1"));
     console.log(defangIPaddr("255.100.50.0"));
     //all tests passed in leetcode
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //source: edabit: https://edabit.com/challenge/WrXmsGDGxqkjNCZtw
+    /*
+        Capitalize the Last Letter
+        Create a function that capitalizes the last letter of every word.
+
+        Examples
+        capLast("hello") ➞ "hellO"
+        capLast("My Name Is Edabit") ➞ "MY NamE IS EdabiT"
+        capLast("HELp THe LASt LETTERs CAPITALISe") ➞ "HELP THE LAST LETTERS CAPITALISE"
+
+        Notes
+        There won't be any cases of punctuation in the tests.
+     */
+    function capLast(string) {
+
+    }
 
 })();
