@@ -102,5 +102,28 @@ a {
 }
 
 .media {
+    width: 100%;
+    background-color: var(--light-bg);
+    border-bottom: 1px var(--separator-color);
+    padding: .5em;
+    overflow: visible;
+}
+
+.media-image {
+    max-width: 50px;
+    float: left;
+}
+
+.media-body {
+    width: calc(100% - 50px);
+    float: left;
+}
+
+.profile-items {
+    padding: 0px;
+    list-style: none;
+}
+
+.profile-entry {
 
 }
