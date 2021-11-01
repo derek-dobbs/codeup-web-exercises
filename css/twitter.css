@@ -29,6 +29,7 @@ a {
     background: var(--light-bg);
     position: fixed;
     width: 100%;
+    z-index: 1000;
 }
 .nav {
     list-style-type: none;
@@ -77,8 +78,29 @@ a {
 
 .profile-image {
     position: absolute;
+
 }
 
 .profile-form {
     line-height: 80px;
+}
+
+.profile-details {
+    width: calc(25% - .5em);
+}
+
+.timeline {
+    width: calc(50% - .5em);
+}
+
+.who-to-follow {
+    width: calc(25% - .5em);
+}
+
+.container {
+    margin: 2em;
+}
+
+.media {
+
 }
