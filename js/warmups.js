@@ -242,14 +242,14 @@
             quantity: 0
         }
         array.forEach(function (element) {
-            if (element > newObject.quantity) {
+            if (element.quantity > newObject.quantity) {
                 newObject = element;
             }
         });
         return newObject;
     }
 
-    // console.log(getHighestQuantity(groceries));
+    console.log(getHighestQuantity(groceries));
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
