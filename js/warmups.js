@@ -1,28 +1,30 @@
 (function () {
     "use strict";
     //Warm up - 13 OCT 21
-    console.log("Warmup - 13 OCT 21");
+    // console.log("Warmup - 13 OCT 21");
+
     //Write a function that returns the number 7
-    function returnSeven () {
+    function returnSeven() {
         return 7;
     }
+
     // console.log(returnSeven());
 
     //Write an if statement with a condition set to the boolean false. Does the condition run?
-    if(false) {
+    if (false) {
         return "The false conditions runs.";
     }
 
-    console.log("----------------------------------------------------------------------------------------------------")
+    // console.log("----------------------------------------------------------------------------------------------------")
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Warm-up - 14 OCT 21
-    console.log("Warmup - 14 OCT 21");
-/*
-* Copy and paste the following code:
-	var hadBreakfast = Boolean(Math.round(Math.random()));
-* Write a ternary expression to set a variable of hadBreakfastMessage to a string expressing whether or not you have had breakfast. You will use the variable hadBreakfast as your condition.
+    // console.log("Warmup - 14 OCT 21");
+    /*
+    * Copy and paste the following code:
+        var hadBreakfast = Boolean(Math.round(Math.random()));
+    * Write a ternary expression to set a variable of hadBreakfastMessage to a string expressing whether or not you have had breakfast. You will use the variable hadBreakfast as your condition.
 
-* */
+    * */
     var hadBreakfast = Boolean(Math.round(Math.random()));
     var hadBreakfastMessage = (hadBreakfast) ? "Yes, I had breakfast." : "No, I did not have breakfast.";
     // console.log(hadBreakfastMessage);
@@ -79,13 +81,14 @@
     // Create a function named secondToLast that accepts an array as an argument
     // and will return the second to last element of the array.
     let numArray = [1, 2, 3, 4, 5];
-    console.log("Here is the array: " + numArray);
-    function secondToLast (array) {
+    // console.log("Here is the array: " + numArray);
+
+    function secondToLast(array) {
         return array[array.length - 2];
     }
 
     // console.log("The second to last element in the array is: " + secondToLast(numArray));
-    console.log("----------------------------------------------------------------------------------------------------")
+    // console.log("----------------------------------------------------------------------------------------------------")
     //Warmup - October 21, 2021
     // Write a function named ‘moveToEnd’ that takes in an array, and returns the array with the
     // original first index moved to the last index of the array.
@@ -99,9 +102,9 @@
     }
 
     // console.log(moveToEnd([1, 2, 3, 4, 5]));
-    console.log("----------------------------------------------------------------------------------------------------")
+    // console.log("----------------------------------------------------------------------------------------------------")
     //Warmup - October 25, 2021
-    console.log("Morning Warmup - October 25, 2021");
+    // console.log("Morning Warmup - October 25, 2021");
     let pokemon = {
         name: "Charmander",
         description: "It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.",
@@ -115,7 +118,7 @@
 
     };
     // console.log(pokemon);
-    console.log("----------------------------------------------------------------------------------------------------");
+    // console.log("----------------------------------------------------------------------------------------------------");
     //Warmup - October 26, 2021
     // Create a function that accepts an array as an argument, and that returns an array of objects that
     // have a nationality property of “Canadian”. Use the following array:
@@ -164,19 +167,90 @@
     *
     * */
     // console.log(returnCanadian(wrestlers));
-    console.log("----------------------------------------------------------------------------------------------------");
+    // console.log("----------------------------------------------------------------------------------------------------");
     //Warmup - October 27, 2021
     // Find the area of the circle, and round it to the nearest whole number using the Math object.
-    console.log("Morning Warmup - Oct 27, 2021")
+    // console.log("Morning Warmup - Oct 27, 2021")
     var circle = {
         radius: 36
     }
 
-    function areaOfCircle (radius) {
+    function areaOfCircle(radius) {
         return Math.round(Math.PI * (radius * radius));
     }
 
-    console.log(areaOfCircle(circle.radius));
-    console.log("----------------------------------------------------------------------------------------------------");
+    // console.log(areaOfCircle(circle.radius));
+    // console.log("----------------------------------------------------------------------------------------------------");
+
+    //Warmup - November 2, 2021
+    // console.log("Morning Warmup: November 2, 2021");
+
+    /*
+    Create a function that takes in an array of objects, and returns the object with the highest quantity property.
+
+    var groceries = [
+            {
+                name: "carrots",
+                quantity: 5
+            },{
+                name: "yams",
+                quantity: 50
+            },{
+                name: "oranges",
+                quantity: 9
+            },{
+                name: "onions",
+                quantity: 2
+            },{
+                name: "cucumbers",
+                quantity: 6
+            },{
+                name: "potatoes",
+                quantity: 8
+            }
+        ];
+
+        Ex. getHighestQuantityObject(groceries)//returns {name: “yams”, quantity: 50};
+
+     */
+    var groceries = [
+        {
+            name: "carrots",
+            quantity: 5
+        }, {
+            name: "yams",
+            quantity: 50
+        }, {
+            name: "oranges",
+            quantity: 9
+        }, {
+            name: "onions",
+            quantity: 2
+        }, {
+            name: "cucumbers",
+            quantity: 6
+        }, {
+            name: "potatoes",
+            quantity: 8
+        }
+    ];
+
+
+    function getHighestQuantity(array) {
+        var newObject = {
+            name: "default name",
+            quantity: 0
+        }
+        array.forEach(function (element) {
+            if (element > newObject.quantity) {
+                newObject = element;
+            }
+        });
+        return newObject;
+    }
+
+    // console.log(getHighestQuantity(groceries));
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 })();
