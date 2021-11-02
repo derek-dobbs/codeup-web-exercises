@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>HTML Elements</title>
+    <link rel="stylesheet" href="css/selectors-properties.css">
 </head>
 <body>
     <header>
@@ -21,12 +22,12 @@
         <p>Number: <span class="red-font"><strong>004</strong></span></p>
         <section id="type">
             <h2>Type</h2>
-            <ul>
+            <ul class="orange-bg">
                 <li>Fire</li>
             </ul>
         </section>
         <table>
-            <tr>
+            <tr class="table-info">
                 <th>Height</th>
                 <th>Weight</th>
                 <th>Gender</th>
@@ -43,10 +44,14 @@
             </tr>
         </table>
     </main>
+    <div id="parent-div">
+        <h2>Am I a descendant of divs?</h2>
+    </div>
     <!--Hyperlink to take me to section with the ID of type-->
    <footer>
-       <a href="#top">Back to Top</a>
+       <a href="#top" id="back-to-top">Back to Top</a>
    </footer>
     <script src="js/html-elements-lec.js"></script>
+    <h1 class="orange-bg underline" id="blue-bg">This is also red.</h1>
 </body>
 </html>

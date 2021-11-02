@@ -6,7 +6,7 @@
     function returnSeven () {
         return 7;
     }
-    console.log(returnSeven());
+    // console.log(returnSeven());
 
     //Write an if statement with a condition set to the boolean false. Does the condition run?
     if(false) {
@@ -25,9 +25,9 @@
 * */
     var hadBreakfast = Boolean(Math.round(Math.random()));
     var hadBreakfastMessage = (hadBreakfast) ? "Yes, I had breakfast." : "No, I did not have breakfast.";
-    console.log(hadBreakfastMessage);
-
-    console.log("----------------------------------------------------------------------------------------------------")
+    // console.log(hadBreakfastMessage);
+    //
+    // console.log("----------------------------------------------------------------------------------------------------")
 
     /*
     * Warmup - 15 OCT 21
@@ -42,18 +42,18 @@
         typeCheck(4 + ‘4’);
 
     * */
-    function typeCheck (input) {
-        if(typeof input === 'string') {
-            return "Haha, it's a string of a string! " + input
-        }else {
-            let message = input.toString();
-            return message;
-        }
-    }
+    // function typeCheck (input) {
+    //     if(typeof input === 'string') {
+    //         return "Haha, it's a string of a string! " + input
+    //     }else {
+    //         let message = input.toString();
+    //         return message;
+    //     }
+    // }
 
-    console.log(typeCheck('Hello'));
-    console.log(typeCheck(4));
-    console.log("----------------------------------------------------------------------------------------------------")
+    // console.log(typeCheck('Hello'));
+    // console.log(typeCheck(4));
+    // console.log("----------------------------------------------------------------------------------------------------")
 
     //Warmup - October 19, 2021
     /*
@@ -62,19 +62,19 @@
     For numbers which are multiples of both three and five console.log “FizzBuzz”.
 
      */
-    console.log("FizzBuzz Exercise");
-    for (let i = 1; i <= 100 ; i++) {
-        if(i % 3 === 0 && i % 5 === 0) {
-            console.log("FizzBuzz");
-        }else if (i % 3 === 0) {
-            console.log("Fizz");
-        }else if (i % 5 === 0) {
-            console.log("Buzz");
-        }else {
-            console.log(i);
-        }
-    }
-    console.log("----------------------------------------------------------------------------------------------------")
+    // console.log("FizzBuzz Exercise");
+    // for (let i = 1; i <= 100 ; i++) {
+    //     if(i % 3 === 0 && i % 5 === 0) {
+    //         console.log("FizzBuzz");
+    //     }else if (i % 3 === 0) {
+    //         console.log("Fizz");
+    //     }else if (i % 5 === 0) {
+    //         console.log("Buzz");
+    //     }else {
+    //         console.log(i);
+    //     }
+    // }
+    // console.log("----------------------------------------------------------------------------------------------------")
     //Warmup - October 20, 2021
     // Create a function named secondToLast that accepts an array as an argument
     // and will return the second to last element of the array.
@@ -84,7 +84,7 @@
         return array[array.length - 2];
     }
 
-    console.log("The second to last element in the array is: " + secondToLast(numArray));
+    // console.log("The second to last element in the array is: " + secondToLast(numArray));
     console.log("----------------------------------------------------------------------------------------------------")
     //Warmup - October 21, 2021
     // Write a function named ‘moveToEnd’ that takes in an array, and returns the array with the
@@ -98,7 +98,7 @@
         return array;
     }
 
-    console.log(moveToEnd([1, 2, 3, 4, 5]));
+    // console.log(moveToEnd([1, 2, 3, 4, 5]));
     console.log("----------------------------------------------------------------------------------------------------")
     //Warmup - October 25, 2021
     console.log("Morning Warmup - October 25, 2021");
@@ -114,7 +114,7 @@
         abilities: "Blaze"
 
     };
-    console.log(pokemon);
+    // console.log(pokemon);
     console.log("----------------------------------------------------------------------------------------------------");
     //Warmup - October 26, 2021
     // Create a function that accepts an array as an argument, and that returns an array of objects that
@@ -140,19 +140,43 @@
             nationality: "Canadian"
         }
     ];
-
-    function returnCanadian (array) {
-        let newArray = [];
-        for (let i = 0; i < array.length; i++) {
-            if(array[i].nationality === "Canadian") {
-                newArray.push(array[i]);
-            }
-        }
-        return newArray;
-    }
-    console.log(returnCanadian(wrestlers));
+    // //Using a for loop
+    // function returnCanadian (array) {
+    //     let newArray = [];
+    //     for (let i = 0; i < array.length; i++) {
+    //         if(array[i].nationality === "Canadian") {
+    //             newArray.push(array[i]);
+    //         }
+    //     }
+    //     return newArray;
+    // }
+    //Using a forEach loop
+    // function returnCanadian(array) {
+    //     let newArray = [];
+    //     array.forEach(function (element) {
+    //         if(element.nationality === "Canadian") {
+    //             newArray.push(element);
+    //         }
+    //     }
+    //     return newArray;
+    // });
+    /*
+    *
+    * */
+    // console.log(returnCanadian(wrestlers));
     console.log("----------------------------------------------------------------------------------------------------");
+    //Warmup - October 27, 2021
+    // Find the area of the circle, and round it to the nearest whole number using the Math object.
+    console.log("Morning Warmup - Oct 27, 2021")
+    var circle = {
+        radius: 36
+    }
 
+    function areaOfCircle (radius) {
+        return Math.round(Math.PI * (radius * radius));
+    }
 
+    console.log(areaOfCircle(circle.radius));
+    console.log("----------------------------------------------------------------------------------------------------");
 
 })();
