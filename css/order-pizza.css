@@ -45,3 +45,12 @@
     background-image: url("https://cdn.pixabay.com/photo/2014/10/22/18/26/pizza-498574_960_720.jpg");
 }
 
+a:hover {
+    background-color: rgb(228, 227, 228);
+}
+
+#sign-up-area {
+    padding: 10px;
+    color: lightgrey;
+}
+
