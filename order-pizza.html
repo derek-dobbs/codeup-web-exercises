@@ -122,6 +122,56 @@
         </footer>
     </div>
 
+    <div id="pizza-card-container" >
+        <header id="choose-size-and-crust">Choose Cheese and Sauce</header>
+
+        <ul class="list-group list-group-flush" id="crust">
+
+            <div class="card pizza-card">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item crust-type">Cheese</li>
+                    <li class="list-group-item">
+                        <p>How Much?</p>
+                        <select class="custom-select">
+                            <option value="1" selected>Normal</option>
+                            <option value="2">Extra</option>
+                            <option value="3">Light</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card pizza-card">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item crust-type">Sauce</li>
+                    <li class="list-group-item">
+                        <p>What Type?</p>
+                        <select class="custom-select">
+                            <option value="tomato" selected>Tomato Sauce</option>
+                            <option value="marinara">Marinara sauce</option>
+                            <option value="BBQ">BBQ Sauce</option>
+                            <option value="alfredo">Alfredo Sauce</option>
+                        </select>
+                    </li>
+
+                    <li class="list-group-item">
+                        <p>How Much?</p>
+                        <select class="custom-select">
+                            <option value="tomato" selected>Normal</option>
+                            <option value="marinara">Extra</option>
+                            <option value="BBQ">Light</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </ul>
+
+        <footer class="text-right">
+            <button class="btn btn-primary" id="next-step" type="submit">< Previous Step</button>
+            <button class="btn btn-primary" id="next-step" type="submit">Next Step ></button>
+        </footer>
+    </div>
+
 
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
