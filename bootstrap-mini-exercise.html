@@ -13,27 +13,33 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light nav-container">
-            <a class="navbar-brand nav-link active" href="#"><img src="..."  alt="realtor.com logo"><span class="sr-only">(current)</span></a>
+            <a class="navbar-brand nav-link active realtor-logo-link" href="#"><img src="..."  alt="realtor.com logo"><span class="sr-only">(current)</span></a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup main-navbar">
                 <div class="navbar-nav">
 <!--                <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
-                    <a class="nav-link" href="#">Buy</a>
-                    <a class="nav-link" href="#">Sell</a>
-                    <a class="nav-link" href="#">Rent</a>
-                    <a class="nav-link" href="#">Mortgage</a>
-                    <a class="nav-link" href="#">Find Realtors&reg;</a>
-                    <a class="nav-link" href="#">My Home</a>
-                    <a class="nav-link" href="#">News and Insights</a>
-                    <form class="form-inline nav-button-container">
+                    <div class="main-links">
+                        <a class="nav-link" href="#">Buy</a>
+                        <a class="nav-link" href="#">Sell</a>
+                        <a class="nav-link" href="#">Rent</a>
+                        <a class="nav-link" href="#">Mortgage</a>
+                        <a class="nav-link" href="#">Find Realtors&reg;</a>
+                        <a class="nav-link" href="#">My Home</a>
+                        <a class="nav-link" href="#">News and Insights</a>
+                    </div>
+
+                    <form class="form-inline nav-button-container manage-advertise">
                         <button class="btn btn-sm btn-outline-secondary" type="button" href="#">Manage Rentals</button>
                         <button class="btn btn-sm btn-outline-secondary" type="button" href="#">Advertise</button>
                     </form>
-                    <a class="nav-link" href="#">Log in</a>
-                    <button class="btn btn-sm btn-outline-secondary rounded-pill p-3 mb-2 bg-danger text-white" type="button" href="#">Sign up</button>
+                    <div class="far-right">
+                        <a class="nav-link login" href="#">Log in</a>
+                        <button class="btn btn-sm btn-outline-secondary rounded-pill p-3 mb-2 bg-danger text-white sign-up" type="button" href="#">Sign up</button>
+                    </div>
+
 
 <!--                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>-->
                 </div>
