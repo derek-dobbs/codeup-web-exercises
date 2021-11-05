@@ -7,10 +7,12 @@
 
         <title>Bootstrap Mini Exercise</title>
 
+        <script src="https://kit.fontawesome.com/b913f92ee4.js" crossorigin="anonymous"></script>
+
         <link rel="stylesheet" href="css/bootstrap-mini-exercise.css">
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light nav-container">
             <a class="navbar-brand nav-link active" href="#"><img src="..."  alt="realtor.com logo"><span class="sr-only">(current)</span></a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,7 +28,7 @@
                     <a class="nav-link" href="#">Find Realtors&reg;</a>
                     <a class="nav-link" href="#">My Home</a>
                     <a class="nav-link" href="#">News and Insights</a>
-                    <form class="form-inline">
+                    <form class="form-inline nav-button-container">
                         <button class="btn btn-sm btn-outline-secondary" type="button" href="#">Manage Rentals</button>
                         <button class="btn btn-sm btn-outline-secondary" type="button" href="#">Advertise</button>
                     </form>
@@ -40,19 +42,65 @@
         <h2>New Listings in San Antonio, TX</h2>
         <a href="#">View All 1623 Listings</a>
 
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <div style="text-align:center">
-                    <h1>Round Dots / Circles</h1>
-                    <span class="dot"></span>
+        <div id="card-container">
+            <div class="card" style="width: 18rem;">
+                <img src="img/ugly-house-1.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div style="text-align:center">
+                        <span class="dot"></span>
+                    </div>
+                    <!--                <p class="card-text">Single-Family Home</p>-->
+                    <i class="fas fa-square"></i> Single Family Home
+                    <h2>$12,500</h2>
+                    <p><strong>1</strong> bed <strong>0</strong> bath <strong>240</strong> sqft</p>
+                    <p>1219 Skunk Crossing,San Antonio, TX 78244</p>
                 </div>
-                <p class="card-text">Single-Family Home</p>
-                <h2>$285,000</h2>
-                <p><strong>4</strong> bed <strong>2.5</strong> bath <strong>2,243</strong> sqft</p>
-                <p>5979 Kendall Pr,San Antonio, TX 78244</p>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="img/ugly-house-2.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div style="text-align:center">
+                        <span class="dot"></span>
+                    </div>
+                    <!--                <p class="card-text">Single-Family Home</p>-->
+                    <i class="fas fa-square"></i> Single Family Home
+                    <h2>$124,000</h2>
+                    <p><strong>3</strong> bed <strong>2</strong> bath <strong>2,600</strong> sqft</p>
+                    <p>12 Moonshine Way Pr,San Antonio, TX 78244</p>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="img/ugly-house-3.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div style="text-align:center">
+                        <span class="dot"></span>
+                    </div>
+                    <!--                <p class="card-text">Single-Family Home</p>-->
+                    <i class="fas fa-square"></i> Single Family Home
+                    <h2>$28,000</h2>
+                    <p><strong>2</strong> bed <strong>2</strong> bath <strong>600</strong> sqft</p>
+                    <p>9466 Covid Rd,San Antonio, TX 78244</p>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="img/ugly-house-4.jpeg" class="card-img-top" alt="ugly house">
+                <div class="card-body">
+                    <div style="text-align:center">
+                        <span class="dot"></span>
+                    </div>
+                    <!--                <p class="card-text">Single-Family Home</p>-->
+                    <i class="fas fa-square"></i> Single Family Home
+                    <h2>$578</h2>
+                    <p><strong>1</strong> bed <strong>0</strong> bath <strong>78</strong> sqft</p>
+                    <p>1219 Banjo St,San Antonio, TX 78244</p>
+                </div>
             </div>
         </div>
+
+
 
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

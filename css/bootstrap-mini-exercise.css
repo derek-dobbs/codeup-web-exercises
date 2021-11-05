@@ -1,7 +1,17 @@
-.dot {
-    border-radius: 15px;
-    background: #73AD21;
-    padding: 1px;
-    width: 5px;
-    height: 5x;
+
+.fa-square {
+    color: rgb(81, 158, 131);
+}
+
+#card-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-container {
+    display: flex;
+}
+
+.nav-button-container {
+
 }
