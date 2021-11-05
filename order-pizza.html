@@ -34,12 +34,12 @@
 
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Zip code" aria-label="Search">
-                <button class="nav-link" type="submit">Search stores near you!</button>
+                <button class="nav-item" type="submit">Search stores near you!</button>
             </form>
 
             <div id="signup">
                 <i class="fas fa-user"></i>
-                <a href="url" id="sign-up-area"><span id="sign-up-text">Sign up</span></a>
+                <a href="url" class="nav-item">Sign up</a>
             </div>
         </div>
     </nav>
@@ -75,53 +75,53 @@
                 </button></a>
             </li>
         </ul>
-
-        <div class="card" id="pizza-card-container" style="width: 18rem;">
-            <header id="choose-size-and-crust"><p id="size-and-crust-text">Choose size and crust</p></header>
-
-            <ul class="list-group list-group-flush">
-
-                <div class="card pizza-card" style="width: 18rem;">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Hand Tossed</li>
-                        <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
-
-                        <li class="list-group-item">
-                            <input type="radio" id="huey" name="drone" value="small">
-                            <label for="huey">Small (10")</label>
-                        </li>
-
-                        <li class="list-group-item">
-                            <input type="radio" id="huey" name="drone" value="medium">
-                            <label for="huey">Medium (12")</label>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="card" style="width: 18rem;">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Crispy Thin</li>
-                        <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
-
-                        <li class="list-group-item">
-                            <input type="radio" id="huey" name="drone" value="medium">
-                            <label for="huey">Medium (12")</label>
-                        </li>
-
-                        <li class="list-group-item">
-                            <input type="radio" id="huey" name="drone" value="medium">
-                            <label for="huey">Large ("14")</label>
-                        </li>
-                    </ul>
-                </div>
-            </ul>
-
-            <footer>
-                <button class="btn btn-primary" type="submit">Next Step ></button>
-            </footer>
-        </div>
-
     </div>
+
+    <div id="pizza-card-container" >
+        <header id="choose-size-and-crust">Choose size and crust</header>
+
+        <ul class="list-group list-group-flush" id="crust">
+
+            <div class="card pizza-card">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item crust-type">Hand Tossed</li>
+                    <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
+
+                    <li class="list-group-item">
+                        <input type="radio" id="huey" name="drone" value="small">
+                        <label for="huey">Small (10")</label>
+                    </li>
+
+                    <li class="list-group-item">
+                        <input type="radio" id="huey" name="drone" value="medium">
+                        <label for="huey">Medium (12")</label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card pizza-card">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item crust-type">Crispy Thin</li>
+                    <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
+
+                    <li class="list-group-item">
+                        <input type="radio" id="huey" name="drone" value="medium">
+                        <label for="huey">Medium (12")</label>
+                    </li>
+
+                    <li class="list-group-item">
+                        <input type="radio" id="huey" name="drone" value="medium">
+                        <label for="huey">Large ("14")</label>
+                    </li>
+                </ul>
+            </div>
+        </ul>
+
+        <footer class="text-right">
+            <button class="btn btn-primary" id="next-step" type="submit">Next Step ></button>
+        </footer>
+    </div>
+
 
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
