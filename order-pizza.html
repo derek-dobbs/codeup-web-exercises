@@ -46,11 +46,12 @@
 
 
     <div class="container">
-        <<div class="jumbotron jumbotron-fluid" id="pizza-jumbo-container">
-        <div class="container">
-            <h1 class="display-4" id="pizza-jumbo-message">Welcome to Pizza World!</h1>
+
+        <div class="jumbotron jumbotron-fluid" id="pizza-jumbo-container">
+            <div class="container">
+                <h1 class="display-4" id="pizza-jumbo-message">Welcome to Pizza World!</h1>
+            </div>
         </div>
-    </div>
 
         <h2>Build your own pizza!</h2>
         <hr>
@@ -75,166 +76,169 @@
                 </button></a>
             </li>
         </ul>
+<!--        insert here -->
+        <div id="pizza-card-container" >
+            <header id="choose-size-and-crust">Choose size and crust</header>
+
+            <ul class="list-group list-group-flush" id="crust">
+
+                <div class="card pizza-card">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item crust-type">Hand Tossed</li>
+                        <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
+
+                        <li class="list-group-item">
+                            <input type="radio" id="huey" name="drone" value="small">
+                            <label for="huey">Small (10")</label>
+                        </li>
+
+                        <li class="list-group-item">
+                            <input type="radio" id="huey" name="drone" value="medium">
+                            <label for="huey">Medium (12")</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card pizza-card">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item crust-type">Crispy Thin</li>
+                        <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
+
+                        <li class="list-group-item">
+                            <input type="radio" id="huey" name="drone" value="medium">
+                            <label for="huey">Medium (12")</label>
+                        </li>
+
+                        <li class="list-group-item">
+                            <input type="radio" id="huey" name="drone" value="medium">
+                            <label for="huey">Large ("14")</label>
+                        </li>
+                    </ul>
+                </div>
+            </ul>
+
+            <footer class="text-right">
+                <button class="btn btn-primary" id="next-step" type="submit">Next Step ></button>
+            </footer>
+        </div>
+
+        <div id="pizza-card-container" >
+            <header id="choose-size-and-crust">Choose Cheese and Sauce</header>
+
+            <ul class="list-group list-group-flush" id="crust">
+
+                <div class="card pizza-card">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item crust-type">Cheese</li>
+                        <li class="list-group-item">
+                            <p>How Much?</p>
+                            <select class="custom-select">
+                                <option value="1" selected>Normal</option>
+                                <option value="2">Extra</option>
+                                <option value="3">Light</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card pizza-card">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item crust-type">Sauce</li>
+                        <li class="list-group-item">
+                            <p>What Type?</p>
+                            <select class="custom-select">
+                                <option value="tomato" selected>Tomato Sauce</option>
+                                <option value="marinara">Marinara sauce</option>
+                                <option value="BBQ">BBQ Sauce</option>
+                                <option value="alfredo">Alfredo Sauce</option>
+                            </select>
+                        </li>
+
+                        <li class="list-group-item">
+                            <p>How Much?</p>
+                            <select class="custom-select">
+                                <option value="tomato" selected>Normal</option>
+                                <option value="marinara">Extra</option>
+                                <option value="BBQ">Light</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+            </ul>
+
+            <footer class="text-right">
+                <button class="btn btn-primary" id="next-step" type="submit">< Previous Step</button>
+                <button class="btn btn-primary" id="next-step" type="submit">Next Step ></button>
+            </footer>
+        </div>
+
+        <div id="pizza-card-container" >
+            <header id="choose-size-and-crust">Choose Toppings</header>
+
+            <ul class="list-group list-group-flush" id="crust">
+
+                <div class="card pizza-card">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item crust-type">Choose Meats</li>
+
+                        <li class="custom-control custom-checkbox list-group-item">
+                            <input type="checkbox" id="beef">
+                            <label for="beef">Beef</label>
+                        </li>
+
+                        <li class="custom-control custom-checkbox list-group-item">
+                            <input type="checkbox" id="ham">
+                            <label for="ham">Ham</label>
+                        </li>
+
+                        <li class="custom-control custom-checkbox list-group-item">
+                            <input type="checkbox" id="philly">
+                            <label for="philly">Philly Steak</label>
+                        </li>
+
+                        <li class="custom-control custom-checkbox list-group-item">
+                            <input type="checkbox" id="bacon">
+                            <label for="bacon">Bacon</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card pizza-card">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item crust-type">Choose Non-Meats</li>
+
+                        <li class="custom-control custom-checkbox list-group-item">
+                            <input type="checkbox" id="green-peppers">
+                            <label for="green-peppers">Green Peppers</label>
+                        </li>
+
+                        <li class="custom-control custom-checkbox list-group-item">
+                            <input type="checkbox" id="mushrooms">
+                            <label for="mushrooms">Mushrooms</label>
+                        </li>
+
+                        <li class="custom-control custom-checkbox list-group-item">
+                            <input type="checkbox" id="onions">
+                            <label for="onions">Onions</label>
+                        </li>
+
+                        <li class="custom-control custom-checkbox list-group-item">
+                            <input type="checkbox" id="jalapenos">
+                            <label for="jalapenos">Jalapenos</label>
+                        </li>
+                    </ul>
+                </div>
+            </ul>
+
+            <footer class="text-right">
+                <button class="btn btn-primary" id="next-step" type="submit">Checkout <i class="fas fa-shopping-cart"></i></button>
+            </footer>
+        </div>
     </div>
 
-    <div id="pizza-card-container" >
-        <header id="choose-size-and-crust">Choose size and crust</header>
 
-        <ul class="list-group list-group-flush" id="crust">
 
-            <div class="card pizza-card">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item crust-type">Hand Tossed</li>
-                    <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
 
-                    <li class="list-group-item">
-                        <input type="radio" id="huey" name="drone" value="small">
-                        <label for="huey">Small (10")</label>
-                    </li>
-
-                    <li class="list-group-item">
-                        <input type="radio" id="huey" name="drone" value="medium">
-                        <label for="huey">Medium (12")</label>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="card pizza-card">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item crust-type">Crispy Thin</li>
-                    <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
-
-                    <li class="list-group-item">
-                        <input type="radio" id="huey" name="drone" value="medium">
-                        <label for="huey">Medium (12")</label>
-                    </li>
-
-                    <li class="list-group-item">
-                        <input type="radio" id="huey" name="drone" value="medium">
-                        <label for="huey">Large ("14")</label>
-                    </li>
-                </ul>
-            </div>
-        </ul>
-
-        <footer class="text-right">
-            <button class="btn btn-primary" id="next-step" type="submit">Next Step ></button>
-        </footer>
-    </div>
-
-    <div id="pizza-card-container" >
-        <header id="choose-size-and-crust">Choose Cheese and Sauce</header>
-
-        <ul class="list-group list-group-flush" id="crust">
-
-            <div class="card pizza-card">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item crust-type">Cheese</li>
-                    <li class="list-group-item">
-                        <p>How Much?</p>
-                        <select class="custom-select">
-                            <option value="1" selected>Normal</option>
-                            <option value="2">Extra</option>
-                            <option value="3">Light</option>
-                        </select>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="card pizza-card">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item crust-type">Sauce</li>
-                    <li class="list-group-item">
-                        <p>What Type?</p>
-                        <select class="custom-select">
-                            <option value="tomato" selected>Tomato Sauce</option>
-                            <option value="marinara">Marinara sauce</option>
-                            <option value="BBQ">BBQ Sauce</option>
-                            <option value="alfredo">Alfredo Sauce</option>
-                        </select>
-                    </li>
-
-                    <li class="list-group-item">
-                        <p>How Much?</p>
-                        <select class="custom-select">
-                            <option value="tomato" selected>Normal</option>
-                            <option value="marinara">Extra</option>
-                            <option value="BBQ">Light</option>
-                        </select>
-                    </li>
-                </ul>
-            </div>
-        </ul>
-
-        <footer class="text-right">
-            <button class="btn btn-primary" id="next-step" type="submit">< Previous Step</button>
-            <button class="btn btn-primary" id="next-step" type="submit">Next Step ></button>
-        </footer>
-    </div>
-
-    <div id="pizza-card-container" >
-        <header id="choose-size-and-crust">Choose Toppings</header>
-
-        <ul class="list-group list-group-flush" id="crust">
-
-            <div class="card pizza-card">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item crust-type">Choose Meats</li>
-
-                    <li class="custom-control custom-checkbox list-group-item">
-                        <input type="checkbox" id="beef">
-                        <label for="beef">Beef</label>
-                    </li>
-
-                    <li class="custom-control custom-checkbox list-group-item">
-                        <input type="checkbox" id="ham">
-                        <label for="ham">Ham</label>
-                    </li>
-
-                    <li class="custom-control custom-checkbox list-group-item">
-                        <input type="checkbox" id="philly">
-                        <label for="philly">Philly Steak</label>
-                    </li>
-
-                    <li class="custom-control custom-checkbox list-group-item">
-                        <input type="checkbox" id="bacon">
-                        <label for="bacon">Bacon</label>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="card pizza-card">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item crust-type">Choose Non-Meats</li>
-
-                    <li class="custom-control custom-checkbox list-group-item">
-                        <input type="checkbox" id="green-peppers">
-                        <label for="green-peppers">Green Peppers</label>
-                    </li>
-
-                    <li class="custom-control custom-checkbox list-group-item">
-                        <input type="checkbox" id="mushrooms">
-                        <label for="mushrooms">Mushrooms</label>
-                    </li>
-
-                    <li class="custom-control custom-checkbox list-group-item">
-                        <input type="checkbox" id="onions">
-                        <label for="onions">Onions</label>
-                    </li>
-
-                    <li class="custom-control custom-checkbox list-group-item">
-                        <input type="checkbox" id="jalapenos">
-                        <label for="jalapenos">Jalapenos</label>
-                    </li>
-                </ul>
-            </div>
-        </ul>
-
-        <footer class="text-right">
-            <button class="btn btn-primary" id="next-step" type="submit">< Previous Step</button>
-            <button class="btn btn-primary" id="next-step" type="submit">Next Step ></button>
-        </footer>
-    </div>
 
 
 
