@@ -1,0 +1,18 @@
+
+.fa-square {
+    color: rgb(81, 158, 131);
+}
+
+#card-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-container {
+    display: flex;
+
+}
+
+.nav-button-container:nth-child(1) {
+    /*margin: auto;*/
+}
