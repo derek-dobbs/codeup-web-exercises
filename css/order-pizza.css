@@ -58,9 +58,35 @@ footer {
 
 /*}*/
 
-.main-card-container {
+
+
+.menu-bar-container {
+    display: flex;
+    /*background-color: hotpink;*/
+}
+
+.menu-bar-container ul>:nth-child(1) {
     background-color: hotpink;
 }
+
+.menu-bar-container ul>:nth-child(2) {
+    background-color: greenyellow;
+}
+
+.menu-bar-container>form {
+    background-color: lightcoral;
+}
+
+.menu-bar-container>div:(4) {
+    background-color: #07e186
+;
+}
+
+.menu-bar-container ul>:nth-child(2) {
+    background-color: greenyellow;
+}
+
+
 
 
 
