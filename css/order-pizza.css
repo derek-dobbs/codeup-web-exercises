@@ -1,0 +1,92 @@
+
+.pizza-tab {
+    color: blue;
+    background-color: white;
+    border-color: white;
+}
+
+#choose-size-and-crust {
+    background-color: rgb(0, 116, 250);
+    color: white;
+    padding: 1em;
+}
+
+#pizza-card-container {
+    display: flex;
+    /*background-color: hotpink;*/
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgb(231, 229, 229);
+}
+
+.pizza-card {
+    margin: 15px;
+}
+
+#pizza-jumbo-message {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255,255,255,0.5);
+    color: #737070;
+}
+
+#pizza-jumbo-container {
+    background-image: url("https://cdn.pixabay.com/photo/2014/10/22/18/26/pizza-498574_960_720.jpg");
+}
+
+a:hover {
+    background-color: rgb(228, 227, 228);
+}
+
+#next-step {
+    background-color: rgb(0, 116, 250);
+    color: white;
+    margin: .5em;
+}
+
+footer {
+    background-color: rgb(231, 229, 229);
+}
+
+.crust-type {
+    background-color: rgb(231, 229, 229);
+}
+
+/*.pizza-card-2 {*/
+/*    background-color: #47ee07;*/
+/*    margin: 1em;*/
+
+/*}*/
+
+
+
+.menu-bar-container {
+    display: flex;
+    /*background-color: hotpink;*/
+}
+
+.menu-bar-container ul>:nth-child(1) {
+    background-color: hotpink;
+}
+
+.menu-bar-container ul>:nth-child(2) {
+    background-color: greenyellow;
+}
+
+.menu-bar-container>form {
+    background-color: lightcoral;
+}
+
+.menu-bar-container>div:(4) {
+    background-color: #07e186
+;
+}
+
+.menu-bar-container ul>:nth-child(2) {
+    background-color: greenyellow;
+}
+
+
+
+
+
