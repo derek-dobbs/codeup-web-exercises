@@ -87,6 +87,47 @@ footer {
 /*    background-color: greenyellow;*/
 /*}*/
 
+#inner-nav-container {
+    /*background-color: hotpink;*/
+    margin-right: 0px !important;
+    width: 100%;
+    display: flex;
+    /*flex-direction: column;*/
+    /*justify-content: space-between;*/
+}
+
+.pizza-nav-links {
+    /*display: flex;*/
+    /*justify-content: space-between !important;*/
+}
+
+#sign-up-icon {
+    /*background-color: greenyellow;*/
+    /*margin-left: auto;*/
+}
+
+#sign-up-link {
+    /*display: inline-flex;*/
+    /*background-color: rebeccapurple;*/
+    margin-left: auto;
+}
+
+#sign-up-container {
+    /*background-color: #b4d455;*/
+    display: flex;
+    /*margin-left: auto;*/
+    align-items: center;
+    /*margin-left: auto;*/
+}
+
+#search-stores {
+    /*background-color: hotpink;*/
+    padding-left: 25px;
+}
+
+#the-big-container {
+
+}
 
 
 
