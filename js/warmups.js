@@ -326,7 +326,7 @@
     function lowestHeight(array) {
         let newObject = {
             name: "default name",
-            height: 1000
+            height: Number.MAX_VALUE
         }
         array.forEach(function (element) {
            if(element.height < newObject.height) {
