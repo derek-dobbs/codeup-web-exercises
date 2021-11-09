@@ -296,5 +296,47 @@
             });
         }
 
-    console.log(sortByName(products));
+    // console.log(sortByName(products));
+
+    //November 9, 2021
+    // Write a function in JavaScript that takes in an array of objects and returns the object with the lowest
+    // height property. Consider the following array to test your code.
+    var bBallPlayers = [
+        {
+            name: "Hakeem Olajuwon",
+            height: 213
+        }, {
+            name: "Muggsy Bogues",
+            height: 160
+        }, {
+            name: "Chris Paul",
+            height: 183
+        }, {
+            name: "Bol Bol",
+            height: 218
+        }, {
+            name: "Moochie Norris",
+            height: 185
+        }, {
+            name: "Manu Ginobili",
+            height: 198
+        }
+    ];
+
+    function lowestHeight(array) {
+        let newObject = {
+            name: "default name",
+            height: 1000
+        }
+        array.forEach(function (element) {
+           if(element.height < newObject.height) {
+               newObject = element;
+            }
+        });
+        return newObject;
+    }
+
+    console.log(lowestHeight(bBallPlayers));
+
+
 })();
