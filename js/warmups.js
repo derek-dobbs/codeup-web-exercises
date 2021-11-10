@@ -336,7 +336,44 @@
         return newObject;
     }
 
-    console.log(lowestHeight(bBallPlayers));
+    // console.log(lowestHeight(bBallPlayers));
+
+    //Warmup - November 10, 2021
+    /*
+        Name your character object, and complete the attack method. The attack method should use the myCharacter weapon
+        object to deal damage to the enemy objects hit points. When the attack method has been executed, the hit points
+        of the enemy object should reflect the damage done in the console.
+     */
+    var myCharacter = {
+        name: 'Derek',
+        hitPoints: 100,
+        class: 'Warrior',
+        abilities: {
+            attack: function(obj) {},
+        },
+        magicPoints: 0,
+        weapon: {
+            name: 'Silver Sabre',
+            damage: 16,
+            type: 'sword'
+        }
+    }
+
+    var enemy = {
+        name: 'Savage Orc',
+        hitPoints: 100,
+        class: 'Warrior',
+        magicPoints: 0,
+    }
+
+    function attack(character, enemy) {
+        let remainingHitPoints = enemy.hitPoints - character.weapon.damage;
+
+        console.log(character.name + " attacked " + enemy.name + " with " + character.weapon.name + " and dealt " + character.weapon.damage + " damage.");
+        console.log(enemy.name + "'s remaining hit points are: " + remainingHitPoints + ".");
+    }
+
+    console.log(attack(myCharacter, enemy));
 
 
 })();
