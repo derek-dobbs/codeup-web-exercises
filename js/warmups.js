@@ -369,11 +369,10 @@
     function attack(character, enemy) {
         let remainingHitPoints = enemy.hitPoints - character.weapon.damage;
 
-        console.log(character.name + " attacked " + enemy.name + " with " + character.weapon.name + " and dealt " + character.weapon.damage + " damage.");
-        console.log(enemy.name + "'s remaining hit points are: " + remainingHitPoints + ".");
+        return console.log(character.name + " attacked " + enemy.name + " with " + character.weapon.name + " and dealt "
+            + character.weapon.damage + " damage." + "\n" + enemy.name + "'s remaining hit points are: " + remainingHitPoints + ".");
     }
 
     console.log(attack(myCharacter, enemy));
-
 
 })();
