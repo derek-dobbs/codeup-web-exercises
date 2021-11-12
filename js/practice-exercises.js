@@ -580,21 +580,22 @@
     ]
 
     function houseFilter (array) {
-        let newArray = []
+        let newArray = [];
 
-        for (let i = 0; i < array.length; i++) {
-            newArray.push(array[i]);
-        }
+        array.forEach(function (element) {
+            if(element.sqft > 5000 && element.numOfBedrooms >= 3 && element.numOfBathrooms >= 2 && element.address.city === 'San Antonio') {
+                newArray.push(element);
+            }
+        });
 
         return newArray;
     }
+
     // Requirements:
     // - sqft > 5000
     // - At least 3 bedrooms
     // - At least 2 bathrooms
     // - In San Antonio, TX
-
-    // console.log(houseFilter(housesForSale));
 
     console.log(houseFilter(housesForSale));
 
