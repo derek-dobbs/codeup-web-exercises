@@ -580,23 +580,13 @@
     ]
 
     function houseFilter (array) {
-        //create an empty array to put the matched results into
-        let filteredArray = [];
+        let newArray = []
 
-        // for (let i = 0; i < array.length; i++) {
-        //     if(array.address.city === 'Converse') {
-        //         filteredArray.push(array[i]);
-        //     }
-        //
-        // }
+        for (let i = 0; i < array.length; i++) {
+            newArray.push(array[i]);
+        }
 
-        array.forEach(function (element, index) {
-            if (element.address.city === 'Converse') {
-                filteredArray.push(element);
-            }
-        });
-
-         return filteredArray;
+        return newArray;
     }
     // Requirements:
     // - sqft > 5000
@@ -606,7 +596,7 @@
 
     // console.log(houseFilter(housesForSale));
 
-    houseFilter(housesForSale);
+    console.log(houseFilter(housesForSale));
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
