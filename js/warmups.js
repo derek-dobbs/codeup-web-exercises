@@ -373,6 +373,8 @@
             + character.weapon.damage + " damage." + "\n" + enemy.name + "'s remaining hit points are: " + remainingHitPoints + ".");
     }
 
-    console.log(attack(myCharacter, enemy));
+    // console.log(attack(myCharacter, enemy));
+
+
 
 })();
