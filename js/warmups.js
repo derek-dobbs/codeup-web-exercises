@@ -375,6 +375,24 @@
 
     // console.log(attack(myCharacter, enemy));
 
+    //November 12, 2021
+    /*
+        Write a function in JavaScript that takes in an array, and returns a random element from the array.
+     */
+    let fruitsArray = ['apple', 'orange', 'grape', 'strawberry'];
 
+    function randomNumber(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+    }
+
+    function randomElement (array) {
+        let random = randomNumber(0, array.length - 1);
+        return array[random];
+        // return random;
+    }
+
+    console.log(randomElement(fruitsArray));
 
 })();

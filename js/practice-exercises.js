@@ -414,6 +414,8 @@
     }
 
     function shoppingCart() {
+        var tax = 0.0825;
+        var shipping = 5.99;
 
     }
 
@@ -424,6 +426,12 @@
     // Realtor.com: You are shopping for a new home and have specific requirements to fulfill before purchasing.
     // Write a program that will filter through an array of house objects, and return an array of house objects
     // that meet the requirements. Use the array below to test your output.
+    // Requirements:
+    // - sqft > 5000
+    // - At least 3 bedrooms
+    // - At least 2 bathrooms
+    // - In San Antonio, TX
+
     var housesForSale = [
         {
             address: {
@@ -571,11 +579,34 @@
 
     ]
 
-    function houseFilter () {
+    function houseFilter (array) {
+        //create an empty array to put the matched results into
+        let filteredArray = [];
 
+        // for (let i = 0; i < array.length; i++) {
+        //     if(array.address.city === 'Converse') {
+        //         filteredArray.push(array[i]);
+        //     }
+        //
+        // }
+
+        array.forEach(function (element, index) {
+            if (element.address.city === 'Converse') {
+                filteredArray.push(element);
+            }
+        });
+
+         return filteredArray;
     }
+    // Requirements:
+    // - sqft > 5000
+    // - At least 3 bedrooms
+    // - At least 2 bathrooms
+    // - In San Antonio, TX
 
-    console.log(houseFilter());
+    // console.log(houseFilter(housesForSale));
+
+    houseFilter(housesForSale);
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
