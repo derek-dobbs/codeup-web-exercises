@@ -390,28 +390,28 @@
     // Amazon: Write a program that iterates through a users shopping cart that returns the sum of all items including tax and shipping (if applicable).
     // Use the shipping variable to add shipping costs, then the tax variable to add tax to the total price.
     // If the user is a premium member, they do not need to pay the shipping fee.
-    var userCart = {
-        user: 'shopaholic2021',
-        isPremium: confirm("Are you a premium member?"),
-        items: [
-            {
-                name: 'Carhartt Men\'s Knit Cuffed Beanie\n',
-                price: 16.49
-            },
-            {
-                name: 'Dodgeball Average Joe\'s Adult Yellow Jersey Costume Set',
-                price: 4.99
-            },
-            {
-                name: 'Champion Sports Rhino Skin Basic Dodgeball Set With Mesh Storage Bag',
-                price: 47.38
-            },
-            {
-                name: 'UNICLI Sports Soccer Cones Training Equipment - Agility Cones with Stylish Mesh Bag and Holder for Sports - Set of 50 Field Cone Markers',
-                price: 19.99
-            },
-        ]
-    }
+    // var userCart = {
+    //     user: 'shopaholic2021',
+    //     isPremium: confirm("Are you a premium member?"),
+    //     items: [
+    //         {
+    //             name: 'Carhartt Men\'s Knit Cuffed Beanie\n',
+    //             price: 16.49
+    //         },
+    //         {
+    //             name: 'Dodgeball Average Joe\'s Adult Yellow Jersey Costume Set',
+    //             price: 4.99
+    //         },
+    //         {
+    //             name: 'Champion Sports Rhino Skin Basic Dodgeball Set With Mesh Storage Bag',
+    //             price: 47.38
+    //         },
+    //         {
+    //             name: 'UNICLI Sports Soccer Cones Training Equipment - Agility Cones with Stylish Mesh Bag and Holder for Sports - Set of 50 Field Cone Markers',
+    //             price: 19.99
+    //         },
+    //     ]
+    // }
 
     function shoppingCart(array) {
         // var items = array.items;
@@ -430,7 +430,7 @@
         return parseFloat(subtotal + (subtotal * tax) + shipping).toFixed(2);
     }
 
-    console.log(shoppingCart(userCart));
+    // console.log(shoppingCart(userCart));
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
      //November 11, 2021
@@ -611,5 +611,10 @@
     // console.log(houseFilter(housesForSale));
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //November 16, 2021
+    /*
+
+    */
+
 
 })();
