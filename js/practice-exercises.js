@@ -413,13 +413,24 @@
         ]
     }
 
-    function shoppingCart() {
+    function shoppingCart(array) {
+        // var items = array.items;
         var tax = 0.0825;
         var shipping = 5.99;
+        var subtotal = 0;
 
+        array.items.forEach(function (element) {
+            subtotal += element.price;
+        });
+
+        if(array.isPremium === true) {
+            shipping = 0;
+        }
+
+        return parseFloat(subtotal + (subtotal * tax) + shipping).toFixed(2);
     }
 
-    console.log(shoppingCart());
+    console.log(shoppingCart(userCart));
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
      //November 11, 2021
@@ -597,7 +608,7 @@
     // - At least 2 bathrooms
     // - In San Antonio, TX
 
-    console.log(houseFilter(housesForSale));
+    // console.log(houseFilter(housesForSale));
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
