@@ -27,7 +27,7 @@ $(document).ready(function() {
     });
 
     $('p').dblclick(function() {
-        $(this).css('font-size', '21px');
+        $(this).css('font-size', '18px');
     });
 
     $('li').hover(
