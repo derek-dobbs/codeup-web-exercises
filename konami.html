@@ -21,6 +21,7 @@
         let cheatArray = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
         let userInput = [];
         let count = 0;
+        let successAudio = new Audio('audio/success-bell.wav');
 
         $(document).keyup(function(event){
           userInput.push(event.keyCode);
@@ -34,6 +35,7 @@
           }
 
           if(count === 11) {
+            successAudio.play()
             alert("Congrats, you have 30 lives!");
             userInput = [];
             count = 0;
