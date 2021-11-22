@@ -11,8 +11,12 @@
 
       h1 {
         padding-top: 0.5em;
-        color: red;
+        color: rgb(255, 42, 21);
         text-align: center;
+      }
+
+      h1>span {
+        color: rgb(255, 222, 115);
       }
 
       .box {
@@ -25,7 +29,7 @@
       }
 
       #success-message {
-        color: yellowgreen;
+        color: #669a17;
         text-align: center;
         font-size: 1.20em;
         display: none;
@@ -34,7 +38,7 @@
     </style>
   </head>
   <body>
-    <h1>Konami Code</h1>
+    <h1><span>Konami</span> Code</h1>
     <br>
     <div class="box" id="start-screen">
       <img src="img/contra-start-screen-edited.jpeg" alt="contra start screen">
@@ -58,8 +62,9 @@
         let successAudio = new Audio('audio/success-bell.wav');
         let failAudio = new Audio('audio/incorrect-2.wav');
 
-        $(document).keyup(function(event){
+        $(document).keydown(function(event){
           $('.box').css('border', '7px solid white');
+          $('#success-message').css('display', 'none');
 
           userInput.push(event.keyCode);
           console.log(userInput);
@@ -72,10 +77,6 @@
             userInput = [];
             count = 0;
           }
-
-          (function () {
-
-          })();
 
           if(count === 11) {
             $('.box').css('border', '7px solid yellowgreen');
