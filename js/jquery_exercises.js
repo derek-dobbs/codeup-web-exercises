@@ -24,6 +24,7 @@ $(document).ready(function() {
 
     $('h1').click(function() {
         $(this).css('background-color', 'hotpink');
+        // if we used 'h1' instead of 'this', all h1 elements would change
     });
 
     $('p').dblclick(function() {

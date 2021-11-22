@@ -5,44 +5,41 @@
   </head>
   <body>
     <h1>Konami Code</h1>
+    <style>
+        h1 {
+          color: red;
+        }
+    </style>
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script>
       "use strict";
 
-
-
       $(document).ready(function() {
         //up = 38, down = 40, left=37, right= 39, b= 66, a= 65, enter=13
+        let testArray = [38];
         let cheatArray = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
         let userInput = [];
         let count = 0;
 
         $(document).keyup(function(event){
-          // console.log(event.keyCode);
           userInput.push(event.keyCode);
           console.log(userInput);
 
-          for (let i = 0; i < cheatArray.length;) {
-            if(userInput[i] === cheatArray[i]){
-              i += 1;
-            }
-            else{
-              userInput = [];
-              i = 0;
-            }
+          if(userInput[count] === cheatArray[count]){
+            count = userInput.length;
+          }else {
+            userInput = [];
+            count = 0;
           }
 
+          if(count === 11) {
+            alert("Congrats, you have 30 lives!");
+            userInput = [];
+            count = 0;
+          }
         });
-
       });
-
-      
-
-
-
-
-
     </script>
   </body>
 </html>
