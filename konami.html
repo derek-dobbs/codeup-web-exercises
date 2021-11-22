@@ -2,22 +2,49 @@
 <html>
   <head>
     <title>Konami Code</title>
+    <style>
+      h1 {
+        color: red;
+        text-align: center;
+      }
+
+      .box {
+        height: 500px;
+        width: 750px;
+        border: 7px solid white;
+        margin: auto;
+        /*background-image: url("img/contra-start-screen.jpeg");*/
+        /*background-repeat: no-repeat;*/
+      }
+
+      #success-message {
+        color: yellowgreen;
+        text-align: center;
+        font-size: 2em;
+        display: none;
+      }
+
+    </style>
   </head>
   <body>
     <h1>Konami Code</h1>
-    <style>
-        h1 {
-          color: red;
-        }
-    </style>
+    <br>
+    <div class="box" id="start-screen">
+      <img src="img/contra-start-screen-edited.jpeg" alt="contra start screen">
+    </div>
 
+    <div> <!--Show the contents of this div when the code is successfully entered.-->
+      <p id="success-message">Congratulations! You now have 30 lives!</p>
+    </div>
+
+    <!--scripts-->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script>
       "use strict";
 
       $(document).ready(function() {
         //up = 38, down = 40, left=37, right= 39, b= 66, a= 65, enter=13
-        let testArray = [38];
+        // let testArray = [38];
         let cheatArray = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
         let userInput = [];
         let count = 0;
@@ -25,20 +52,29 @@
         let failAudio = new Audio('audio/incorrect-2.wav');
 
         $(document).keyup(function(event){
+          $('.box').css('border', '7px solid white');
+
           userInput.push(event.keyCode);
           console.log(userInput);
 
           if(userInput[count] === cheatArray[count]){
             count = userInput.length;
           }else {
+            $('.box').css('border', '7px solid red');
             failAudio.play();
             userInput = [];
             count = 0;
           }
 
+          (function () {
+
+          })();
+
           if(count === 11) {
+            $('.box').css('border', '7px solid yellowgreen');
             successAudio.play();
-            alert("Congrats, you have 30 lives!");
+            // alert("Congrats, you have 30 lives!");
+            $('#success-message').css('display', 'block');
             userInput = [];
             count = 0;
           }
