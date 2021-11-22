@@ -65,9 +65,9 @@
         });
 
         $(document).keydown(function(event){
-          $('.box').css('border', '7px solid rgb(255, 222, 115)');
 
-          // $('.box').css('border', '7px solid white');
+
+          $('.box').css('border', '7px solid white');
           $('#success-message').css('display', 'none');
 
           userInput.push(event.keyCode);
@@ -82,8 +82,13 @@
             count = 0;
           }
 
+          if (count === 5) {
+            $(document).off('keyup');
+            $('.box').css('border', '7px solid rgb(255, 222, 115)');
+          }
+
           if(count === 11) {
-            $('.box').off('keyup');
+            // $('.box').off('keyup');
             $('.box').css('border', '7px solid yellowgreen');
             successAudio.play();
             // alert("Congrats, you have 30 lives!");
