@@ -24,6 +24,7 @@
         width: 750px;
         border: 7px solid white;
         margin: auto;
+        background-image: url("img/contra-start-screen-edited.jpeg");
       }
 
       #success-message {
@@ -38,7 +39,7 @@
     <h1><span>Konami</span> Code</h1>
     <br>
     <div class="box" id="start-screen">
-      <img src="img/contra-start-screen-edited.jpeg" alt="contra start screen">
+<!--      <img src="img/contra-start-screen-edited.jpeg" alt="contra start screen">-->
     </div>
 
     <div> <!--Show the contents of this div when the code is successfully entered.-->
@@ -86,6 +87,7 @@
 
           if(count === 11) {
             // $(document).off('keyup');
+            $('.box').css('background-image', 'url(img/level-1-start.png)');
             $('.box').css('border', '25px solid yellowgreen');
             successAudio.play();
             $('#success-message').css('display', 'block');
