@@ -79,6 +79,22 @@
                 color: white;
                 padding: .10em;
             }
+
+            td {
+                text-align: center;
+                vertical-align: middle;
+
+            }
+
+            th {
+                text-align: center;
+                vertical-align: middle;
+                width: 25%;
+            }
+
+            tr {
+
+            }
         </style>
     </head>
     <body>
@@ -125,15 +141,41 @@
 
             <div id="tally-box" class="d-flex flex-column align-items-center">
                 <p>Match History</p>
+                <ol>
+<!--                    <li>List item 1</li>-->
+<!--                    <li>List item 2</li>-->
+<!--                    <li>List item 3</li>-->
+                </ol>
+<!--                <button id="btn2">Append list item</button>-->
 
-                <ul>
-                    <li>Result 1</li>
-                    <li>Result 2</li>
-                    <li>Result 3</li>
-                </ul>
+<!--                <table id="match-history">-->
+<!--                        <tr>-->
+<!--                            <th>Round</th>-->
+<!--                            <th>Player Choice</th>-->
+<!--                            <th>Opponent Choice</th>-->
+<!--                            <th>Winner</th>-->
+<!--                        </tr>-->
+
+<!--                        <tr>-->
+<!--                            <td>1</td>-->
+<!--                            <td>Rock</td>-->
+<!--                            <td>Scissors</td>-->
+<!--                            <td>Player</td>-->
+<!--                        </tr>-->
+
+<!--                        <tr>-->
+<!--                            <td>2</td>-->
+<!--                            <td>Rock</td>-->
+<!--                            <td>Paper</td>-->
+<!--                            <td>Computer</td>-->
+<!--                        </tr>-->
+<!--                </table>-->
+                <br>
 
                 <button type="button" class="btn btn-light" value="reset">Reset</button>
             </div>
+
+
 
         </div> <!--End bigdiv-->
 
@@ -150,6 +192,7 @@
 
             let opponentArray = ['rock', 'paper', 'scissors'];
             let opponentChoice = '';
+            let message = '';
 
             $(document).ready(function() {
 
@@ -161,7 +204,7 @@
                     opponentChoice = opponentArray[randomNumber(0, (opponentArray.length - 1))];
                     $('#opponent-choice').html(opponentChoice);
 
-                    let message = '';
+
 
                     if(userChoice === 'rock' && opponentChoice === 'scissors') {
                         message = 'Player wins!';
@@ -192,6 +235,9 @@
                     }
 
                     $('#result-message').html(message);
+
+                    $("ol").append("<li>message</li>");
+
                 }); //end $('choice-button').click()
 
                 $('#play-again-button').click(function () {
@@ -201,6 +247,10 @@
                     $('#opponent-choice').html('');
                     $('#result-message').html('');
                 });
+
+                // $("#btn2").click(function(){
+                //     $("ol").append("<li>Appended item</li>");
+                // });
             }); //end document ready
         </script>
     </body>
