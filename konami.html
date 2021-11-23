@@ -1,101 +1,104 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Konami Code</title>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-      body {
-        font-family: 'Press Start 2P', cursive;
-      }
+        body {
+            font-family: 'Press Start 2P', cursive;
+        }
 
-      h1 {
-        padding-top: 0.5em;
-        color: rgb(255, 42, 21);
-        text-align: center;
-      }
+        h1 {
+            padding-top: 0.5em;
+            color: rgb(255, 42, 21);
+            text-align: center;
+        }
 
-      h1>span {
-        color: rgb(255, 222, 115);
-      }
+        h1 > span {
+            color: rgb(255, 222, 115);
+        }
 
-      .box {
-        height: 500px;
-        width: 750px;
-        border: 7px solid white;
-        margin: auto;
-        background-image: url("img/contra-start-screen-edited.jpeg");
-      }
+        .box {
+            height: 500px;
+            width: 750px;
+            border: 7px solid white;
+            margin: auto;
+            background-image: url("img/contra-start-screen-edited.jpeg");
+        }
 
-      #success-message {
-        color: #669a17;
-        text-align: center;
-        font-size: 1.20em;
-        display: none;
-      }
+        #success-message {
+            color: #669a17;
+            text-align: center;
+            font-size: 1.20em;
+            display: none;
+        }
     </style>
-  </head>
-  <body>
-    <h1><span>Konami</span> Code</h1>
-    <br>
-    <div class="box" id="start-screen">
-<!--      <img src="img/contra-start-screen-edited.jpeg" alt="contra start screen">-->
-    </div>
+</head>
+    <body>
+        <h1><span>Konami</span> Code</h1>
+        <br>
+        <div class="box" id="start-screen">
+            <!--      <img src="img/contra-start-screen-edited.jpeg" alt="contra start screen">-->
+        </div>
 
-    <div> <!--Show the contents of this div when the code is successfully entered.-->
-      <p id="success-message">Congratulations! You now have 30 lives!</p>
-    </div>
+        <div> <!--Show the contents of this div when the code is successfully entered.-->
+            <p id="success-message">Congratulations! You now have 30 lives!</p>
+        </div>
 
-    <!--scripts-->
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script>
-      "use strict";
+        <!--scripts-->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+                integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script>
+            "use strict";
 
-      $(document).ready(function() {
-        //up = 38, down = 40, left=37, right= 39, b= 66, a= 65, enter=13
-        let cheatArray = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
-        let userInput = [];
-        let count = 0;
-        let successAudio = new Audio('audio/success-bell.wav');
-        let failAudio = new Audio('audio/incorrect-2.wav');
+            $(document).ready(function () {
+                //up = 38, down = 40, left=37, right= 39, b= 66, a= 65, enter=13
+                let cheatArray = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+                let userInput = [];
+                let count = 0;
+                let successAudio = new Audio('audio/success-bell.wav');
+                let failAudio = new Audio('audio/incorrect-2.wav');
+                let startScreenAudio = new Audio('audio/contra-title.mp3');
 
-        $(document).keyup(function(event){
-          $('.box').css('border', '7px solid white');
-        });
+                startScreenAudio.play();
 
-        $(document).keydown(function(event){
-          $('.box').css('border', '7px solid white');
-          $('#success-message').css('display', 'none');
+                $(document).keyup(function (event) {
+                    $('.box').css('border', '7px solid white');
+                });
 
+                $(document).keydown(function (event) {
+                    $('.box').css('border', '7px solid white');
+                    $('#success-message').css('display', 'none');
 
-          userInput.push(event.keyCode);
-          console.log(userInput);
+                    userInput.push(event.keyCode);
+                    console.log(userInput);
 
-          if(userInput[count] === cheatArray[count]){ //ToDo: Refactor the code so that it only plays the error after the 5th unsuccessful keypress
-            count = userInput.length;
-          }else {
-            $('.box').css('border', '7px solid red');
-            failAudio.play();
-            userInput = [];
-            count = 0;
-          }
+                    if (userInput[count] === cheatArray[count]) { //ToDo: Refactor the code so that it only plays the error after the 5th unsuccessful keypress
+                        count = userInput.length;
+                    } else {
+                        $('.box').css('border', '7px solid red');
+                        failAudio.play();
+                        userInput = [];
+                        count = 0;
+                    }
 
-          if (count === 5) {
-            // $(document).off('keyup');
-            $('.box').css('border', '7px solid rgb(255, 222, 115)');
-          }
+                    if (count === 5) {
+                        // $(document).off('keyup');
+                        $('.box').css('border', '7px solid rgb(255, 222, 115)');
+                    }
 
-          if(count === 11) {
-            // $(document).off('keyup');
-            $('.box').css('background-image', 'url(img/level-1-start.png)');
-            $('.box').css('border', '25px solid yellowgreen');
-            successAudio.play();
-            $('#success-message').css('display', 'block');
-            userInput = [];
-            count = 0;
-          }
-        });
-      });
-    </script>
-  </body>
+                    if (count === 11) {
+                        // $(document).off('keyup');
+                        $('.box').css('background-image', 'url(img/level-1-start.png)');
+                        $('.box').css('border', '25px solid yellowgreen');
+                        successAudio.play();
+                        $('#success-message').css('display', 'block');
+                        userInput = [];
+                        count = 0;
+                    }
+                });
+            });
+        </script>
+    </body>
 </html>
