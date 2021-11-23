@@ -36,6 +36,7 @@
     </style>
 </head>
     <body>
+<!--        <audio autoplay src=”audio/contra-title.mp3″></audio>-->
         <h1><span>Konami</span> Code</h1>
         <br>
         <div class="box" id="start-screen">
@@ -51,6 +52,10 @@
                 integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
         <script>
             "use strict";
+            // (function () {
+            //     let startScreenAudio = new Audio('audio/contra-title.mp3');
+            //     startScreenAudio.play();
+            // })();
 
             $(document).ready(function () {
                 //up = 38, down = 40, left=37, right= 39, b= 66, a= 65, enter=13
@@ -61,13 +66,14 @@
                 let failAudio = new Audio('audio/incorrect-2.wav');
                 let startScreenAudio = new Audio('audio/contra-title.mp3');
 
-                startScreenAudio.play();
+                // startScreenAudio.play();
 
                 $(document).keyup(function (event) {
                     $('.box').css('border', '7px solid white');
                 });
 
                 $(document).keydown(function (event) {
+                    startScreenAudio.play();
                     $('.box').css('border', '7px solid white');
                     $('.box').css('background-image', 'url(img/contra-start-screen-edited.jpeg)');
                     $('#success-message').css('display', 'none');
@@ -100,6 +106,7 @@
                     }
                 });
             });
+
         </script>
     </body>
 </html>
