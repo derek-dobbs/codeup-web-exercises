@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Rock Paper Scissors Game</title>
+    </head>
+    <style>
+        h1 {
+            color: red;
+        }
+    </style>
+    <body>
+        <h1>Rock Paper Scissors Game</h1>
+        <script>
+            // console.log("test rps");
+            let rock = 'rock';
+            let paper = 'paper';
+            let scissors = 'scissors';
+
+            let computerArray = ['rock', 'paper', 'scissors'];
+
+            function randomNumber(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+            }
+
+        </script>
+    </body>
+</html>
