@@ -8,7 +8,7 @@
             h1 {
                 /*color: red;*/
                 text-align: center;
-                padding-top: 1em;
+                padding-top: .5em;
             }
 
             .box {
@@ -19,8 +19,9 @@
                 margin: 1em;
             }
 
-            #container {
+            #match-container {
                 margin-top: 2em;
+                border: 1px solid yellowgreen;
             }
 
             #vs {
@@ -42,26 +43,80 @@
                 background-image: none;
             }
 
+            #bigdiv {
+                /*background-color: hotpink;*/
+                /*margin: auto;*/
+            }
+
+            #tally-box {
+                border: 1px solid black;
+                margin: auto;
+                padding-top: 1em;
+                background-color: lightgray;
+            }
+
+            li {
+                /*list-style: none;*/
+            }
+
+            #result-message-container {
+                padding-top: .5em;
+                /*border: 1px solid blue;*/
+                margin: auto;
+            }
+
+            #make-a-selection {
+                border: 1px solid black;
+            }
+
         </style>
     </head>
     <body>
-        <h1>Rock Paper Scissors Game</h1>
 
-        <div id="container" class="d-flex flex-row justify-content-center">
 
-            <div id="player" class="box">
+        <div id="bigdiv" class="d-flex flex-column">
+            <h1>Rock Paper Scissors Game</h1>
 
+            <div id="make-a-selection" class="d-flex flex-column">
+                <p>Make a Selection:</p>
+                <div class="d-flex flex-row justify-content-around">
+                    <button id="rock-button" type="button" class="btn btn-light">Rock</button>
+                    <button id="paper-button" type="button" class="btn btn-light">Paper</button>
+                    <button id="scissors-button" type="button" class="btn btn-light">Scissors</button>
+                </div>
             </div>
 
-            <p id="vs">VS</p>
+            <div id="match-container" class="d-flex flex-row justify-content-center">
 
-            <div id="opponent" class="box">
+                <div id="player" class="box">
 
+                </div>
+
+                <p id="vs">VS</p>
+
+                <div id="opponent" class="box">
+
+                </div>
+
+            </div> <!--End match-container-->
+
+            <div id="result-message-container">
+                <p>Result message</p>
             </div>
 
-        </div>
+            <div id="tally-box" class="d-flex flex-column align-items-center">
+                <p>Match History</p>
 
-        <p>Result Message</p>
+                <ul>
+                    <li>Result 1</li>
+                    <li>Result 2</li>
+                    <li>Result 3</li>
+                </ul>
+
+                <button type="button" class="btn btn-light">Reset</button>
+            </div>
+
+        </div> <!--End bigdiv-->
 
         <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
