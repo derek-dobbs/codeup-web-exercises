@@ -51,11 +51,24 @@
             */
 
             $(document).ready(function() {
+                function randomNumber(min, max) {
+                    min = Math.ceil(min);
+                    max = Math.floor(max);
+                    return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+                }
+
                 let greenBox = $('#green-box');
                 let redBox = $('#red-box');
                 let yellowBox = $('#yellow-box');
                 let blueBox = $('#blue-box');
-            });
+
+                let boxArray = [greenBox, redBox, yellowBox, blueBox];
+
+                function randomBox() {
+                    return boxArray[randomNumber(0, (boxArray.length - 1))];
+                }
+
+            }); //end $(document).ready(function() {
         </script>
     </body>
 </html>
