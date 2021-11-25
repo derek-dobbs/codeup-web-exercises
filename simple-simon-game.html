@@ -35,6 +35,8 @@
                 <div id="yellow-box" class="col-6 box"></div>
                 <div id="blue-box" class="col-6 box"></div>
             </div>
+
+            <button id="start-button" type="button" class="btn btn-light mt-2">Start</button>
         </div> <!--end box-container-->
 
         <!--scripts-->
@@ -64,9 +66,13 @@
 
                 let boxArray = [greenBox, redBox, yellowBox, blueBox];
 
-                function randomBox() {
+                function randomBox() { //returns a randomly chosen box from boxArray
                     return boxArray[randomNumber(0, (boxArray.length - 1))];
                 }
+
+                $('#start-button').click(function () {
+                    greenBox.css('background-color', 'green');
+                });
 
             }); //end $(document).ready(function() {
         </script>
