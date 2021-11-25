@@ -236,25 +236,29 @@
                         message = 'It is a tie!';
                     }
 
+                    count += 1;
+
                     $('#result-message').html("Round " + count + ": " +  message);
 
                     // $("#tally-box").append(message + "<br />");
-                    $('#history-message').append(message + "<br />");
+                    $('#history-message').append('Round '+ count + ':     ' + message + "<br />");
                     // $('#')
                 }); //end $('choice-button').click()
 
                 $('#play-again-button').click(function () {
                     userChoice = '';
                     opponentChoice = '';
-                    $('#player-choice').html('');
-                    $('#opponent-choice').html('');
-                    $('#result-message').html('');
+                    $('#player-choice').empty();
+                    $('#opponent-choice').empty();
+                    $('#result-message').empty();
                 });
 
                 $('#reset-history').click(function () {
                     $('#history-message').empty();
                     $('#player-choice').empty();
                     $('#opponent-choice').empty();
+                    $('#result-message').empty();
+                    count = 0;
                 });
 
                 // $("#btn2").click(function(){
