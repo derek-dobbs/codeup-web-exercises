@@ -98,7 +98,7 @@
         </style>
     </head>
     <body>
-        <div id="bigdiv" class="d-flex flex-column">
+        <div id="bigdiv" class="d-flex flex-column justify-content-center">
             <h1>Rock Paper Scissors Game</h1>
 
             <div id="make-a-selection" class="d-flex flex-column">
@@ -110,6 +110,11 @@
                 </div>
 <!--                <br>-->
 <!--                <button id="start-button" type="button" class="btn btn-light">Start Game</button>-->
+            </div>
+
+            <div id="round-number-container">
+<!--                <p id="round-number>Round <span "></span></p>-->
+                <p id="round-number"></p>
             </div>
 
             <div id="match-container" class="d-flex flex-row justify-content-center">
@@ -194,7 +199,7 @@
             let opponentArray = ['rock', 'paper', 'scissors'];
             let opponentChoice = '';
             let message = '';
-            let count = 0;
+            let count = 1;
 
             $(document).ready(function() {
 
@@ -205,6 +210,8 @@
 
                     opponentChoice = opponentArray[randomNumber(0, (opponentArray.length - 1))];
                     $('#opponent-choice').html(opponentChoice);
+
+                    $('#round-number').html("Round " + count);
 
 
 
@@ -236,13 +243,16 @@
                         message = 'It is a tie!';
                     }
 
-                    count += 1;
 
-                    $('#result-message').html("Round " + count + ": " +  message);
+
+                    $('#result-message').html(message);
 
                     // $("#tally-box").append(message + "<br />");
                     $('#history-message').append('Round '+ count + ':     ' + message + "<br />");
                     // $('#')
+
+                    count += 1;
+
                 }); //end $('choice-button').click()
 
                 $('#play-again-button').click(function () {
@@ -251,6 +261,8 @@
                     $('#player-choice').empty();
                     $('#opponent-choice').empty();
                     $('#result-message').empty();
+                    $('#round-number').empty();
+
                 });
 
                 $('#reset-history').click(function () {
@@ -258,7 +270,8 @@
                     $('#player-choice').empty();
                     $('#opponent-choice').empty();
                     $('#result-message').empty();
-                    count = 0;
+                    $('#round-number').empty();
+                    count = 1;
                 });
 
                 // $("#btn2").click(function(){
