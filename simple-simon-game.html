@@ -38,7 +38,7 @@
         </div> <!--end box-container-->
 
         <!--scripts-->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
         <script>
             /*
@@ -49,6 +49,13 @@
             5. If the user continues to get the order correct then proceed to adding another color to the collection until the user gets the order incorrectly.
             6. Keep track of how many rounds the user is able to go.
             */
+
+            $(document).ready(function() {
+                let greenBox = $('#green-box');
+                let redBox = $('#red-box');
+                let yellowBox = $('#yellow-box');
+                let blueBox = $('#blue-box');
+            });
         </script>
     </body>
 </html>
