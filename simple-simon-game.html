@@ -25,7 +25,7 @@
         <h1>Simple Simon Game</h1>
 
         <div id="box-container" class="d-flex flex-column align-items-center">
-            <h3>Round 1</h3>
+            <h3 id="round-number"></h3>
             <div class="row">
                 <div id="green-box" class="col-6 box"></div>
                 <div id="red-box" class="col-6 box"></div>
@@ -36,7 +36,11 @@
                 <div id="blue-box" class="col-6 box"></div>
             </div>
 
-            <button id="start-button" type="button" class="btn btn-light mt-2">Start</button>
+            <div id="button-container" class="d-flex flex-row justify-content-center">
+                <button id="start-button" type="button" class="btn btn-light m-2">Start</button>
+                <button id="reset-button" type="button" class="btn btn-light m-2">Reset</button>
+            </div>
+
         </div> <!--end box-container-->
 
         <!--scripts-->
@@ -66,13 +70,41 @@
 
                 let boxArray = [greenBox, redBox, yellowBox, blueBox];
 
+                let roundNumber = 1;
+
                 function randomBox() { //returns a randomly chosen box from boxArray
                     return boxArray[randomNumber(0, (boxArray.length - 1))];
                 }
 
                 $('#start-button').click(function () {
-                    greenBox.css('background-color', 'green');
-                });
+                    $('#round-number').html('Round ' + roundNumber);
+
+                    roundNumber += 1;
+
+                    let chosenBox = randomBox();
+
+                    switch (chosenBox) {
+                        case greenBox:
+                            greenBox.css('background-color', 'green');
+                            break;
+                        case redBox:
+                            redBox.css('background-color', 'red');
+                            break;
+                        case yellowBox:
+                            yellowBox.css('background-color', 'yellow');
+                            break;
+                        case blueBox:
+                            blueBox.css('background-color', 'blue');
+                            break;
+                    }
+
+                }); //end start-button.click
+
+                $('#reset-button').click(function () {
+                    roundNumber = 1;
+                    $('#round-number').empty();
+                    $('.box').css('background-color', 'lightblue');
+                }); //end reset-button.click
 
             }); //end $(document).ready(function() {
         </script>
