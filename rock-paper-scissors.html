@@ -141,11 +141,12 @@
 
             <div id="tally-box" class="d-flex flex-column align-items-center">
                 <p>Match History</p>
-                <ol>
-<!--                    <li>List item 1</li>-->
-<!--                    <li>List item 2</li>-->
-<!--                    <li>List item 3</li>-->
-                </ol>
+                <p id="history-message"></p>
+<!--                <ol>-->
+<!--&lt;!&ndash;                    <li>List item 1</li>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <li>List item 2</li>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <li>List item 3</li>&ndash;&gt;-->
+<!--                </ol>-->
 <!--                <button id="btn2">Append list item</button>-->
 
 <!--                <table id="match-history">-->
@@ -172,9 +173,9 @@
 <!--                </table>-->
                 <br>
 
-                <button type="button" class="btn btn-light" value="reset">Reset</button>
-            </div>
 
+            </div>
+            <button id="reset-history" type="button" class="btn btn-light" value="reset">Reset</button>
 
 
         </div> <!--End bigdiv-->
@@ -193,6 +194,7 @@
             let opponentArray = ['rock', 'paper', 'scissors'];
             let opponentChoice = '';
             let message = '';
+            let count = 0;
 
             $(document).ready(function() {
 
@@ -234,10 +236,11 @@
                         message = 'It is a tie!';
                     }
 
-                    $('#result-message').html(message);
+                    $('#result-message').html("Round " + count + ": " +  message);
 
-                    $("ol").append("<li>message</li>");
-
+                    // $("#tally-box").append(message + "<br />");
+                    $('#history-message').append(message + "<br />");
+                    // $('#')
                 }); //end $('choice-button').click()
 
                 $('#play-again-button').click(function () {
@@ -246,6 +249,12 @@
                     $('#player-choice').html('');
                     $('#opponent-choice').html('');
                     $('#result-message').html('');
+                });
+
+                $('#reset-history').click(function () {
+                    $('#history-message').empty();
+                    $('#player-choice').empty();
+                    $('#opponent-choice').empty();
                 });
 
                 // $("#btn2").click(function(){
