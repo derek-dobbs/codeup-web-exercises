@@ -25,7 +25,7 @@
             }
 
             #vs {
-                margin-top: 5em;
+                margin-top: 6em;
             }
 
             p {
@@ -34,13 +34,15 @@
             }
 
             #player-box {
-                background-color: blue;
-                background-image: none;
+                /*background-color: blue;*/
+                /*background-image: none;*/
+                border: 3px solid blue;
             }
 
             #opponent-box {
-                background-color: red;
-                background-image: none;
+                /*background-color: red;*/
+                /*background-image: none;*/
+                border: 3px solid red;
             }
 
             #bigdiv {
@@ -95,18 +97,62 @@
             tr {
 
             }
+
+            .selection-image {
+                /*border: 5px solid white;*/
+                height: 150px;
+                width: 150px;
+                background-color: lightblue;
+                margin: 1em;
+            }
+
+            .choice-button {
+                /*background-color: hotpink;*/
+                /*padding: 0;*/
+                /*margin: auto;*/
+                margin-top: .10em;
+            }
+
+            #rock-selection-image {
+                background-image: url("img/small-rock-image.png");
+            }
+
+            #paper-selection-image {
+                background-image: url("img/small-paper-image.png");
+            }
+
+            #scissors-selection-image {
+                background-image: url("img/small-scissors-image.png");
+            }
         </style>
     </head>
     <body>
         <div id="bigdiv" class="d-flex flex-column justify-content-center">
-            <h1>Rock Paper Scissors Game</h1>
+            <div class="jumbotron jumbotron-fluid" id="pizza-jumbo-container">
+                <div class="container">
+                    <h1 class="display-4" id="pizza-jumbo-message">Rock Paper Scissors Game</h1>
+                </div>
+            </div>
+<!--            <h1>Rock Paper Scissors Game</h1>-->
 
             <div id="make-a-selection" class="d-flex flex-column">
                 <p>Make a Selection to Start Game:</p>
                 <div class="d-flex flex-row justify-content-around">
-                    <button id="rock-button" type="button" class="choice-button btn btn-light" value="rock">Rock</button>
-                    <button id="paper-button" type="button" class="choice-button btn btn-light" value="paper">Paper</button>
-                    <button id="scissors-button" type="button" class="choice-button btn btn-light" value="scissors">Scissors</button>
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <div id="rock-selection-image" class="selection-image"></div>
+                        <button id="rock-button" type="button" class="choice-button btn btn-light" value="rock">Rock</button>
+                    </div>
+
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <div id="paper-selection-image" class="selection-image"></div>
+                        <button id="paper-button" type="button" class="choice-button btn btn-light" value="paper">Paper</button>
+                    </div>
+
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <div id="scissors-selection-image" class="selection-image"></div>
+                        <button id="scissors-button" type="button" class="choice-button btn btn-light" value="scissors">Scissors</button>
+                    </div>
+
                 </div>
 <!--                <br>-->
 <!--                <button id="start-button" type="button" class="btn btn-light">Start Game</button>-->
@@ -119,17 +165,32 @@
 
             <div id="match-container" class="d-flex flex-row justify-content-center">
 
-                <div id="player-box" class="box d-flex flex-column align-items-center justify-content-center">
-                    <p>Player Choice:</p>
-                    <p id="player-choice"></p>
+<!--                <div id="player-box" class="box d-flex flex-column align-items-center justify-content-center">-->
+<!--                    <p>Player</p>-->
+<!--&lt;!&ndash;                    <p id="player-choice"></p>&ndash;&gt;-->
+<!--                </div>-->
+
+                <div id="player-box-container" class="d-flex flex-column justify-content-center">
+                    <p>Player</p>
+
+                    <div id="player-box" class="box d-flex flex-column align-items-center justify-content-center">
+
+                        <!--                    <p id="opponent-choice"></p>-->
+                    </div>
                 </div>
 
                 <p id="vs">VS</p>
 
-                <div id="opponent-box" class="box d-flex flex-column align-items-center justify-content-center">
-                    <p>Opponent Choice:</p>
-                    <p id="opponent-choice"></p>
+                <div id="opponent-box-container" class="d-flex flex-column justify-content-center">
+                    <p>Computer</p>
+
+                    <div id="opponent-box" class="box d-flex flex-column align-items-center justify-content-center">
+
+                        <!--                    <p id="opponent-choice"></p>-->
+                    </div>
                 </div>
+
+
 
             </div> <!--End match-container-->
 
@@ -200,12 +261,15 @@
             let opponentChoice = '';
             let message = '';
             let count = 1;
+            let winAudio = new Audio('audio/success-bell.wav');
+            let loseAudio = new Audio('audio/incorrect-2.wav');
+            let tieAudio = new Audio('audio/incorrect.wav');
 
             $(document).ready(function() {
 
                 $('.choice-button').click(function () {
                     userChoice = this.value;
-                    console.log(userChoice);
+                    // console.log(userChoice);
                     $('#player-choice').html(userChoice);
 
                     opponentChoice = opponentArray[randomNumber(0, (opponentArray.length - 1))];
@@ -213,34 +277,68 @@
 
                     $('#round-number').html("Round " + count);
 
+                    if(userChoice === 'rock') {
+                        $('#player-box').css('background-image', 'url(img/rock-image.png)');
+                    }
+
+                    if(userChoice === 'paper') {
+                        $('#player-box').css('background-image', 'url(img/paper-image.png)');
+                    }
+
+                    if(userChoice === 'scissors') {
+                        $('#player-box').css('background-image', 'url(img/scissors-image.png)');
+                    }
+
+                    if(opponentChoice === 'rock') {
+                        $('#opponent-box').css('background-image', 'url(img/rock-image.png)');
+                    }
+
+                    if(opponentChoice === 'paper') {
+                        $('#opponent-box').css('background-image', 'url(img/paper-image.png)');
+                    }
+
+                    if(opponentChoice === 'scissors') {
+                        $('#opponent-box').css('background-image', 'url(img/scissors-image.png)');
+                    }
+
+
+
 
 
                     if(userChoice === 'rock' && opponentChoice === 'scissors') {
                         message = 'Player wins!';
+                        winAudio.play();
+
                     }
 
                     if(userChoice === 'paper' && opponentChoice === 'rock') {
                         message = 'Player wins!';
+                        winAudio.play();
                     }
 
                     if(userChoice === 'scissors' && opponentChoice === 'paper') {
                         message = 'Player wins!';
+                        winAudio.play();
                     }
 
                     if(opponentChoice === 'rock' && userChoice === 'scissors') {
                         message = 'Computer wins.';
+                        loseAudio.play();
                     }
 
                     if(opponentChoice === 'paper' && userChoice === 'rock') {
                         message = 'Computer wins.';
+                        loseAudio.play();
                     }
 
                     if(opponentChoice === 'scissors' && userChoice === 'paper') {
                         message = 'Computer wins.';
+                        loseAudio.play();
                     }
 
                     if(userChoice === opponentChoice){
                         message = 'It is a tie!';
+                        tieAudio.play();
                     }
 
 
@@ -262,6 +360,8 @@
                     $('#opponent-choice').empty();
                     $('#result-message').empty();
                     $('#round-number').empty();
+                    $('#player-box').css('background-image', 'none');
+                    $('#opponent-box').css('background-image', 'none');
 
                 });
 
@@ -271,6 +371,8 @@
                     $('#opponent-choice').empty();
                     $('#result-message').empty();
                     $('#round-number').empty();
+                    $('#player-box').css('background-image', 'none');
+                    $('#opponent-box').css('background-image', 'none');
                     count = 1;
                 });
 
