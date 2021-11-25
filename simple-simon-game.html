@@ -8,13 +8,33 @@
             body {
                 background-color: lightblue;
             }
+
+            h1 {
+                text-align: center;
+                margin-bottom: 1em;
+            }
+
+            .box {
+                width: 100px;
+                height: 100px;
+                border: 1px solid black;
+            }
         </style>
     </head>
     <body>
-        <div id="green-box" class="box"></div>
-        <div id="red-box" class="box"></div>
-        <div id="yellow-box" class="box"></div>
-        <div id="blue-box" class="box"></div>
+        <h1>Simple Simon Game</h1>
+
+        <div id="box-container" class="d-flex flex-column align-items-center">
+            <div class="row">
+                <div id="green-box" class="col-6 box"></div>
+                <div id="red-box" class="col-6 box"></div>
+            </div>
+
+            <div class="row">
+                <div id="yellow-box" class="col-6 box"></div>
+                <div id="blue-box" class="col-6 box"></div>
+            </div>
+        </div> <!--end box-container-->
 
         <!--scripts-->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
