@@ -19,6 +19,26 @@
                 height: 100px;
                 border: 1px solid black;
             }
+
+            #green-box {
+                /*display: none;*/
+                /*background-color: green;*/
+            }
+
+            #red-box {
+                /*display: none;*/
+                /*background-color: red;*/
+            }
+
+            #yellow-box {
+                /*display: none;*/
+                /*background-color: yellow;*/
+            }
+
+            #blue-box {
+                /*display: none;*/
+                /*background-color: blue;*/
+            }
         </style>
     </head>
     <body>
@@ -85,16 +105,28 @@
 
                     switch (chosenBox) {
                         case greenBox:
-                            greenBox.css('background-color', 'green');
+                            // greenBox.css('background-color', 'green');
+                            // greenBox.css('display', 'block');
+                            greenBox.fadeIn().css('background-color', 'green');
+                            greenBox.fadeOut("slow");
                             break;
                         case redBox:
-                            redBox.css('background-color', 'red');
+                            // redBox.css('background-color', 'red');
+                            // redBox.css('display', 'block');
+                            redBox.fadeIn().css('background-color', 'red');
+                            redBox.fadeOut("slow");
                             break;
                         case yellowBox:
-                            yellowBox.css('background-color', 'yellow');
+                            // yellowBox.css('background-color', 'yellow');
+                            // yellowBox.css('display', 'block');
+                            yellowBox.fadeIn().css('background-color', 'yellow');
+                            yellowBox.fadeOut("slow");
                             break;
                         case blueBox:
-                            blueBox.css('background-color', 'blue');
+                            // blueBox.css('background-color', 'blue');
+                            // blueBox.css('display', 'block');
+                            blueBox.fadeIn().css('background-color', 'blue');
+                            blueBox.fadeOut("slow");
                             break;
                     }
 
