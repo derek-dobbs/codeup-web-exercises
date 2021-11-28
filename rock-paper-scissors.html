@@ -48,13 +48,13 @@
             }
 
             #player-box {
-                /*background-color: blue;*/
+                background-color: lightblue;
                 /*background-image: none;*/
                 /*border: 3px solid blue;*/
             }
 
             #opponent-box {
-                /*background-color: red;*/
+                background-color: lightcoral;
                 /*background-image: none;*/
                 /*border: 3px solid red;*/
             }
@@ -294,6 +294,7 @@
 
                 $('#hide-me').css('display', 'block');
                 $('#hide-me-on-selection').css('display', 'none');
+                $('#play-again-button').css('display', 'block');
 
 
                     userChoice = this.value;
@@ -388,7 +389,9 @@
                     $('#opponent-box').css('background-image', 'none');
                     $('#show-me').css('display', 'block');
                     $('#hide-me-on-selection').css('display', 'block');
-                    $('#hide-me').css('display', 'none');
+                    // $('#hide-me').css('display', 'none');
+                    $('#play-again-button').css('display', 'none');
+
 
                 });
 
