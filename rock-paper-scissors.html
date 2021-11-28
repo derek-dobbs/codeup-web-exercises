@@ -51,12 +51,14 @@
                 background-color: lightblue;
                 /*background-image: none;*/
                 /*border: 3px solid blue;*/
+                display: none;
             }
 
             #opponent-box {
                 background-color: lightcoral;
                 /*background-image: none;*/
                 /*border: 3px solid red;*/
+                display: none;
             }
 
             #bigdiv {
@@ -322,7 +324,7 @@
                     $('#round-number').html("Round " + count);
 
                     if(userChoice === 'rock') {
-                        $('#player-box').css('background-image', 'url(img/rock-image.png)');
+                        $('#player-box').css('background-image', 'url(img/rock-image.png)').fadeIn("slow");
                     }
 
                     if(userChoice === 'paper') {
