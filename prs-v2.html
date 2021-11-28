@@ -28,25 +28,37 @@
             }
 
             .selection-box {
-                border: 1px solid green;
+                /*border: 1px solid green;*/
                 margin: 1em;
                 width: auto;
                 height: auto;
             }
 
             #make-a-selection-container {
-                border: 1px solid yellow;
+                /*border: 1px solid yellow;*/
             }
 
             .selection-image-container {
                 width: 300px;
                 height: 300px;
-                border: 1px solid hotpink;
+                /*border: 1px solid hotpink;*/
                 margin: 1em;
             }
 
             .select-button {
                 margin-bottom: .5em;
+            }
+
+            #rock-image {
+                background-image: url("img/rock-1-logo.png");
+            }
+
+            #paper-image {
+                background-image: url("img/paper-1-logo.png");
+            }
+
+            #scissors-image {
+                background-image: url("img/scissors-1-logo.png");
             }
         </style>
     </head>
@@ -110,17 +122,17 @@
             <h3>Make a Selection to Start Game</h3>
             <div class="d-flex flex-row">
                 <div class="selection-box d-flex flex-column justify-content-center align-items-center">
-                    <div class="selection-image-container">Image</div>
+                    <div id="rock-image" class="selection-image-container"></div>
                     <button type="button" class="select-button btn btn-light">Select</button>
                 </div>
 
                 <div class="selection-box d-flex flex-column justify-content-center align-items-center">
-                    <div class="selection-image-container">Image</div>
+                    <div id="paper-image" class="selection-image-container"></div>
                     <button type="button" class="select-button btn btn-light">Select</button>
                 </div>
 
                 <div class="selection-box d-flex flex-column justify-content-center align-items-center">
-                    <div class="selection-image-container">Image</div>
+                    <div id="scissors-image" class="selection-image-container"></div>
                     <button type="button" class="select-button btn btn-light">Select</button>
                 </div>
             </div> <!--end row-->
