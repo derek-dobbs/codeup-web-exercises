@@ -167,6 +167,18 @@
                 margin-right: 1em;
                 margin-top: 2em;
             }
+
+            #reset-history {
+                border: 1px solid black;
+                margin: auto;
+                margin-bottom: 2em;
+                margin-left: 1em;
+                background-color: darkred;
+                color: white;
+                padding: .10em;
+                padding-left: 1.5em;
+                padding-right: 1.5em;
+            }
         </style>
     </head>
     <body>
@@ -243,6 +255,10 @@
                         <p>
                             <button id="play-again-button" type="button" class="btn btn-light" value="play-again">Play Again</button>
                         </p>
+
+                        <p>
+                            <button id="reset-history" type="button" class="btn btn-light" value="reset">Quit</button>
+                        </p>
                     </div>
                 </div>
 
@@ -250,7 +266,6 @@
                     <div id="tally-box" class="d-flex flex-column align-items-center justify-content-center">
                         <p>Match History</p>
                         <p id="history-message"></p>
-                        <button id="reset-history" type="button" class="btn btn-light" value="reset">Reset</button>
                     </div>
 
                 </div>
