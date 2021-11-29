@@ -21,6 +21,10 @@
                 text-align: center;
             }
 
+            h3 {
+                margin-bottom: .5em;
+            }
+
             #top-banner {
                 background-color: lightgray;
                 padding: 0;
@@ -50,37 +54,87 @@
             }
 
             #rock-image {
-                background-image: url("img/rock-1-logo.png");
+                background-image: url("img/rock-select.png");
+
             }
 
             #paper-image {
-                background-image: url("img/paper-1-logo.png");
+                background-image: url("img/paper-select.png");
+
             }
 
             #scissors-image {
-                background-image: url("img/scissors-1-logo.png");
+                background-image: url("img/scissors-select.png");
+                background-repeat: no-repeat;
+                background-size: auto;
             }
+
+            .player-box {
+                width: 450px;
+                height: 450px;
+                border: 1px solid black;
+                margin: 1em;
+            }
+
+            #player-box {
+                background-color: lightblue;
+                /*background-image: url("img/rock-select-large.png");*/
+                background-repeat: no-repeat;
+                /*background-size: auto;*/
+            }
+
+            #opponent-box {
+                background-color: indianred;
+            }
+
+            #match-history {
+                /*border: 1px solid yellowgreen;*/
+            }
+
+            table, th, td {
+                border: 0.5px solid black;
+                text-align: center;
+            }
+
+            .small-selection-box {
+                /*border: 1px solid white;*/
+                width: 150px;
+                height: 150px;
+                /*background-image: url("img/paper-select-small.png");*/
+                margin: 1em;
+            }
+
+            #rock-small-selection-box {
+                /*background-image: url("img/rock-select-small.png");*/
+            }
+
+            #paper-small-selection-box {
+                /*background-image: url("img/paper-select-small.png");*/
+            }
+
+            #scissors-small-selection-box {
+                /*background-image: url("img/scissors-select-small.png");*/
+            }
+
+            input {
+                margin: 1em;
+            }
+
+            button {
+                margin-right: 1em;
+            }
+
         </style>
     </head>
     <body>
-<!--        <h1>Rock Paper Scissors Game v2</h1>-->
         <div id="top-banner" class="jumbotron jumbotron-fluid">
             <div class="container d-flex flex-row justify-content-between">
                 <h1 class="display-4">Rock Paper Scissors Game</h1>
-<!--                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>-->
                 <br>
 
                 <nav class="navbar navbar-expand-lg">
-<!--                    <a class="navbar-brand" href="#">Navbar</a>-->
-<!--                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--                        <span class="navbar-toggler-icon"></span>-->
-<!--                    </button>-->
-
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
-<!--                            <li class="nav-item active">-->
-<!--                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>-->
-<!--                            </li>-->
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Turn Off Sound</a>
                             </li>
@@ -92,25 +146,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Quit</a>
                             </li>
-<!--                            <li class="nav-item dropdown">-->
-<!--                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<!--                                    Dropdown-->
-<!--                                </a>-->
-<!--                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-<!--                                    <a class="dropdown-item" href="#">Action</a>-->
-<!--                                    <a class="dropdown-item" href="#">Another action</a>-->
-<!--                                    <div class="dropdown-divider"></div>-->
-<!--                                    <a class="dropdown-item" href="#">Something else here</a>-->
-<!--                                </div>-->
-<!--                            </li>-->
-<!--                            <li class="nav-item">-->
-<!--                                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>-->
-<!--                            </li>-->
                         </ul>
-<!--                        <form class="form-inline my-2 my-lg-0">-->
-<!--                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
-<!--                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
-<!--                        </form>-->
                     </div>
                 </nav>
             </div> <!--end container-->
@@ -137,7 +173,125 @@
                 </div>
             </div> <!--end row-->
         </div> <!--End make-a-selection-container-->
+        <!---------------------------End Make a Selection--------------------------->
 
+        <div id="match-container" class="d-flex flex-column justify-content-center align-items-center">
+            <h3>Round Number Placeholder</h3>
+
+            <div class="d-flex flex-row justify-content-around align-items-center">
+                <div id="player-box" class="player-box d-flex flex-column justify-content-center align-items-center">
+                    <p>Image</p>
+                    <p>Player</p>
+                </div>
+
+                <div>
+                    <h2>VS</h2>
+                </div>
+
+                <div id="opponent-box" class="player-box d-flex flex-column justify-content-center align-items-center">
+                    <p>Image</p>
+                    <p>Computer</p>
+                </div>
+            </div>
+
+            <h3>Result Message</h3>
+
+            <div class="d-flex flex-column justify-content-between align-items-center">
+                <h3>Make a Selection to Play Again</h3>
+                <div class="d-flex flex-row">
+                    <div id="rock-small-selection-box" class="small-selection-box d-flex flex-column align-items-center">
+                        <img src="img/rock-select-small.png" alt="">
+                        <input type="radio" id="rock-radio" name="rock" value="rock">
+                        <label for="rock-radio"></label>
+                    </div>
+
+                    <div id="paper-small-selection-box" class="small-selection-box d-flex flex-column align-items-center">
+                        <img src="img/paper-select-small.png" alt="">
+                        <input type="radio" id="paper-radio" name="paper" value="paper">
+                        <label for="paper-radio"></label>
+                    </div>
+
+                    <div id="scissors-small-selection-box" class="small-selection-box d-flex flex-column align-items-center">
+                        <img src="img/scissors-select-small.png" alt="">
+                        <input type="radio" id="scissors-radio" name="scissors" value="scissors">
+                        <label for="scissors-radio"></label>
+                    </div>
+                </div>
+            </div> <!--End make-a-selection-container-->
+            <br>
+            <br>
+
+            <div class="d-flex flex-row justify-content-center align-items-center">
+                <button type="button" class="select-button btn btn-light">Play</button>
+                <button type="button" class="select-button btn btn-light">Quit</button>
+            </div>
+
+        </div> <!--End match-container-->
+        <!---------------------------End Match Container--------------------------->
+
+        <div id="match-history" class="d-flex flex-column justify-content-center align-items-center">
+            <br>
+            <br>
+            <h3>Match History</h3>
+<!--            <table>-->
+<!--                <tr>-->
+<!--                    <th>Round</th>-->
+<!--                    <th>Player Choice</th>-->
+<!--                    <th>Opponent Choice</th>-->
+<!--                    <th>Result</th>-->
+<!--                </tr>-->
+
+<!--                <tr>-->
+<!--                    <td>1</td>-->
+<!--                    <td>Rock</td>-->
+<!--                    <td>Paper</td>-->
+<!--                    <td>Computer Wins</td>-->
+<!--                </tr>-->
+<!--            </table>-->
+
+<!--            <div class="row d-flex justify-content-center">-->
+<!--                <div class="col-3"><p>Round</p></div>-->
+<!--                <div class="col-3"><p>Player Choice</p></div>-->
+<!--                <div class="col-3"><p>Opponent Choice</p></div>-->
+<!--                <div class="col-3"><p>Result</p></div>-->
+<!--            </div> &lt;!&ndash;End Row&ndash;&gt;-->
+
+<!--            <div class="row d-flex justify-content-center">-->
+<!--                <div class="col-3"><p>1</p></div>-->
+<!--                <div class="col-3"><p>Scissors</p></div>-->
+<!--                <div class="col-3"><p>Paper</p></div>-->
+<!--                <div class="col-3"><p>Player Wins</p></div>-->
+<!--            </div> &lt;!&ndash;End Row&ndash;&gt;-->
+
+<!--            <div class="row d-flex justify-content-center">-->
+<!--                <div class="col-3"><p>2</p></div>-->
+<!--                <div class="col-3"><p>Scissors</p></div>-->
+<!--                <div class="col-3"><p>Rock</p></div>-->
+<!--                <div class="col-3"><p>Computer Wins</p></div>-->
+<!--            </div> &lt;!&ndash;End Row&ndash;&gt;-->
+
+            <table style="width:75%">
+                <tr>
+                    <th>Round</th>
+                    <th>Player Choice</th>
+                    <th>Opponent Choice</th>
+                    <th>Result</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Rock</td>
+                    <td>Scissors</td>
+                    <td>Player Wins</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Rock</td>
+                    <td>Paper</td>
+                    <td>Opponent Wins</td>
+                </tr>
+            </table>
+
+        </div> <!--End Match History-->
         <!--Scripts-->
         <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
