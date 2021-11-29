@@ -1,3 +1,11 @@
 .invisible {
     visibility: hidden;
 }
+
+dd {
+    display: list-item;
+}
+
+dt {
+    font-weight: bold;
+}
