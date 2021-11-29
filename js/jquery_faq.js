@@ -6,4 +6,9 @@ $(document).ready(function() {
        event.preventDefault();
         $('dd').toggleClass('invisible');
     });
+
+    // When any of the dt elements is clicked, the element that was clicked should be highlighted.
+    $('dt').click(function () {
+        $(this).css('background-color', 'yellow');
+    });
 });
