@@ -6,4 +6,4 @@ $(document).ready(function() {
        event.preventDefault();
         $('dd').toggleClass('invisible');
     });
-}); //end document.ready
+});

@@ -9,3 +9,7 @@ dd {
 dt {
     font-weight: bold;
 }
+
+#show-answers {
+    font-size: .75em;
+}
