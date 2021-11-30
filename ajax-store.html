@@ -2,26 +2,71 @@
 <html>
 <head>
     <title>Online Store</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&display=swap');        body {
+            background-color: #C96567;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 2em;
+        }
+        h1 {
+            text-align: center;
+            color: whitesmoke;
+            font-size: 4em;
+        }
+
+        h2 {
+            color: #C96567;
+            font-size: 2.5em;
+        }
+
+        table, th {
+            color: #C96567;
+            border: 3px solid black !important;
+        }
+
+        td, tr {
+            border: 0.5px solid black;
+            color: black
+        }
+
+        .container {
+            /*background-color: #314455;*/
+            background-color: whitesmoke;
+            border: 5px solid whitesmoke;
+        }
+
+        button {
+            color: #C96567;
+        }
+
+    </style>
 </head>
 <body>
 
 <h1>My Tool Store</h1>
-
-<table id="products">
-    <thead>
+<br>
+<div class="container d-flex flex-column align-items-center">
+    <h2>Inventory</h2>
+    <table id="products" class="table">
+        <thead>
         <tr>
             <th>Title</th>
             <th>Quantity</th>
             <th>Price</th>
             <th>Categories</th>
         </tr>
-    </thead>
-    <tbody id="insertProducts"></tbody>
-</table>
-<br>
-<button id="refresh-button" type="button">Refresh</button>
+        </thead>
+        <tbody id="insertProducts"></tbody>
+    </table>
+    <br>
+    <button id="refresh-button" type="button">Refresh</button>
+    <br>
+</div>
+
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
 <script>
 (function() {
