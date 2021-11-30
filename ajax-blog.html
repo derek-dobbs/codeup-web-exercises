@@ -7,13 +7,21 @@
   <body>
     <h1>Ajax Blog Exercise</h1>
     <br>
-    <div id="posts"></div>
+    <div id="posts">
 
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script>
         (function () {
             "use strict";
 
-
+            $.ajax("/data/blog.json").done(function (data) {
+              data.forEach(function (element) {
+                // $('#posts').append("<p>" + 'test' + "</p>");
+                $('#posts').append("<p>" + element.title + "</p>" + "<p>" + element.content + "</p>" + "<p>" + "Categories: " + element.categories.join(", ") + "</p>" + "<p>" + "Date: " + element.date + "</p>" + "<br>");
+              });
+            });
 
         })();
     </script>
