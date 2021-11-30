@@ -1,3 +1,8 @@
+body {
+    background-color: darkslategray;
+    color: white;
+}
+
 .invisible {
     visibility: hidden;
 }
@@ -12,4 +17,29 @@ dt {
 
 #show-answers {
     font-size: .75em;
+}
+
+.frame {
+    width: 250px;
+    height: 250px;
+    border: 5px solid maroon;
+}
+
+#picture-container {
+    width: 1000px;
+    height: 1500px;
+    margin: auto;
+    margin-top: 1em;
+}
+
+.left-frame {
+    background-image: url("/img/macbook.jpg");
+}
+
+.middle-frame {
+    background-image: url("/img/head.jpg");
+}
+
+.right-frame {
+    background-image: url("/img/apple-ipad.jpg");
 }

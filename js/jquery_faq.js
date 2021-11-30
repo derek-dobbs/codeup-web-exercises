@@ -30,4 +30,26 @@ $(document).ready(function() {
         $(this).parent().children().first().css('color', 'blue');
     });
 
+    $('#left-frame').addClass('left-frame');
+    $('#middle-frame').addClass('middle-frame');
+    $('#right-frame').addClass('right-frame');
+
+    $('#left-button').click(function (event) {
+        event.preventDefault();
+        $('#left-frame').removeClass('left-frame').addClass('middle-frame');
+        $('#middle-frame').removeClass('middle-frame').addClass('left-frame');
+    });
+
+    $('#middle-button').click(function (event) {
+        event.preventDefault();
+        $('#middle-frame').removeClass('middle-frame').addClass('left-frame');
+        $('#left-frame').removeClass('left-frame').addClass('middle-frame');
+    });
+
+    $('#right-button').click(function (event) {
+        event.preventDefault();
+        $('#right-frame').removeClass('right-frame').addClass('middle-frame');
+        $('#middle-frame').removeClass('middle-frame').addClass('right-frame');
+    });
+
 });
