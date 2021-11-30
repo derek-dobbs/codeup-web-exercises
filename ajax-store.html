@@ -33,12 +33,9 @@
     //       HINT: You will want to target #insertProducts for your new HTML elements
 
     $.ajax("/data/inventory.json").done(function(data, status, jqXhr) {
-        // alert("AJAX call completed successfully!");
-        // console.log("Request status: " + status);
-        // console.log("Data returned from server:");
-        // console.log(data);
-
-        $('#products').append("<tr><td>" + data.title + "</td><td>" + data.quantity + "</td><td>" + data.price + "</td><td." + data.categories + "</td></tr>");
+        data.forEach(function (element) {
+            $('#products').append("<tr><td>" + element.title + "</td><td>" + element.quantity + "</td><td>" + element.price + "</td><td." + data.categories + "</td></tr>");
+        });
 
     });
 })();
