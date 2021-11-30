@@ -19,4 +19,10 @@ $(document).ready(function() {
             $(this).children().last().css('background-color', 'yellow');
         });
     });
+
+    //When any h3 is clicked, the lis underneath it should be bolded. Use font-weight: bold to achieve this.
+    $('h3').click(function () {
+        $(this).next().children().css('font-weight', 'bold');
+    });
+
 });
