@@ -18,6 +18,8 @@
     </thead>
     <tbody id="insertProducts"></tbody>
 </table>
+<br>
+<button id="refresh-button" type="button">Refresh</button>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
@@ -33,8 +35,8 @@
     //       HINT: You will want to target #insertProducts for your new HTML elements
 
     $.ajax("/data/inventory.json").done(function(data, status, jqXhr) {
-        data.forEach(function (element) {
-            $('#products').append("<tr><td>" + element.title + "</td><td>" + element.quantity + "</td><td>" + element.price + "</td><td." + data.categories + "</td></tr>");
+        data.forEach(function (element, index) {
+            $('#products').append("<tr><td>" + element.title + "</td><td>" + element.quantity + "</td><td>" + element.price + "</td><td." + element.categories[index] + "</td></tr>");
         });
 
     });
