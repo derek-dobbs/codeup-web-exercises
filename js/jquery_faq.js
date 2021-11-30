@@ -15,12 +15,8 @@ $(document).ready(function() {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // makes the last li in each ul have a yellow background.
     $('#turn-yellow').click(function () {
-        // $('ul').children().last().css('background-color', 'yellow');
-        $('ul').children().each(function (index, element) {
-            // $(this).css('background-color', 'yellow');
-            if(index === 3) {
-                $(this).css('background-color', 'yellow');
-            }
+        $('ul').each(function (index, element) {
+            $(this).children().last().css('background-color', 'yellow');
         });
     });
 });
