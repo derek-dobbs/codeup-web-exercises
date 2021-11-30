@@ -38,5 +38,13 @@
             "tool"
         ],
         "price": 20
+    },
+    {
+        "title": "Crescent Wrench",
+        "quantity": 10,
+        "categories": [
+            "tool"
+        ],
+        "price": 8
     }
 ]
