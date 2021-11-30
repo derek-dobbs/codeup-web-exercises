@@ -25,4 +25,9 @@ $(document).ready(function() {
         $(this).next().children().css('font-weight', 'bold');
     });
 
+    //When any list item is clicked, first li of the parent ul should have a font color of blue.
+    $('li').click(function () {
+        $(this).parent().children().first().css('color', 'blue');
+    });
+
 });
