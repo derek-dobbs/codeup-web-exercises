@@ -3,13 +3,45 @@
   <head>
       <meta charset="UTF-8">
       <title>Ajax Blog Exercise</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+      body {
+        /*background-color: #FBEEC1;*/
+        font-family: 'Oswald', sans-serif;
+        font-size: 2em;
+        background-color: lightsteelblue;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 2em;
+        color: whitesmoke;
+      }
+
+      h3 {
+        font-size: 2em;
+        color: whitesmoke;
+      }
+
+      p {
+        /*color: whitesmoke;*/
+      }
+
+      #posts {
+        margin: 1em;
+      }
+
+      .make-white {
+        color: whitesmoke;
+      }
+
+    </style>
   </head>
   <body>
     <h1>Ajax Blog Exercise</h1>
     <br>
-    <div id="posts">
-
-    </div>
+    <div id="posts"></div>
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script>
@@ -19,10 +51,9 @@
             $.ajax("/data/blog.json").done(function (data) {
               data.forEach(function (element) {
                 // $('#posts').append("<p>" + 'test' + "</p>");
-                $('#posts').append("<p>" + element.title + "</p>" + "<p>" + element.content + "</p>" + "<p>" + "Categories: " + element.categories.join(", ") + "</p>" + "<p>" + "Date: " + element.date + "</p>" + "<br>");
+                $('#posts').append("<h3>" + element.title + "</h3>" + "<p>" + element.content + "</p>" + "<p>" + "<span class='make-white'>Categories:</span> " + element.categories.join(", ") + "</p>" + "<p>" + "<span class='make-white'>Date: </span>" + element.date + "</p>" + "<br>" + "<hr>");
               });
             });
-
         })();
     </script>
   </body>
