@@ -22,25 +22,21 @@
             });
 
             $(document).ready(function() {
+
                 let statueOfLiberty = new mapboxgl.Marker({
                     color: "blue"
                 }).setLngLat([-74.0445626, 40.6892522]).setDraggable(true);
 
                 statueOfLiberty.addTo(map);
 
-                statueOfLiberty.on('dragend', function () {
-                    popup.setLngLat(statueOfLiberty.getLngLat());
-                });
-
-                // codeup.remove(); //removes marker
-
-                // let secondMarker = new mapboxgl.Marker();
-                // secondMarker.setLngLat([]);
-
                 let popup = new mapboxgl.Popup()
                     .setLngLat(statueOfLiberty.getLngLat())
                     .setHTML('<h3>Statue of Liberty</h3>')
                     .addTo(map).closeOnMove('true');
+
+                statueOfLiberty.on('dragend', function () {
+                    popup.setLngLat(statueOfLiberty.getLngLat());
+                });
             });
         </script>
     </body>
