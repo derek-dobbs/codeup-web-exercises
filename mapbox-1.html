@@ -8,9 +8,10 @@
     </head>
     <body>
     <h1 style="text-align: center">Mapbox 1</h1>
-
+    <br>
 
     <div id='map' style='width: 800px; height: 600px; margin: auto'></div>
+    <button id="zoom-in" type="button">Zoom In</button>
 
         <script src="js/keys.js"></script> <!--this needs to be listed first before other scripts-->
         <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -31,10 +32,11 @@
                      center: [-97.0425239, 32.8998091],
                      essential: true // this animation is considered essential with respect to prefers-reduced-motion
                  });
-                 map.setStyle('mapbox://styles/mapbox/satellite-v9');
+                 map.setStyle('mapbox://styles/mapbox/satellite-streets-v11');
                 }, 5000);
 
-                // console.log(map.style);
+             $('#zoom-in.')
+
             });
 
 
