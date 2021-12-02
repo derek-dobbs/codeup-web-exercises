@@ -15,6 +15,7 @@
     <div id='map' style='width: 800px; height: 600px; margin: auto'></div>
 
     <script src="js/keys.js"></script> <!--this needs to be listed first before other scripts-->
+    <script src="js/mapbox-geocoder-utils.js"></script>
     <script>
         mapboxgl.accessToken = MAPBOX_KEY;
         const map = new mapboxgl.Map({
@@ -31,7 +32,8 @@
         codeup.addTo(map);
 
         codeup.on('dragend', function () {
-            popup.setLngLat(codeup.getLngLat());
+            // popup.setLngLat(codeup.getLngLat());
+            alert("marker moved");
         });
 
         // codeup.remove(); //removes marker

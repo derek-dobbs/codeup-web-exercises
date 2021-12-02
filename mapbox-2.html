@@ -10,6 +10,7 @@
         <h1 style="text-align: center">Mapbox 2</h1>
         <br>
         <div id='map' style='width: 800px; height: 600px; margin: auto'></div>
+        <h1 id="coordinates">test</h1>
         <script src="js/keys.js"></script> <!--this needs to be listed first before other scripts-->
         <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
         <script>
@@ -24,18 +25,20 @@
             $(document).ready(function() {
 
                 let statueOfLiberty = new mapboxgl.Marker({
-                    color: "blue"
+                    color: "red"
                 }).setLngLat([-74.0445626, 40.6892522]).setDraggable(true);
 
                 statueOfLiberty.addTo(map);
 
+
                 let popup = new mapboxgl.Popup()
                     .setLngLat(statueOfLiberty.getLngLat())
                     .setHTML('<h3>Statue of Liberty</h3>')
-                    .addTo(map).closeOnMove('true');
+                    .addTo(map)
+                    .closeOnMove('true');
 
                 statueOfLiberty.on('dragend', function () {
-                    popup.setLngLat(statueOfLiberty.getLngLat());
+                    $('#coordinates').html(statueOfLiberty.getLngLat());
                 });
             });
         </script>
