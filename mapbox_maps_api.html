@@ -5,11 +5,9 @@
     <title>Mapbox Exercise</title>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
-
   </head>
   <body>
     <h1 style="text-align: center">Mapbox Exercise</h1>
-
 
     <div id='map' style='width: 800px; height: 600px; margin: auto'></div>
     <br>
@@ -20,9 +18,9 @@
       <label for="input">Enter the desired zoom level: </label>
       <input id="input" type="text">
       <button id="submit" type="button">Submit</button>
+
+      <button id="remove-markers" type="button">Remove All Markers</button>
     </div>
-
-
 
     <script src="js/keys.js"></script> <!--this needs to be listed first before other scripts-->
     <script src="js/mapbox-geocoder-utils.js"></script>
@@ -41,24 +39,9 @@
 
       elBurrito.addTo(map);
 
-      // codeup.on('dragend', function () {
-      //   // popup.setLngLat(codeup.getLngLat());
-      //   alert("marker moved");
-      // });
-
-      // codeup.remove(); //removes marker
-
-      // let secondMarker = new mapboxgl.Marker();
-      // secondMarker.setLngLat([]);
-
       let elBurritoPopup = new mapboxgl.Popup()
               .setHTML('<h3>El Burrito</h3>')
-              // .addTo(map);
       elBurrito.setPopup(elBurritoPopup);
-
-      $(elBurrito).click(function () {
-        elBurritoPopup.addTo(map);
-      });
 
       let littleCaesars = new mapboxgl.Marker({
         color: "blue"
@@ -68,13 +51,18 @@
 
       let littleCaesarsPopup = new mapboxgl.Popup()
               .setHTML('<h3>Little Caesars</h3>')
-      // .addTo(map);
       littleCaesars.setPopup(littleCaesarsPopup);
 
-      $(littleCaesars).click(function () {
-        littleCaesarsPopup.addTo(map);
-      });
+      let jackNTheBox = new mapboxgl.Marker({
+        color: "green"
+      }).setLngLat([-95.0942338, 30.3387689]).setDraggable(true);
 
+      jackNTheBox.addTo(map);
+
+      let jackNTheBoxPopup = new mapboxgl.Popup()
+              .setHTML('<h3>Jack N The Box</h3>')
+      // .addTo(map);
+      jackNTheBox.setPopup(jackNTheBoxPopup);
 
       //Can't get these to work, come back to it
       // $('#zoom-in').click(function () {
@@ -84,11 +72,16 @@
       // $('#zoom-out').click(function () {
       //   map.zoomTo(map.getZoom() - 1);
       // });
-
+      //
       // $('#submit').click(function () {
       //   map.zoomTo($('#input').val());
       // });
-
+      //
+      // $('#remove-markers').click(function () {
+      //   elBurrito.remove();
+      //   littleCaesars.remove();
+      //   jackNTheBox.remove();
+      // });
     </script>
   </body>
 </html>
