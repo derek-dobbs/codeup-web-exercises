@@ -34,8 +34,7 @@
                 }, 5000);
 
              $('#zoom-in').click(function () {
-                 let zoomVal = parseInt(map.getZoom());
-                 map.zoomTo(zoomVal + 1);
+                 map.zoomTo(map.getZoom() + 1);
              });
             });
         </script>
