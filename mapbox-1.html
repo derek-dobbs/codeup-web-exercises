@@ -25,6 +25,8 @@
                 zoom: 12 // starting zoom
             });
 
+
+
             $(document).ready(function() {
              let timeoutID = setTimeout(function () {
                     // alert('Should see this after 5 sec');
@@ -35,7 +37,10 @@
                  map.setStyle('mapbox://styles/mapbox/satellite-streets-v11');
                 }, 5000);
 
-             $('#zoom-in.')
+             $('#zoom-in').click(function () {
+                 let zoomVal = parseInt(map.getZoom());
+                 map.zoomTo(zoomVal + 1);
+             });
 
             });
 
