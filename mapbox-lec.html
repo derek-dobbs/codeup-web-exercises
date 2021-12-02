@@ -23,6 +23,27 @@
             center: [-98.4683, 29.5312], // starting position [lng, lat]
             zoom: 9 // starting zoom
         });
+
+        let codeup = new mapboxgl.Marker({
+            color: "blue"
+        }).setLngLat([-98.48615, 29.426827]).setDraggable(true);
+
+        codeup.addTo(map);
+
+        codeup.on('dragend', function () {
+            popup.setLngLat(codeup.getLngLat());
+        });
+
+        // codeup.remove(); //removes marker
+
+        // let secondMarker = new mapboxgl.Marker();
+        // secondMarker.setLngLat([]);
+
+        let popup = new mapboxgl.Popup()
+        .setLngLat(codeup.getLngLat())
+        .setHTML('<h3>Hello from Codeup</h3>')
+        .addTo(map).closeOnMove('true');
+
     </script>
 </body>
 </html>
