@@ -16,7 +16,6 @@
         <script src="js/keys.js"></script> <!--this needs to be listed first before other scripts-->
         <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
         <script>
-
             mapboxgl.accessToken = MAPBOX_KEY;
             const map = new mapboxgl.Map({
                 container: 'map', // container ID
@@ -25,11 +24,8 @@
                 zoom: 12 // starting zoom
             });
 
-
-
             $(document).ready(function() {
              let timeoutID = setTimeout(function () {
-                    // alert('Should see this after 5 sec');
                  map.flyTo({
                      center: [-97.0425239, 32.8998091],
                      essential: true // this animation is considered essential with respect to prefers-reduced-motion
@@ -41,12 +37,7 @@
                  let zoomVal = parseInt(map.getZoom());
                  map.zoomTo(zoomVal + 1);
              });
-
             });
-
-
-
-
         </script>
     </body>
 </html>
