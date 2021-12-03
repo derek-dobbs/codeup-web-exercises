@@ -1,0 +1,16 @@
+[
+  {
+    "name": "El Burrito",
+    "type": "Mexican"
+  },
+
+  {
+    "name": "Little Caesars",
+    "type": "Pizza"
+  },
+
+  {
+    "name": "Jack N The Box",
+    "type": "Fast Food"
+  }
+]

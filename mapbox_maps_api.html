@@ -15,16 +15,27 @@
       <button id="zoom-in" type="button">Zoom In</button> <!--see zoomIn-->
       <button id="zoom-out" type="button">Zoom Out</button>
 
-      <label for="input">Enter the desired zoom level: </label>
-      <input id="input" type="text">
-      <button id="submit" type="button">Submit</button>
+      <label for="zoom-input">Enter the desired zoom level: </label>
+      <input id="zoom-input" type="text">
+      <button id="zoom-submit" type="button">Submit</button>
+
+      <label for="address-input">Enter an address: </label>
+      <input id="address-input" type="text">
+      <button id="submit" type="button">Find Location</button>
+
+
 
       <button id="remove-markers" type="button">Remove All Markers</button>
     </div>
 
     <script src="js/keys.js"></script> <!--this needs to be listed first before other scripts-->
     <script src="js/mapbox-geocoder-utils.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script>
+      $(document).ready(function() {
+        // alert( 'The DOM has finished loading!' );
+      });
+
       mapboxgl.accessToken = MAPBOX_KEY;
       const map = new mapboxgl.Map({
         container: 'map', // container ID
