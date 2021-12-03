@@ -23,8 +23,6 @@
       <input id="address-input" type="text">
       <button id="submit" type="button">Find Location</button>
 
-
-
       <button id="remove-markers" type="button">Remove All Markers</button>
     </div>
 
@@ -34,7 +32,33 @@
     <script>
       $(document).ready(function() {
         // alert( 'The DOM has finished loading!' );
+        // $.ajax("/data/restaurants.json").done(function(data, status, jqXhr) {
+        //   data.forEach(function (element, index) {
+        //     $('#products').append("<tr><td>" + element.title + "</td><td>" + element.quantity + "</td><td>" + element.price + "</td><td>" + element.categories.join(", ") + "</td></tr>");
+        //   });
+        // });
+
       });
+
+      let testVariable = 'Test Variable';
+
+      let restaurants = [
+        {
+          name: "El Burrito",
+          address: "",
+          foodType: "Mexican"
+        },
+        {
+          name: "Little Caesars",
+          address: "",
+          foodType: "Pizza"
+        },
+        {
+          name: "Jack N The Box",
+          address: "",
+          foodType: "Fast Food"
+        }
+      ];
 
       mapboxgl.accessToken = MAPBOX_KEY;
       const map = new mapboxgl.Map({
@@ -44,36 +68,54 @@
         zoom: 12 // starting zoom
       });
 
-      let elBurrito = new mapboxgl.Marker({
-        color: "red"
-      }).setLngLat([-95.0990043, 30.3368053]).setDraggable(true);
+      function placeMarkerAndPopup(info, MAPBOX_KEY, map) {
+        geocode(info.address, token).then(function(coordinates) {
+          var popup = new mapboxgl.Popup()
+                  .setHTML(info.popupHTML);
+          var marker = new mapboxgl.Marker()
+                  .setLngLat(coordinates)
+                  .addTo(map)
+                  .setPopup(popup);
+          popup.addTo(map);
+        });
+      }
 
-      elBurrito.addTo(map);
+      //iterate through each object and add marker with info
+      restaurants.forEach(function (element) {
+        console.log(element.name);
+      });
 
-      let elBurritoPopup = new mapboxgl.Popup()
-              .setHTML('<h3>El Burrito</h3>')
-      elBurrito.setPopup(elBurritoPopup);
-
-      let littleCaesars = new mapboxgl.Marker({
-        color: "blue"
-      }).setLngLat([-95.0690217, 30.339046]).setDraggable(true);
-
-      littleCaesars.addTo(map);
-
-      let littleCaesarsPopup = new mapboxgl.Popup()
-              .setHTML('<h3>Little Caesars</h3>')
-      littleCaesars.setPopup(littleCaesarsPopup);
-
-      let jackNTheBox = new mapboxgl.Marker({
-        color: "green"
-      }).setLngLat([-95.0942338, 30.3387689]).setDraggable(true);
-
-      jackNTheBox.addTo(map);
-
-      let jackNTheBoxPopup = new mapboxgl.Popup()
-              .setHTML('<h3>Jack N The Box</h3>')
-      // .addTo(map);
-      jackNTheBox.setPopup(jackNTheBoxPopup);
+      //
+      // let elBurrito = new mapboxgl.Marker({
+      //   color: "red"
+      // }).setLngLat([-95.0990043, 30.3368053]).setDraggable(true);
+      //
+      // elBurrito.addTo(map);
+      //
+      // let elBurritoPopup = new mapboxgl.Popup()
+      //         .setHTML('<h3>El Burrito</h3>' + testVariable + "<p>Info in a paragraph.</p>")
+      // elBurrito.setPopup(elBurritoPopup);
+      //
+      // let littleCaesars = new mapboxgl.Marker({
+      //   color: "blue"
+      // }).setLngLat([-95.0690217, 30.339046]).setDraggable(true);
+      //
+      // littleCaesars.addTo(map);
+      //
+      // let littleCaesarsPopup = new mapboxgl.Popup()
+      //         .setHTML('<h3>Little Caesars</h3>')
+      // littleCaesars.setPopup(littleCaesarsPopup);
+      //
+      // let jackNTheBox = new mapboxgl.Marker({
+      //   color: "green"
+      // }).setLngLat([-95.0942338, 30.3387689]).setDraggable(true);
+      //
+      // jackNTheBox.addTo(map);
+      //
+      // let jackNTheBoxPopup = new mapboxgl.Popup()
+      //         .setHTML('<h3>Jack N The Box</h3>')
+      // // .addTo(map);
+      // jackNTheBox.setPopup(jackNTheBoxPopup);
 
       //Can't get these to work, come back to it
       // $('#zoom-in').click(function () {
