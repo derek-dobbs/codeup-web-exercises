@@ -1,10 +1,166 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Weather Map Project</title>
+        <!-- Mapbox CSS -->
+        <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <style>
+            header {
+                background-color: rgb(0, 116, 250);
+                color: white;
+                padding: .5em;
+            }
 
-</body>
+            .card {
+                margin: 1em;
+            }
+
+            .card-heading {
+                background-color: rgb(247, 246, 246);
+                color: black;
+                text-align: center;
+                padding: .5em;
+                width: 100%;
+            }
+
+            button {
+                background-color: rgb(0, 116, 250);
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="d-flex flex-row justify-content-center align-items-center">
+            <h4 class="flex-grow-1">Weather App</h4>
+            <div class="d-flex justify-content-center">
+                <p class="flex-grow-2" style="margin-bottom: 0 !important;">Current city: San Antonio</p>
+            </div>
+        </header>
+        <br>
+        <div class="d-flex flex-row" style="margin: 3em">
+            <label for="location-search" style="padding-right: 1em">Place </label>
+            <input id="location-search" type="text" placeholder="Enter location">
+            <button type="button" style="margin-left: 1em">Find</button>
+        </div>
+        <div class="container d-flex flex-row">
+            <div class="card">
+                <div class="d-flex flex-column align-items-center">
+                    <p class="card-heading">Date</p>
+                    <p>0F / 100F</p>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+                    <div class="card-body">
+                        <p>Description: <span style="font-weight: bold">overcast clouds</span></p>
+                        <p>Humidity: <span style="font-weight: bold">71</span></p>
+                        <hr>
+                        <p>Wind: <span style="font-weight: bold">5.84</span></p>
+                        <hr>
+                        <p>Pressure: <span style="font-weight: bold">1015</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="d-flex flex-column align-items-center">
+                    <p class="card-heading">Date</p>
+                    <p>0F / 100F</p>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+                    <div class="card-body">
+                        <p>Description: <span style="font-weight: bold">overcast clouds</span></p>
+                        <p>Humidity: <span style="font-weight: bold">71</span></p>
+                        <hr>
+                        <p>Wind: <span style="font-weight: bold">5.84</span></p>
+                        <hr>
+                        <p>Pressure: <span style="font-weight: bold">1015</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="d-flex flex-column align-items-center">
+                    <p class="card-heading">Date</p>
+                    <p>0F / 100F</p>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+                    <div class="card-body">
+                        <p>Description: <span style="font-weight: bold">overcast clouds</span></p>
+                        <p>Humidity: <span style="font-weight: bold">71</span></p>
+                        <hr>
+                        <p>Wind: <span style="font-weight: bold">5.84</span></p>
+                        <hr>
+                        <p>Pressure: <span style="font-weight: bold">1015</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="d-flex flex-column align-items-center">
+                    <p class="card-heading">Date</p>
+                    <p>0F / 100F</p>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+                    <div class="card-body">
+                        <p>Description: <span style="font-weight: bold">overcast clouds</span></p>
+                        <p>Humidity: <span style="font-weight: bold">71</span></p>
+                        <hr>
+                        <p>Wind: <span style="font-weight: bold">5.84</span></p>
+                        <hr>
+                        <p>Pressure: <span style="font-weight: bold">1015</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="d-flex flex-column align-items-center">
+                    <p class="card-heading">Date</p>
+                    <p>0F / 100F</p>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+                    <div class="card-body">
+                        <p>Description: <span style="font-weight: bold">overcast clouds</span></p>
+                        <p>Humidity: <span style="font-weight: bold">71</span></p>
+                        <hr>
+                        <p>Wind: <span style="font-weight: bold">5.84</span></p>
+                        <hr>
+                        <p>Pressure: <span style="font-weight: bold">1015</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div id='map' style='width: 1075px; height: 600px; margin: auto'></div>
+
+        <script src="js/keys.js"></script> <!--this needs to be listed first before other scripts-->
+        <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <script src="js/mapbox-geocoder-utils.js"></script>
+        <script>
+            mapboxgl.accessToken = MAPBOX_KEY;
+            const map = new mapboxgl.Map({
+                container: 'map', // container ID
+                style: 'mapbox://styles/mapbox/streets-v11', // style URL
+                center: [-98.46829363291353, 29.53137474496273], // starting position [lng, lat]
+                zoom: 4 // starting zoom
+            });
+
+            $.get('https://api.openweathermap.org/data/2.5/onecall', {
+                lat: 29.7604,
+                lon: -95.3698,
+                exclude: "minutely,hourly",
+                units: "imperial",
+                APPID: OPEN_WEATHER_KEY
+            }).done(function (data) {
+                console.log(data);
+                $("#weather-icon").attr("src", "http://openweathermap.org/img/w/" + data.daily[0].weather[0].icon + ".png");
+                console.log(new Date(data.daily[0].dt * 1000));
+                console.log(new Date(data.daily[1].dt * 1000));
+                console.log(new Date(data.daily[2].dt * 1000));
+                console.log(new Date(data.daily[3].dt * 1000));
+                console.log(new Date(data.daily[4].dt * 1000));
+            });
+        </script>
+    </body>
 </html>
