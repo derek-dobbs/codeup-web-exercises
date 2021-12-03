@@ -23,6 +23,11 @@
         }).done(function (data) {
             console.log(data);
             $("#weather-icon").attr("src", "http://openweathermap.org/img/w/" + data.daily[0].weather[0].icon + ".png");
+            console.log(new Date(data.daily[0].dt * 1000));
+            console.log(new Date(data.daily[1].dt * 1000));
+            console.log(new Date(data.daily[2].dt * 1000));
+            console.log(new Date(data.daily[3].dt * 1000));
+            console.log(new Date(data.daily[4].dt * 1000));
         });
     </script>
     </body>
