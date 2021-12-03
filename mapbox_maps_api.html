@@ -30,32 +30,22 @@
     <script src="js/mapbox-geocoder-utils.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script>
-      $(document).ready(function() {
-        // alert( 'The DOM has finished loading!' );
-        // $.ajax("/data/restaurants.json").done(function(data, status, jqXhr) {
-        //   data.forEach(function (element, index) {
-        //     $('#products').append("<tr><td>" + element.title + "</td><td>" + element.quantity + "</td><td>" + element.price + "</td><td>" + element.categories.join(", ") + "</td></tr>");
-        //   });
-        // });
-
-      });
-
       let testVariable = 'Test Variable';
 
       let restaurants = [
         {
           name: "El Burrito",
-          address: "",
+          address: "422 W Southline St, Cleveland, TX 77327",
           foodType: "Mexican"
         },
         {
           name: "Little Caesars",
-          address: "",
+          address: "1825 E Houston St, Cleveland, TX 77327",
           foodType: "Pizza"
         },
         {
           name: "Jack N The Box",
-          address: "",
+          address: "419 S Washington Ave, Cleveland, TX 77327",
           foodType: "Fast Food"
         }
       ];
@@ -68,73 +58,75 @@
         zoom: 12 // starting zoom
       });
 
-      function placeMarkerAndPopup(info, MAPBOX_KEY, map) {
-        geocode(info.address, token).then(function(coordinates) {
-          var popup = new mapboxgl.Popup()
-                  .setHTML(info.popupHTML);
-          var marker = new mapboxgl.Marker()
-                  .setLngLat(coordinates)
-                  .addTo(map)
-                  .setPopup(popup);
-          popup.addTo(map);
+      $(document).ready(function() {
+        function placeMarkerAndPopup(info, MAPBOX_KEY, map) {
+          geocode(info.address, MAPBOX_KEY).then(function(coordinates) {
+            var popup = new mapboxgl.Popup()
+                    .setHTML(info.name);
+            var marker = new mapboxgl.Marker()
+                    .setLngLat(coordinates)
+                    .addTo(map)
+                    .setPopup(popup);
+            popup.addTo(map);
+          });
+        }
+
+        //iterate through each object and add marker with info
+        restaurants.forEach(function (element) {
+          placeMarkerAndPopup(element, MAPBOX_KEY, map);
         });
-      }
 
-      //iterate through each object and add marker with info
-      restaurants.forEach(function (element) {
-        console.log(element.name);
+        //
+        // let elBurrito = new mapboxgl.Marker({
+        //   color: "red"
+        // }).setLngLat([-95.0990043, 30.3368053]).setDraggable(true);
+        //
+        // elBurrito.addTo(map);
+        //
+        // let elBurritoPopup = new mapboxgl.Popup()
+        //         .setHTML('<h3>El Burrito</h3>' + testVariable + "<p>Info in a paragraph.</p>")
+        // elBurrito.setPopup(elBurritoPopup);
+        //
+        // let littleCaesars = new mapboxgl.Marker({
+        //   color: "blue"
+        // }).setLngLat([-95.0690217, 30.339046]).setDraggable(true);
+        //
+        // littleCaesars.addTo(map);
+        //
+        // let littleCaesarsPopup = new mapboxgl.Popup()
+        //         .setHTML('<h3>Little Caesars</h3>')
+        // littleCaesars.setPopup(littleCaesarsPopup);
+        //
+        // let jackNTheBox = new mapboxgl.Marker({
+        //   color: "green"
+        // }).setLngLat([-95.0942338, 30.3387689]).setDraggable(true);
+        //
+        // jackNTheBox.addTo(map);
+        //
+        // let jackNTheBoxPopup = new mapboxgl.Popup()
+        //         .setHTML('<h3>Jack N The Box</h3>')
+        // // .addTo(map);
+        // jackNTheBox.setPopup(jackNTheBoxPopup);
+
+        //Can't get these to work, come back to it
+        // $('#zoom-in').click(function () {
+        //   map.zoomTo(map.getZoom() + 1);
+        // });
+        //
+        // $('#zoom-out').click(function () {
+        //   map.zoomTo(map.getZoom() - 1);
+        // });
+        //
+        // $('#submit').click(function () {
+        //   map.zoomTo($('#input').val());
+        // });
+        //
+        // $('#remove-markers').click(function () {
+        //   elBurrito.remove();
+        //   littleCaesars.remove();
+        //   jackNTheBox.remove();
+        // });
       });
-
-      //
-      // let elBurrito = new mapboxgl.Marker({
-      //   color: "red"
-      // }).setLngLat([-95.0990043, 30.3368053]).setDraggable(true);
-      //
-      // elBurrito.addTo(map);
-      //
-      // let elBurritoPopup = new mapboxgl.Popup()
-      //         .setHTML('<h3>El Burrito</h3>' + testVariable + "<p>Info in a paragraph.</p>")
-      // elBurrito.setPopup(elBurritoPopup);
-      //
-      // let littleCaesars = new mapboxgl.Marker({
-      //   color: "blue"
-      // }).setLngLat([-95.0690217, 30.339046]).setDraggable(true);
-      //
-      // littleCaesars.addTo(map);
-      //
-      // let littleCaesarsPopup = new mapboxgl.Popup()
-      //         .setHTML('<h3>Little Caesars</h3>')
-      // littleCaesars.setPopup(littleCaesarsPopup);
-      //
-      // let jackNTheBox = new mapboxgl.Marker({
-      //   color: "green"
-      // }).setLngLat([-95.0942338, 30.3387689]).setDraggable(true);
-      //
-      // jackNTheBox.addTo(map);
-      //
-      // let jackNTheBoxPopup = new mapboxgl.Popup()
-      //         .setHTML('<h3>Jack N The Box</h3>')
-      // // .addTo(map);
-      // jackNTheBox.setPopup(jackNTheBoxPopup);
-
-      //Can't get these to work, come back to it
-      // $('#zoom-in').click(function () {
-      //   map.zoomTo(map.getZoom() + 1);
-      // });
-      //
-      // $('#zoom-out').click(function () {
-      //   map.zoomTo(map.getZoom() - 1);
-      // });
-      //
-      // $('#submit').click(function () {
-      //   map.zoomTo($('#input').val());
-      // });
-      //
-      // $('#remove-markers').click(function () {
-      //   elBurrito.remove();
-      //   littleCaesars.remove();
-      //   jackNTheBox.remove();
-      // });
     </script>
   </body>
 </html>
