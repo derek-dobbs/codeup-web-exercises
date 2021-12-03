@@ -58,18 +58,47 @@
         zoom: 12 // starting zoom
       });
 
+      let marker;
+      let popup;
+
       $(document).ready(function() {
         function placeMarkerAndPopup(info, MAPBOX_KEY, map) {
           geocode(info.address, MAPBOX_KEY).then(function(coordinates) {
-            var popup = new mapboxgl.Popup()
+            popup = new mapboxgl.Popup()
                     .setHTML("<strong>" + info.name + "</strong>" + "<br>" + info.address + "<br>" + "<em>" + info.foodType + "</em>");
-            var marker = new mapboxgl.Marker()
+            marker = new mapboxgl.Marker()
                     .setLngLat(coordinates)
                     .addTo(map)
                     .setPopup(popup);
             popup.addTo(map);
           });
         }
+
+        // function placeMarker(info, MAPBOX_KEY, map) {
+        //   geocode(info.address, MAPBOX_KEY).then(function(coordinates) {
+        //     marker = new mapboxgl.Marker()
+        //             .setLngLat(coordinates)
+        //             .addTo(map)
+        //     marker.addTo(map);
+        //   });
+        // }
+        //
+        // function placePopUp() {
+        //   geocode(info.address, MAPBOX_KEY).then(function(coordinates) {
+        //     popup = new mapboxgl.Popup()
+        //             .setHTML("<strong>" + info.name + "</strong>" + "<br>" + info.address + "<br>" + "<em>" + info.foodType + "</em>");
+        //   marker.setPopup(popup);
+        //   });
+        // }
+        //
+        // //iterate through each object and add marker with info
+        // restaurants.forEach(function (element) {
+        //   placeMarker(element, MAPBOX_KEY, map);
+        // });
+        //
+        // restaurants.forEach(function (element) {
+        //   placePopUp(element, MAPBOX_KEY, map);
+        // });
 
         //iterate through each object and add marker with info
         restaurants.forEach(function (element) {
