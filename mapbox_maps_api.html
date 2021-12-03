@@ -7,7 +7,10 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
   </head>
   <body>
-    <h1 style="text-align: center">Mapbox Exercise</h1>
+    <h1 style="text-align: center">Check Out My Old Favorite Restaurants!</h1>
+<!--    <br>-->
+<!--    <button id="test-button" type="button">Do something</button>-->
+<!--    <br>-->
 
     <div id='map' style='width: 800px; height: 600px; margin: auto'></div>
     <br>
@@ -70,9 +73,16 @@
                     .setLngLat(coordinates)
                     .addTo(map)
                     .setPopup(popup);
-            popup.addTo(map);
+            // popup.addTo(map);
+            $(popup).click(function () {
+              popup.addTo(map);
+            });
           });
         }
+
+        restaurants.forEach(function (element) {
+          placeMarkerAndPopup(element, MAPBOX_KEY, map);
+        });
 
         // function placeMarker(info, MAPBOX_KEY, map) {
         //   geocode(info.address, MAPBOX_KEY).then(function(coordinates) {
@@ -101,8 +111,15 @@
         // });
 
         //iterate through each object and add marker with info
-        restaurants.forEach(function (element) {
-          placeMarkerAndPopup(element, MAPBOX_KEY, map);
+        // restaurants.forEach(function (element) {
+        //   placeMarkerAndPopup(element, MAPBOX_KEY, map);
+        // });
+
+        $('#test-button').click(function () {
+          alert("Test button");
+          // restaurants.forEach(function (element) {
+          //   placeMarkerAndPopup(element, MAPBOX_KEY, map);
+          // });
         });
 
         //
