@@ -51,9 +51,9 @@
         <div class="container d-flex flex-row">
             <div class="card">
                 <div class="d-flex flex-column align-items-center">
-                    <p class="card-heading">Date</p>
-                    <p>0F / 100F</p>
-                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+                    <p id="day0" class="card-heading">Date</p>
+                    <p><span id="day0-low"></span>F / <span id="day0-high"></span>F</p>
+                    <img id="day0-icon" src="" alt="">
                     <div class="card-body">
                         <p>Description: <span style="font-weight: bold">overcast clouds</span></p>
                         <p>Humidity: <span style="font-weight: bold">71</span></p>
@@ -67,9 +67,9 @@
 
             <div class="card">
                 <div class="d-flex flex-column align-items-center">
-                    <p class="card-heading">Date</p>
-                    <p>0F / 100F</p>
-                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+                    <p id="day1" class="card-heading">Date</p>
+                    <p><span id="day1-low"></span>F / <span id="day1-high"></span>F</p>
+                    <img id="day1-icon" src="" alt="">
                     <div class="card-body">
                         <p>Description: <span style="font-weight: bold">overcast clouds</span></p>
                         <p>Humidity: <span style="font-weight: bold">71</span></p>
@@ -83,9 +83,9 @@
 
             <div class="card">
                 <div class="d-flex flex-column align-items-center">
-                    <p class="card-heading">Date</p>
-                    <p>0F / 100F</p>
-                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+                    <p id="day3" class="card-heading">Date</p>
+                    <p><span id="day2-low"></span>F / <span id="day2-high"></span>F</p>
+                    <img id="day2-icon" src="" alt="">
                     <div class="card-body">
                         <p>Description: <span style="font-weight: bold">overcast clouds</span></p>
                         <p>Humidity: <span style="font-weight: bold">71</span></p>
@@ -99,9 +99,9 @@
 
             <div class="card">
                 <div class="d-flex flex-column align-items-center">
-                    <p class="card-heading">Date</p>
-                    <p>0F / 100F</p>
-                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+                    <p id="day4" class="card-heading">Date</p>
+                    <p><span id="day3-low"></span>F / <span id="day3-high"></span>F</p>
+                    <img id="day3-icon" src="" alt="">
                     <div class="card-body">
                         <p>Description: <span style="font-weight: bold">overcast clouds</span></p>
                         <p>Humidity: <span style="font-weight: bold">71</span></p>
@@ -115,9 +115,9 @@
 
             <div class="card">
                 <div class="d-flex flex-column align-items-center">
-                    <p class="card-heading">Date</p>
-                    <p>0F / 100F</p>
-                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+                    <p id="day5" class="card-heading">Date</p>
+                    <p><span id="day4-low"></span>F / <span id="day4-high"></span>F</p>
+                    <img id="day4-icon" src="" alt="">
                     <div class="card-body">
                         <p>Description: <span style="font-weight: bold">overcast clouds</span></p>
                         <p>Humidity: <span style="font-weight: bold">71</span></p>
@@ -154,12 +154,34 @@
                 APPID: OPEN_WEATHER_KEY
             }).done(function (data) {
                 console.log(data);
-                $("#weather-icon").attr("src", "http://openweathermap.org/img/w/" + data.daily[0].weather[0].icon + ".png");
-                console.log(new Date(data.daily[0].dt * 1000));
-                console.log(new Date(data.daily[1].dt * 1000));
-                console.log(new Date(data.daily[2].dt * 1000));
-                console.log(new Date(data.daily[3].dt * 1000));
-                console.log(new Date(data.daily[4].dt * 1000));
+
+                $('#day0').html(new Date(data.daily[0].dt * 1000));
+                $('#day1').html(new Date(data.daily[1].dt * 1000));
+                $('#day3').html(new Date(data.daily[2].dt * 1000));
+                $('#day4').html(new Date(data.daily[3].dt * 1000));
+                $('#day5').html(new Date(data.daily[4].dt * 1000));
+
+                $('#day0-low').html("Low " + parseInt(data.daily[0].temp.min) + "&#176");
+                $('#day0-high').html("High " + parseInt(data.daily[0].temp.max) + "&#176");
+
+                $('#day1-low').html("Low " + parseInt(data.daily[1].temp.min) + "&#176");
+                $('#day1-high').html("High " + parseInt(data.daily[1].temp.max) + "&#176");
+
+                $('#day2-low').html("Low " + parseInt(data.daily[2].temp.min) + "&#176");
+                $('#day2-high').html("High " + parseInt(data.daily[2].temp.max) + "&#176");
+
+                $('#day3-low').html("Low " + parseInt(data.daily[3].temp.min) + "&#176");
+                $('#day3-high').html("High " + parseInt(data.daily[3].temp.max) + "&#176");
+
+                $('#day4-low').html("Low " + parseInt(data.daily[4].temp.min) + "&#176");
+                $('#day5-high').html("High " + parseInt(data.daily[4].temp.max) + "&#176");
+
+
+                $("#day0-icon").attr("src", "http://openweathermap.org/img/w/" + data.daily[0].weather[0].icon + ".png");
+                $("#day1-icon").attr("src", "http://openweathermap.org/img/w/" + data.daily[1].weather[0].icon + ".png");
+                $("#day2-icon").attr("src", "http://openweathermap.org/img/w/" + data.daily[2].weather[0].icon + ".png");
+                $("#day3-icon").attr("src", "http://openweathermap.org/img/w/" + data.daily[3].weather[0].icon + ".png");
+                $("#day4-icon").attr("src", "http://openweathermap.org/img/w/" + data.daily[4].weather[0].icon + ".png");
             });
         </script>
     </body>
