@@ -55,12 +55,12 @@
                     <p><span id="day0-low"></span>F / <span id="day0-high"></span>F</p>
                     <img id="day0-icon" src="" alt="">
                     <div class="card-body">
-                        <p>Description: <span style="font-weight: bold">overcast clouds</span></p>
-                        <p>Humidity: <span style="font-weight: bold">71</span></p>
+                        <p>Description: <span id="day0-description" style="font-weight: bold"></span></p>
+                        <p>Humidity: <span id="day0-humidity" style="font-weight: bold"></span></p>
                         <hr>
-                        <p>Wind: <span style="font-weight: bold">5.84</span></p>
+                        <p>Wind: <span id="day0-wind" style="font-weight: bold">5.84</span></p>
                         <hr>
-                        <p>Pressure: <span style="font-weight: bold">1015</span></p>
+                        <p>Pressure: <span id="day0-pressure" style="font-weight: bold"></span></p>
                     </div>
                 </div>
             </div>
@@ -71,12 +71,28 @@
                     <p><span id="day1-low"></span>F / <span id="day1-high"></span>F</p>
                     <img id="day1-icon" src="" alt="">
                     <div class="card-body">
-                        <p>Description: <span style="font-weight: bold">overcast clouds</span></p>
-                        <p>Humidity: <span style="font-weight: bold">71</span></p>
+                        <p>Description: <span id="day1-description" style="font-weight: bold"></span></p>
+                        <p>Humidity: <span id="day1-humidity" style="font-weight: bold"></span></p>
                         <hr>
-                        <p>Wind: <span style="font-weight: bold">5.84</span></p>
+                        <p>Wind: <span id="day1-wind" style="font-weight: bold">5.84</span></p>
                         <hr>
-                        <p>Pressure: <span style="font-weight: bold">1015</span></p>
+                        <p>Pressure: <span id="day1-pressure" style="font-weight: bold"></span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="d-flex flex-column align-items-center">
+                    <p id="day2" class="card-heading">Date</p>
+                    <p><span id="day2-low"></span>F / <span id="day2-high"></span>F</p>
+                    <img id="day2-icon" src="" alt="">
+                    <div class="card-body">
+                        <p>Description: <span id="day2-description" style="font-weight: bold"></span></p>
+                        <p>Humidity: <span id="day2-humidity" style="font-weight: bold"></span></p>
+                        <hr>
+                        <p>Wind: <span id="day2-wind" style="font-weight: bold">5.84</span></p>
+                        <hr>
+                        <p>Pressure: <span id="day2-pressure" style="font-weight: bold"></span></p>
                     </div>
                 </div>
             </div>
@@ -84,15 +100,15 @@
             <div class="card">
                 <div class="d-flex flex-column align-items-center">
                     <p id="day3" class="card-heading">Date</p>
-                    <p><span id="day2-low"></span>F / <span id="day2-high"></span>F</p>
-                    <img id="day2-icon" src="" alt="">
+                    <p><span id="day3-low"></span>F / <span id="day3-high"></span>F</p>
+                    <img id="day3-icon" src="" alt="">
                     <div class="card-body">
-                        <p>Description: <span style="font-weight: bold">overcast clouds</span></p>
-                        <p>Humidity: <span style="font-weight: bold">71</span></p>
+                        <p>Description: <span id="day3-description" style="font-weight: bold"></span></p>
+                        <p>Humidity: <span id="day3-humidity" style="font-weight: bold"></span></p>
                         <hr>
-                        <p>Wind: <span style="font-weight: bold">5.84</span></p>
+                        <p>Wind: <span id="day3-wind" style="font-weight: bold">5.84</span></p>
                         <hr>
-                        <p>Pressure: <span style="font-weight: bold">1015</span></p>
+                        <p>Pressure: <span id="day3-pressure" style="font-weight: bold"></span></p>
                     </div>
                 </div>
             </div>
@@ -100,31 +116,15 @@
             <div class="card">
                 <div class="d-flex flex-column align-items-center">
                     <p id="day4" class="card-heading">Date</p>
-                    <p><span id="day3-low"></span>F / <span id="day3-high"></span>F</p>
-                    <img id="day3-icon" src="" alt="">
-                    <div class="card-body">
-                        <p>Description: <span style="font-weight: bold">overcast clouds</span></p>
-                        <p>Humidity: <span style="font-weight: bold">71</span></p>
-                        <hr>
-                        <p>Wind: <span style="font-weight: bold">5.84</span></p>
-                        <hr>
-                        <p>Pressure: <span style="font-weight: bold">1015</span></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="d-flex flex-column align-items-center">
-                    <p id="day5" class="card-heading">Date</p>
                     <p><span id="day4-low"></span>F / <span id="day4-high"></span>F</p>
                     <img id="day4-icon" src="" alt="">
                     <div class="card-body">
-                        <p>Description: <span style="font-weight: bold">overcast clouds</span></p>
-                        <p>Humidity: <span style="font-weight: bold">71</span></p>
+                        <p>Description: <span id="day4-description" style="font-weight: bold"></span></p>
+                        <p>Humidity: <span id="day4-humidity" style="font-weight: bold"></span></p>
                         <hr>
-                        <p>Wind: <span style="font-weight: bold">5.84</span></p>
+                        <p>Wind: <span id="day4-wind" style="font-weight: bold">5.84</span></p>
                         <hr>
-                        <p>Pressure: <span style="font-weight: bold">1015</span></p>
+                        <p>Pressure: <span id="day4-pressure" style="font-weight: bold"></span></p>
                     </div>
                 </div>
             </div>
@@ -143,7 +143,7 @@
                 container: 'map', // container ID
                 style: 'mapbox://styles/mapbox/streets-v11', // style URL
                 center: [-98.46829363291353, 29.53137474496273], // starting position [lng, lat]
-                zoom: 4 // starting zoom
+                zoom: 12 // starting zoom
             });
 
             $.get('https://api.openweathermap.org/data/2.5/onecall', {
@@ -157,9 +157,9 @@
 
                 $('#day0').html(new Date(data.daily[0].dt * 1000));
                 $('#day1').html(new Date(data.daily[1].dt * 1000));
-                $('#day3').html(new Date(data.daily[2].dt * 1000));
-                $('#day4').html(new Date(data.daily[3].dt * 1000));
-                $('#day5').html(new Date(data.daily[4].dt * 1000));
+                $('#day2').html(new Date(data.daily[2].dt * 1000));
+                $('#day3').html(new Date(data.daily[3].dt * 1000));
+                $('#day4').html(new Date(data.daily[4].dt * 1000));
 
                 $('#day0-low').html("Low " + parseInt(data.daily[0].temp.min) + "&#176");
                 $('#day0-high').html("High " + parseInt(data.daily[0].temp.max) + "&#176");
@@ -182,6 +182,30 @@
                 $("#day2-icon").attr("src", "http://openweathermap.org/img/w/" + data.daily[2].weather[0].icon + ".png");
                 $("#day3-icon").attr("src", "http://openweathermap.org/img/w/" + data.daily[3].weather[0].icon + ".png");
                 $("#day4-icon").attr("src", "http://openweathermap.org/img/w/" + data.daily[4].weather[0].icon + ".png");
+
+                $('#day0-description').html(data.daily[0].weather[0].description);
+                $('#day1-description').html(data.daily[1].weather[0].description);
+                $('#day2-description').html(data.daily[2].weather[0].description);
+                $('#day3-description').html(data.daily[3].weather[0].description);
+                $('#day4-description').html(data.daily[4].weather[0].description);
+
+                $('#day0-humidity').html(parseInt(data.daily[0].humidity));
+                $('#day1-humidity').html(parseInt(data.daily[1].humidity));
+                $('#day2-humidity').html(parseInt(data.daily[2].humidity));
+                $('#day3-humidity').html(parseInt(data.daily[3].humidity));
+                $('#day4-humidity').html(parseInt(data.daily[4].humidity));
+
+                $('#day0-wind').html(parseFloat(data.daily[0].wind_speed));
+                $('#day1-wind').html(parseFloat(data.daily[1].wind_speed));
+                $('#day2-wind').html(parseFloat(data.daily[2].wind_speed));
+                $('#day3-wind').html(parseFloat(data.daily[3].wind_speed));
+                $('#day4-wind').html(parseFloat(data.daily[4].wind_speed));
+
+                $('#day0-pressure').html(parseInt(data.daily[0].pressure));
+                $('#day1-pressure').html(parseInt(data.daily[1].pressure));
+                $('#day2-pressure').html(parseInt(data.daily[2].pressure));
+                $('#day3-pressure').html(parseInt(data.daily[3].pressure));
+                $('#day4-pressure').html(parseInt(data.daily[4].pressure));
             });
         </script>
     </body>
