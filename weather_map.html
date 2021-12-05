@@ -138,22 +138,43 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
         <script src="js/mapbox-geocoder-utils.js"></script>
         <script>
-            let mapLat;
-            let mapLon;
+            let mapLat = 29.674525;
+            let mapLon = -97.959844;
+
+            $('#find-button').click(function () {
+                geocode($('#location-search').val(), MAPBOX_KEY).then(function(results) {
+                    mapLon = results[0];
+                    mapLat = results[1];
+                    // console.log(mapLon);
+                    // console.log(mapLat);
+                });
+                // $('#map').html("Test");
+                map = new mapboxgl.Map({
+                    container: 'map', // container ID
+                    style: 'mapbox://styles/mapbox/streets-v11', // style URL
+                    center: [mapLon, mapLat], // starting position [lng, lat]
+                    zoom: 12 // starting zoom
+                });
+            });
+
+            reverseGeocode({lat: mapLat, lng: mapLon}, MAPBOX_KEY).then(function(results) {
+                $('#current-city').html(results.features[0].context[1].text);
+
+            });
 
             mapboxgl.accessToken = MAPBOX_KEY;
             let map = new mapboxgl.Map({
                 container: 'map', // container ID
                 style: 'mapbox://styles/mapbox/streets-v11', // style URL
-                center: [-97.959844, 29.674525], // starting position [lng, lat]
+                center: [mapLon, mapLat], // starting position [lng, lat]
                 zoom: 12 // starting zoom
             });
 
 
 
             $.get('https://api.openweathermap.org/data/2.5/onecall', {
-                lat: 29.674525,
-                lon: -97.959844,
+                lat: mapLat,
+                lon: mapLon,
                 exclude: "minutely,hourly",
                 units: "imperial",
                 APPID: OPEN_WEATHER_KEY
@@ -163,31 +184,6 @@
                 let location;
 
 
-
-
-
-
-                $('#find-button').click(function () {
-                    geocode("767 Geronimo Dr, Seguin, Texas, 78155", MAPBOX_KEY).then(function(results) {
-                        mapLon = results[0]
-                        mapLat = results[1]
-                        console.log(mapLon);
-                        console.log(mapLat);
-                    });
-
-                    reverseGeocode({mapLat, mapLon}, MAPBOX_KEY).then(function(results) {
-                        $('#current-city').html(results.features[0].context[1].text);
-
-                    });
-
-
-                    map.flyTo({
-                        center: [mapLon, mapLat],
-                        essential: true // this animation is considered essential with respect to prefers-reduced-motion
-                    });
-                    // $('#map').html(map);
-
-                });
 
                 $('#day0').html(new Date(data.daily[0].dt * 1000));
                 $('#day1').html(new Date(data.daily[1].dt * 1000));
