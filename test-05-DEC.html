@@ -20,6 +20,13 @@
 
             .card {
                 margin: 1em;
+                border: .5em solid white;
+            }
+
+            .card-header {
+                /*background-color: hotpink;*/
+                width: 100%;
+                text-align: center;
             }
         </style>
     </head>
@@ -68,9 +75,11 @@
         </div>
     </nav>
 
-    <div class="container-fluid d-flex flex-row">
+    <div class="container-fluid d-flex flex-row" style="{width: 75%, height: 80%}">
         <div class="card shadow-lg" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <div class="card-header" style="">
+                Date
+            </div>
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
