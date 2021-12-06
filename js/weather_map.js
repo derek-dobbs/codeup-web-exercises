@@ -10,13 +10,14 @@ $(document).ready(function () {
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
         center: [mapLon, mapLat], // starting position [lng, lat]
-        zoom: 12 // starting zoom
+        zoom: 10 // starting zoom
     });
+
+    map.addControl(new mapboxgl.NavigationControl());
 
     reverseGeocode({lat: mapLat, lng: mapLon}, MAPBOX_KEY).then(function(results) {
         location = results.features[2].place_name;
         $('#current-city').html(location);
-        // console.log(location);
     });
 
     let marker = new mapboxgl.Marker({
@@ -25,11 +26,6 @@ $(document).ready(function () {
         .setLngLat([mapLon, mapLat])
         .addTo(map);
 
-    // function onDragEnd() {
-    //     //
-    //     alert("Pin was dragged");
-    // }
-
     $.get('https://api.openweathermap.org/data/2.5/onecall', {
         lat: mapLat,
         lon: mapLon,
@@ -37,9 +33,6 @@ $(document).ready(function () {
         units: "imperial",
         APPID: OPEN_WEATHER_KEY
     }).done(function (data) {
-        // console.log(data);
-        // console.log(data.current);
-
         $('#current-temperature').html(parseInt(data.current.temp) + "&#176");
         $('#current-description').html(data.current.weather[0].description);
         $('#current-feels-like').html("<em>Feels like</em>: " + parseInt(data.current.feels_like) + "&#176");
@@ -104,9 +97,7 @@ $(document).ready(function () {
         });
 
         marker.on('dragend', function () {
-            // alert("Pin was dragged");
             const lngLat = marker.getLngLat();
-            // console.log(lngLat);
 
             mapLat = lngLat.lat;
             mapLon = lngLat.lng;
@@ -115,7 +106,7 @@ $(document).ready(function () {
 
             map.flyTo({
                 center: [mapLon, mapLat],
-                zoom: 12,
+                zoom: 10,
                 essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
 
@@ -132,9 +123,6 @@ $(document).ready(function () {
                     $('#current-city').html(location);
                     // console.log(location);
                 });
-
-                // console.log(data);
-                // console.log(data.current);
 
                 $('#current-temperature').html(parseInt(data.current.temp) + "&#176");
                 $('#current-description').html(data.current.weather[0].description);
@@ -163,7 +151,6 @@ $(document).ready(function () {
 
                 $('#day4-low').html("Low " + parseInt(data.daily[4].temp.min) + "&#176");
                 $('#day4-high').html("High " + parseInt(data.daily[4].temp.max) + "&#176");
-
 
                 $("#day0-icon").attr("src", "http://openweathermap.org/img/w/" + data.daily[0].weather[0].icon + ".png");
                 $("#day1-icon").attr("src", "http://openweathermap.org/img/w/" + data.daily[1].weather[0].icon + ".png");
@@ -206,6 +193,7 @@ $(document).ready(function () {
 
                 map.flyTo({
                     center: [mapLon, mapLat],
+                    zoom: 10,
                     essential: true // this animation is considered essential with respect to prefers-reduced-motion
                 });
 
@@ -219,16 +207,10 @@ $(document).ready(function () {
                     units: "imperial",
                     APPID: OPEN_WEATHER_KEY
                 }).done(function (data) {
-                    // alert("test");
-
                     reverseGeocode({lat: mapLat, lng: mapLon}, MAPBOX_KEY).then(function(results) {
                         location = results.features[2].place_name;
                         $('#current-city').html(location);
-                        // console.log(location);
                     });
-
-                    // console.log(data);
-                    // console.log(data.current);
 
                     $('#current-temperature').html(parseInt(data.current.temp) + "&#176");
                     $('#current-description').html(data.current.weather[0].description);
@@ -257,7 +239,6 @@ $(document).ready(function () {
 
                     $('#day4-low').html("Low " + parseInt(data.daily[4].temp.min) + "&#176");
                     $('#day4-high').html("High " + parseInt(data.daily[4].temp.max) + "&#176");
-
 
                     $("#day0-icon").attr("src", "http://openweathermap.org/img/w/" + data.daily[0].weather[0].icon + ".png");
                     $("#day1-icon").attr("src", "http://openweathermap.org/img/w/" + data.daily[1].weather[0].icon + ".png");
