@@ -51,8 +51,8 @@
     <div class="row">
         <div class="container col-8" style="margin-left: 1em;">
             <!--            <img src="/img/mobile-phone.jpg" class="img-fluid" alt="Responsive image">-->
-            <h1 class="display-4">Fluid jumbotron</h1>
-            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            <h1 class="display-4">Weather Map</h1>
+            <p class="lead">Weather information for <span>ph_City, State</span></p>
         </div>
 
         <div class="container col-4" style="margin-right: 1em;">
@@ -63,7 +63,7 @@
                         <p id="current-temperature">ph_73&#176</p>
                         <p id="current-description">ph_Partly Cloudy</p>
                         <p id="current-feels-like">ph_Feels like 73&#176</p>
-                        <p id="day-night-temp">ph_Day 78&#176 &bullet; Night 68&#176</p>
+                        <p id="wind-speed">ph_Day 78&#176 &bullet; Night 68&#176</p>
                     </div>
 
                     <div class="col-4">
@@ -115,7 +115,7 @@
     </div>
 </nav>
 
-
+        <h2 style="text-align: center">Five Day Forecast</h2>
         <div class="container d-flex flex-row">
             <div class="card shadow">
                 <div class="d-flex flex-column align-items-center">
@@ -251,6 +251,14 @@
 
                 let location;
 
+                $('#current-temperature').html("Current: " + parseInt(data.current.temp) + "&#176");
+                $('#current-description').html(data.current.weather[0].description);
+                $('#current-feels-like').html("<em>Feels like</em>: " + parseInt(data.current.feels_like) + "&#176");
+                $('#wind-speed').html("Wind Speed: " + parseInt(data.current.wind_speed));
+
+
+
+                console.log(data.current.weather[0].icon);
 
 
                 $('#day0').html(new Date(data.daily[0].dt * 1000));
