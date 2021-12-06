@@ -2,17 +2,30 @@ body {
     /*background-color: hotpink;*/
 }
 
-.jumbotron {
-    background-color: rebeccapurple;
+header {
+    background-color: blue;
     /*background-image: url('/img/lightning.jpeg');*/
-    background-repeat: no-repeat;
+    /*background-repeat: no-repeat;*/
     color: white;
     background-size: 100%;
+    padding-bottom: 2em;
+    padding-top: 2em;
 }
 
 .card {
     margin: 1em;
     border: .5em solid white;
+}
+
+#location-prompt {
+    /*color: white;*/
+    /*margin-left: 1em;*/
+    /*background-color: hotpink;*/
+    /*visibility: hidden;*/
+}
+
+.visibility-hidden {
+    visibility: hidden;
 }
 
 .card-header {
@@ -27,4 +40,16 @@ body {
     text-align: center;
     padding: .5em;
     width: 100%;
+}
+
+#change-location-link {
+    color: greenyellow;
+    font-size: .75em;
+}
+
+#search-button {
+    color: white;
+    border-color: white;
+    padding: .5em;
+    /*background-color: lightgray;*/
 }

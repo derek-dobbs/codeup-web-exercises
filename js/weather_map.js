@@ -88,8 +88,13 @@ $(document).ready(function () {
         $('#day3-pressure').html(parseInt(data.daily[3].pressure));
         $('#day4-pressure').html(parseInt(data.daily[4].pressure));
 
+        $('#change-location-link').click(function () {
+            $('#location-prompt').removeClass('visibility-hidden')
+        });
+
         $('#search-button').click(function (event) {
             event.preventDefault();
+            $('#location-prompt').addClass('visibility-hidden');
             geocode($('#location-search').val(), MAPBOX_KEY).then(function(results) {
                 mapLon = results[0];
                 mapLat = results[1];
