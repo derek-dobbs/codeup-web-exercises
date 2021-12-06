@@ -14,9 +14,9 @@
     </head>
     <body>
         <header>
-            <div class="d-flex flex-row align-items-center justify-content-center">
-                <div class="d-flex flex-column">
-                    <div class="container" style="margin-left: 1em;">
+            <div class="d-flex flex-row align-items-center justify-content-between">
+                <div class="d-flex flex-column ">
+                    <div id="weather-map-header-box">
                         <!--            <img src="/img/mobile-phone.jpg" class="img-fluid" alt="Responsive image">-->
                         <h1 class="display-4">Weather Map</h1>
                         <p class="lead" style="font-size: 1.5em;">Weather information for
@@ -33,14 +33,29 @@
                         </div>
                     </div>
                 </div>
+                <!--Start new current conditions-->
+                <div id="current-conditions-box" class="d-flex flex-row align-items-center justify-content-between">
 
-                <div class="d-flex flex-row">
-                    <!--Begin current conditions section-->
-                    <div style="margin: 1em">
                         <p id="current-temperature">ph_73&#176</p>
-                        <p id="current-description">ph_Partly Cloudy</p>
-                        <p id="current-feels-like">ph_Feels like 73&#176</p>
-                        <p id="wind-speed">ph_Day 78&#176 &bullet; Night 68&#176</p>
+
+                        <div class="d-flex flex-column">
+                            <p id="current-description">ph_Partly Cloudy</p>
+                            <p id="current-feels-like" style="margin-left: 1em;">ph_Feels like 73&#176</p>
+                            <p id="wind-speed" style="margin-left: 2em;">ph_Day 78&#176 &bullet; Night 68&#176</p>
+                        </div>
+
+
+
+                </div>
+                <!--End new current conditions-->
+
+                <div class="d-flex flex-row align-items-center">
+                    <!--Begin current conditions section-->
+                    <div>
+<!--                        <p id="current-temperature">ph_73&#176</p>-->
+<!--                        <p id="current-description">ph_Partly Cloudy</p>-->
+<!--                        <p id="current-feels-like">ph_Feels like 73&#176</p>-->
+<!--                        <p id="wind-speed">ph_Day 78&#176 &bullet; Night 68&#176</p>-->
                     </div>
                     <img id="current-icon" src="" alt="weather icon">
                     <!--End current conditions section-->

@@ -29,7 +29,7 @@ $(document).ready(function () {
         console.log(data);
         console.log(data.current);
 
-        $('#current-temperature').html("Current: " + parseInt(data.current.temp) + "&#176");
+        $('#current-temperature').html(parseInt(data.current.temp) + "&#176");
         $('#current-description').html(data.current.weather[0].description);
         $('#current-feels-like').html("<em>Feels like</em>: " + parseInt(data.current.feels_like) + "&#176");
         $('#wind-speed').html("Wind Speed: " + parseInt(data.current.wind_speed));
@@ -122,7 +122,7 @@ $(document).ready(function () {
                     console.log(data);
                     console.log(data.current);
 
-                    $('#current-temperature').html("Current: " + parseInt(data.current.temp) + "&#176");
+                    $('#current-temperature').html(parseInt(data.current.temp) + "&#176");
                     $('#current-description').html(data.current.weather[0].description);
                     $('#current-feels-like').html("<em>Feels like</em>: " + parseInt(data.current.feels_like) + "&#176");
                     $('#wind-speed').html("Wind Speed: " + parseInt(data.current.wind_speed));
