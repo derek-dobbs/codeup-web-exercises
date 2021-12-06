@@ -10,46 +10,114 @@
         <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/weather_map.css">
         <style>
-            header {
-                background-color: rgb(0, 116, 250);
-                color: white;
-                padding: .5em;
-            }
+            /*header {*/
+            /*    background-color: rgb(0, 116, 250);*/
+            /*    color: white;*/
+            /*    padding: .5em;*/
+            /*}*/
 
-            .card {
-                margin: 1em;
-            }
+            /*.card-heading {*/
+            /*    background-color: rgb(247, 246, 246);*/
+            /*    color: black;*/
+            /*    text-align: center;*/
+            /*    padding: .5em;*/
+            /*    width: 100%;*/
+            /*}*/
 
-            .card-heading {
-                background-color: rgb(247, 246, 246);
-                color: black;
-                text-align: center;
-                padding: .5em;
-                width: 100%;
-            }
-
-            button {
-                background-color: rgb(0, 116, 250);
-                color: white;
-            }
+            /*button {*/
+            /*    background-color: rgb(0, 116, 250);*/
+            /*    color: white;*/
+            /*}*/
         </style>
     </head>
     <body>
-        <header class="d-flex flex-row justify-content-center align-items-center">
-            <h4 class="flex-grow-1">Weather App</h4>
-            <div class="d-flex justify-content-center">
-                <p class="flex-grow-2" style="margin-bottom: 0 !important;">Current city: <span id="current-city">Place Holder</span></p>
-            </div>
-        </header>
-        <br>
-        <div class="d-flex flex-row" style="margin: 3em">
-            <label for="location-search" style="padding-right: 1em">Place </label>
-            <input id="location-search" type="text" placeholder="Enter location">
-            <button id="find-button" type="button" style="margin-left: 1em">Find</button>
+<!--        <header class="d-flex flex-row justify-content-center align-items-center">-->
+<!--            <h4 class="flex-grow-1">Weather App</h4>-->
+<!--            <div class="d-flex justify-content-center">-->
+<!--                <p class="flex-grow-2" style="margin-bottom: 0 !important;">Current city: <span id="current-city">Place Holder</span></p>-->
+<!--            </div>-->
+<!--        </header>-->
+<!--        <br>-->
+<!--        <div class="d-flex flex-row" style="margin: 3em">-->
+<!--            <label for="location-search" style="padding-right: 1em">Place </label>-->
+<!--            <input id="location-search" type="text" placeholder="Enter location">-->
+<!--            <button id="find-button" type="button" style="margin-left: 1em">Find</button>-->
+<!--        </div>-->
+
+<div class="jumbotron jumbotron-fluid" style="margin: 0">
+
+    <div class="row">
+        <div class="container col-8" style="margin-left: 1em;">
+            <!--            <img src="/img/mobile-phone.jpg" class="img-fluid" alt="Responsive image">-->
+            <h1 class="display-4">Fluid jumbotron</h1>
+            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
         </div>
+
+        <div class="container col-4" style="margin-right: 1em;">
+            <!--Begin current conditions section-->
+            <section class="container shadow-lg" style="border: 1px solid black">
+                <div class="row">
+                    <div class="col-8">
+                        <p id="current-temperature">ph_73&#176</p>
+                        <p id="current-description">ph_Partly Cloudy</p>
+                        <p id="current-feels-like">ph_Feels like 73&#176</p>
+                        <p id="day-night-temp">ph_Day 78&#176 &bullet; Night 68&#176</p>
+                    </div>
+
+                    <div class="col-4">
+                        <img src="" alt="weather icon">
+                    </div>
+                </div>
+
+            </section>
+            <!--End current conditions section-->
+        </div>
+    </div>
+
+
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="margin-bottom: 1em">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+
         <div class="container d-flex flex-row">
-            <div class="card">
+            <div class="card shadow">
                 <div class="d-flex flex-column align-items-center">
                     <p id="day0" class="card-heading">Date</p>
                     <p><span id="day0-low"></span>F / <span id="day0-high"></span>F</p>
@@ -65,7 +133,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card shadow">
                 <div class="d-flex flex-column align-items-center">
                     <p id="day1" class="card-heading">Date</p>
                     <p><span id="day1-low"></span>F / <span id="day1-high"></span>F</p>
@@ -81,7 +149,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card shadow">
                 <div class="d-flex flex-column align-items-center">
                     <p id="day2" class="card-heading">Date</p>
                     <p><span id="day2-low"></span>F / <span id="day2-high"></span>F</p>
@@ -97,7 +165,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card shadow">
                 <div class="d-flex flex-column align-items-center">
                     <p id="day3" class="card-heading">Date</p>
                     <p><span id="day3-low"></span>F / <span id="day3-high"></span>F</p>
@@ -113,7 +181,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card shadow">
                 <div class="d-flex flex-column align-items-center">
                     <p id="day4" class="card-heading">Date</p>
                     <p><span id="day4-low"></span>F / <span id="day4-high"></span>F</p>

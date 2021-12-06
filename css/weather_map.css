@@ -1,0 +1,30 @@
+body {
+    /*background-color: hotpink;*/
+}
+
+.jumbotron {
+    background-color: rebeccapurple;
+    /*background-image: url('/img/lightning.jpeg');*/
+    background-repeat: no-repeat;
+    color: white;
+    background-size: 100%;
+}
+
+.card {
+    margin: 1em;
+    border: .5em solid white;
+}
+
+.card-header {
+    /*background-color: hotpink;*/
+    width: 100%;
+    text-align: center;
+}
+
+/*.card-heading {*/
+/*    background-color: rgb(247, 246, 246);*/
+/*    color: black;*/
+/*    text-align: center;*/
+/*    padding: .5em;*/
+/*    width: 100%;*/
+/*}*/
