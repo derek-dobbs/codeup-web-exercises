@@ -30,10 +30,6 @@ $(document).ready(function () {
     //     alert("Pin was dragged");
     // }
 
-    marker.on('dragend', function () {
-        alert("Pin was dragged");
-    });
-
     $.get('https://api.openweathermap.org/data/2.5/onecall', {
         lat: mapLat,
         lon: mapLon,
@@ -107,10 +103,19 @@ $(document).ready(function () {
             $('#location-prompt').removeClass('visibility-hidden')
         });
 
+        marker.on('dragend', function () {
+            // alert("Pin was dragged");
+            const lngLat = marker.getLngLat();
+            // console.log(lngLat);
+
+            mapLat = lngLat.lat;
+            mapLon = lngLat.lng;
+            // console.log(mapLat);
+            // console.log(mapLon);
+        });
+
         $('#search-button').click(function (event) {
             event.preventDefault();
-
-
             $('#location-prompt').addClass('visibility-hidden');
             geocode($('#location-search').val(), MAPBOX_KEY).then(function(results) {
                 mapLon = results[0];
