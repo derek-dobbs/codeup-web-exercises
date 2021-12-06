@@ -4,32 +4,6 @@ $(document).ready(function () {
     let mapLat = 29.674525;
     let mapLon = -97.959844;
 
-    $('#search-button').click(function (event) {
-        event.preventDefault();
-        geocode($('#location-search').val(), MAPBOX_KEY).then(function(results) {
-            mapLon = results[0];
-            mapLat = results[1];
-            map.setCenter([mapLon, mapLat]);
-            // map.flyTo
-            // console.log(mapLon);
-            // console.log(mapLat);
-        });
-        // $('#map').html("Test");
-        // map = new mapboxgl.Map({
-        //     container: 'map', // container ID
-        //     style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        //     center: [mapLon, mapLat], // starting position [lng, lat]
-        //     zoom: 12 // starting zoom
-        // });
-    });
-    //move map instantiation to top
-    //
-
-    reverseGeocode({lat: mapLat, lng: mapLon}, MAPBOX_KEY).then(function(results) {
-        $('#current-city').html(results.features[2].place_name);
-        console.log(results.features[2].place_name);
-    });
-
     mapboxgl.accessToken = MAPBOX_KEY;
     let map = new mapboxgl.Map({
         container: 'map', // container ID
@@ -37,6 +11,44 @@ $(document).ready(function () {
         center: [mapLon, mapLat], // starting position [lng, lat]
         zoom: 12 // starting zoom
     });
+
+    $('#search-button').click(function (event) {
+        event.preventDefault();
+        geocode($('#location-search').val(), MAPBOX_KEY).then(function(results) {
+            mapLon = results[0];
+            mapLat = results[1];
+
+            map.flyTo({
+                center: [mapLon, mapLat],
+                essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            });
+        });
+
+        function placeMarkerAndPopup(info, MAPBOX_KEY, map) {
+            geocode(info.address, MAPBOX_KEY).then(function(coordinates) {
+                popup = new mapboxgl.Popup()
+                    .setHTML("<strong>" + info.name + "</strong>" + "<br>" + info.address + "<br>" + "<em>" + info.foodType + "</em>");
+                marker = new mapboxgl.Marker()
+                    .setLngLat(coordinates)
+                    .addTo(map)
+                    .setPopup(popup);
+                // popup.addTo(map);
+                $(popup).click(function () {
+                    popup.addTo(map);
+                });
+            });
+        }
+
+        // reverseGeocode({lat: mapLat, lng: mapLon}, MAPBOX_KEY).then(function(results) {
+        //     $('#current-city').html(results.features[2].place_name);
+        //     console.log(results.features[2].place_name);
+        // });
+
+    });
+
+   let currentLocation = reverseGeocode({lat: mapLat, lng: mapLon}, MAPBOX_KEY);
+
+    $('#current-city').html(currentLocation);
 
     $.get('https://api.openweathermap.org/data/2.5/onecall', {
         lat: mapLat,
