@@ -16,7 +16,22 @@ $(document).ready(function () {
     reverseGeocode({lat: mapLat, lng: mapLon}, MAPBOX_KEY).then(function(results) {
         location = results.features[2].place_name;
         $('#current-city').html(location);
-        console.log(location);
+        // console.log(location);
+    });
+
+    let marker = new mapboxgl.Marker({
+        draggable: true
+    })
+        .setLngLat([mapLon, mapLat])
+        .addTo(map);
+
+    // function onDragEnd() {
+    //     //
+    //     alert("Pin was dragged");
+    // }
+
+    marker.on('dragend', function () {
+        alert("Pin was dragged");
     });
 
     $.get('https://api.openweathermap.org/data/2.5/onecall', {
@@ -26,8 +41,8 @@ $(document).ready(function () {
         units: "imperial",
         APPID: OPEN_WEATHER_KEY
     }).done(function (data) {
-        console.log(data);
-        console.log(data.current);
+        // console.log(data);
+        // console.log(data.current);
 
         $('#current-temperature').html(parseInt(data.current.temp) + "&#176");
         $('#current-description').html(data.current.weather[0].description);
@@ -94,6 +109,8 @@ $(document).ready(function () {
 
         $('#search-button').click(function (event) {
             event.preventDefault();
+
+
             $('#location-prompt').addClass('visibility-hidden');
             geocode($('#location-search').val(), MAPBOX_KEY).then(function(results) {
                 mapLon = results[0];
@@ -103,6 +120,9 @@ $(document).ready(function () {
                     center: [mapLon, mapLat],
                     essential: true // this animation is considered essential with respect to prefers-reduced-motion
                 });
+
+                marker.remove();
+                marker.setLngLat([mapLon, mapLat]).addTo(map);
 
                 $.get('https://api.openweathermap.org/data/2.5/onecall', {
                     lat: mapLat,
@@ -119,8 +139,8 @@ $(document).ready(function () {
                         console.log(location);
                     });
 
-                    console.log(data);
-                    console.log(data.current);
+                    // console.log(data);
+                    // console.log(data.current);
 
                     $('#current-temperature').html(parseInt(data.current.temp) + "&#176");
                     $('#current-description').html(data.current.weather[0].description);
