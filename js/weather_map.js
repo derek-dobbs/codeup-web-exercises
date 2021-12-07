@@ -130,12 +130,16 @@ $(document).ready(function () {
         });
 
         marker.on('dragend', function () {
+
+
             const lngLat = marker.getLngLat();
 
             mapLat = lngLat.lat;
             mapLon = lngLat.lng;
             console.log(mapLat);
             console.log(mapLon);
+
+
 
             map.flyTo({
                 center: [mapLon, mapLat],
@@ -156,6 +160,13 @@ $(document).ready(function () {
                     $('#current-city').html(location);
                     // console.log(location);
                 });
+
+                $('#current-temperature').html(parseInt(data.current.temp) + "&#176");
+                $('#current-description').html(data.current.weather[0].description);
+                $('#current-feels-like').html("<em>Feels like</em>: " + parseInt(data.current.feels_like) + "&#176");
+                $('#wind-speed').html("Wind Speed: " + parseInt(data.current.wind_speed));
+
+                $('#current-icon').attr("src", "http://openweathermap.org/img/w/" + data.current.weather[0].icon + ".png");
 
                 for (let i = 0; i < 6; i++) {
                     $('#day' + i).html(new Date(data.daily[i].dt * 1000));
