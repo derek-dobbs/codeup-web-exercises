@@ -130,16 +130,12 @@ $(document).ready(function () {
         });
 
         marker.on('dragend', function () {
-
-
-            const lngLat = marker.getLngLat();
+            let lngLat = marker.getLngLat();
 
             mapLat = lngLat.lat;
             mapLon = lngLat.lng;
             console.log(mapLat);
             console.log(mapLon);
-
-
 
             map.flyTo({
                 center: [mapLon, mapLat],
