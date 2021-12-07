@@ -126,7 +126,7 @@ $(document).ready(function () {
         }
 
         $('#change-location-link').click(function () {
-            $('#location-prompt').removeClass('visibility-hidden')
+            $('#location-prompt').toggleClass('visibility-hidden')
         });
 
         marker.on('dragend', function () {
