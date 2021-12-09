@@ -29,13 +29,13 @@ const users = [
   }
 ];
 
-// TODO: fill in your name and email and add some programming languages you know
+// TODONE: fill in your name and email and add some programming languages you know
 // to the languages array
 // TODO: replace the `var` keyword with `const`, then try to reassign a variable
 // declared as `const`
-var name = 'your_name_here';
-var email = '';
-var languages = [];
+var name = 'Derek';
+var email = 'myEmail@mail.com';
+var languages = ['HTML', 'CSS', 'Javascript'];
 
 // TODO: rewrite the object literal using object property shorthand
 users.push({
