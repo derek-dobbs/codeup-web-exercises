@@ -55,8 +55,8 @@ users.forEach(user => names.push(user.name));
 // console.log(emails);
 // console.log(names);
 
-// TODO: replace `var` with `let` in the following declaration
-var developers = [];
+// TODONE: replace `var` with `let` in the following declaration
+let developers = [];
 users.forEach(function(user) {
   // TODO: rewrite the code below to use object destructuring assignment
   //       note that you can also use destructuring assignment in the function
