@@ -37,13 +37,13 @@ const name = 'Derek';
 const email = 'myEmail@mail.com';
 const languages = ['HTML', 'CSS', 'Javascript'];
 
-// TODO: rewrite the object literal using object property shorthand
+// TODONE: rewrite the object literal using object property shorthand
 users.push({
-  name: name,
-  email: email,
-  languages: languages
+  name,
+  email,
+  languages
 });
-
+console.log(users);
 // TODO: replace `var` with `let` in the following variable declarations
 var emails = [];
 var names = [];
