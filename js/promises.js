@@ -16,12 +16,24 @@ function getLastCommit (username) {
         .catch(error => console.error(error));
 }
 
-getLastCommit('derek-dobbs');
+// getLastCommit('derek-dobbs');
 
 /////Create Your Own Promise/////
 //TODO: Write a function named wait that accepts a number as a parameter, and returns a promise that resolves after the passed number of milliseconds.
-// wait(1000).then(() => console.log('You\'ll see this after 1 second'));
-// wait(3000).then(() => console.log('You\'ll see this after 3 seconds'));
+function wait(seconds) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let x = 1;
+            if (seconds <= 1000) {
+                resolve('Loaded in less than a second or less');
+            } else {
+                reject('Took more than a second to load');
+            }
+        }, seconds);
+    });
+}
+wait(1000).then(() => console.log('You\'ll see this after 1 second'));
+wait(3000).then(() => console.log('You\'ll see this after 3 seconds'));
 
 /////BONUS/////
 //TODO: As a bonus make sure the promise resolves with the milliseconds in return, so you can make the console log message more dynamic.
