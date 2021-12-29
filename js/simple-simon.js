@@ -1,7 +1,12 @@
 "use strict";
 (function () {
-    // alert("Test simple-simon.js");
     $(document).ready(function() {
+        let roundNumber = 1;
+
+        $('#round-count').html(roundNumber);
+        $('#round-display').css('display', 'none');
+        $('#reset-button').css('display', 'none');
+
         $('.box').toggleClass('bg-color-none');
 
         $('#green-box').click(function () {
@@ -22,7 +27,6 @@
 
         $('#reset-button').click(function (event) {
             event.preventDefault();
-
             $('.box').toggleClass('bg-color-none');
         }); // end $('#reset-button').click
 
@@ -71,10 +75,45 @@
             }, 5000);
         } // end flashSequence
 
-        // flashSequence();
+        flashSequence();
 
-        $('#start-button').click(function () {
-            // alert("Start button clicked");
+        $('#start-button').click(function (event) {
+            event.preventDefault();
+            $('#round-display').css('display', 'block');
+            $('#start-button').css('display', 'none');
+            $('#reset-button').css('display', 'block');
+            $('.box').toggleClass('bg-color-none');
+        }); // end $('#start-button').click
+
+        $('#reset-button').click(function (event) {
+            event.preventDefault();
+            $('#round-display').css('display', 'none');
+            $('#start-button').css('display', 'block');
+            $('#reset-button').css('display', 'none');
         });
+
+        function randomColor() {
+            function randomNumber(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+            }
+
+            let colorArray = ['green', 'red', 'yellow', 'blue'];
+
+            return colorArray[randomNumber(0, colorArray.length -1)];
+        }
+
+        function randomSequence () {
+            let newArray = [];
+
+            for (let i = 0; i < 4; i++) {
+                newArray.push(randomColor());
+            }
+
+            return newArray;
+        }
+
+        console.log(randomSequence());
     }); //end $(document).ready
 })();

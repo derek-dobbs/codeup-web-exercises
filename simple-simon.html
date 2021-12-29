@@ -15,7 +15,7 @@
             <div class="d-flex flex-column align-items-center">
                 <h1>Simple Simon Game</h1>
                 <br>
-                <h2>ph_Round 1</h2>
+                <h2 id="round-display">Round <span id="round-count">ph_1</span></h2>
                 <br>
                 <div class="d-flex flex-row">
                     <div id="green-box" class="box"></div> <!--top-left quadrant -->
@@ -28,9 +28,8 @@
                 </div>
                 <br>
                 <div id="buttons-container" class="d-flex flex-row justify-content-around">
-                    <input id="start-button" class="button btn btn-primary" type="submit" value="Start">
-<!--                    <input id="reset-button" class="button btn btn-primary" type="reset" value="Toggle Colors">-->
-<!--                    <input id="stop-sequence-button" class="button btn btn-primary" type="reset" value="Stop Sequence">-->
+                    <button id="start-button" class="button btn btn-primary" type="button">Start</button>
+                    <button id="reset-button" class="button btn btn-primary" type="button">Reset</button>
                 </div>
             </div>
         </div> <!-- END class container-fluid -->
