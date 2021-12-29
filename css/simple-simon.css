@@ -5,3 +5,33 @@ body {
 h1 {
     text-align: center;
 }
+
+.box {
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
+}
+
+.button {
+    margin: 1em;
+}
+
+#green-box {
+    background-color: green;
+}
+
+#red-box {
+    background-color: red;
+}
+
+#yellow-box {
+    background-color: yellow;
+}
+
+#blue-box {
+    background-color: blue;
+}
+
+.bg-color-none {
+    background-color: white !important;
+}
