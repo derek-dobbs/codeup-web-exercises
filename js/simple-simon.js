@@ -5,6 +5,7 @@
 
         $('#round-count').html(roundNumber);
         $('#round-display').css('display', 'none');
+        $('#game-over').css('display', 'none');
         $('#reset-button').css('display', 'none');
 
         $('.box').toggleClass('bg-color-none');
@@ -33,6 +34,7 @@
         function startScreenSequence () {
             $('.button').css('visibility', 'hidden');
             $('h1').css('visibility', 'hidden');
+            $('#game-over').css('display', 'none');
             setTimeout(function () {
                 $('#green-box').css('opacity', '1').css('border', '5px solid black');
             },1000);
@@ -135,10 +137,18 @@
                     randomBox();
                 }
             }, interval);
-        }
+
+            setTimeout(function () {
+                $('#round-display').css('display', 'none');
+                $('#game-over').css('display', 'block');
+            }, 8000)
+        }// end randomSequence()
 /////// END RANDOM SEQUENCE /////////////////////////////////////////////////////////////////////////////////////////////////
         $('#start-button').click(function (event) {
             event.preventDefault();
+
+            $('#game-over').css('display', 'none');
+            $('#round-display').css('display', 'block');
 
             $('#green-box').css('opacity', '0.25');
             $('#red-box').css('opacity', '0.25');
@@ -156,14 +166,12 @@
         $('#reset-button').click(function (event) {
             event.preventDefault();
 
-            $('#green-box').css('opacity', '1');
-            $('#red-box').css('opacity', '1');
-            $('#yellow-box').css('opacity', '1');
-            $('#blue-box').css('opacity', '1');
+            $('#game-over').css('display', 'none');
+            $('#round-display').css('display', 'block');
 
             $('#round-display').css('display', 'none');
             $('#start-button').css('display', 'block');
             $('#reset-button').css('display', 'none');
         });
     }); //end $(document).ready
-})();
+})();// end IIFE
