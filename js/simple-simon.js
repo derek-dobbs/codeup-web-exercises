@@ -2,6 +2,8 @@
 (function () {
     $(document).ready(function() {
         let roundNumber = 1;
+        let clickSequence = [];
+        let sequenceArray = [];
 
         $('#round-count').html(roundNumber);
         $('#round-display').css('display', 'none');
@@ -13,27 +15,32 @@
         $('#green-box').click(function (event) {
             // alert("Green box was clicked");
             let id = $(this).attr('id');
-            console.log(id);
+            clickSequence.push(id);
+            console.log("User Click Sequence: " + clickSequence);
         }); // end $('#green-box').click
 
         $('#red-box').click(function () {
             // alert("Red box was clicked");
             let id = $(this).attr('id');
-            console.log(id);
+            clickSequence.push(id);
+            console.log("User Click Sequence: " + clickSequence);
         }); // end $('#red-box').click
 
         $('#yellow-box').click(function () {
             // alert("Yellow box was clicked");
             let id = $(this).attr('id');
-            console.log(id);
+            clickSequence.push(id);
+            console.log("User Click Sequence: " + clickSequence);
         }); // end $('#yellow-box').click
 
         $('#blue-box').click(function () {
             // alert("Blue box was clicked");
             let id = $(this).attr('id');
-            console.log(id);
+            clickSequence.push(id);
+            console.log(clickSequence);
         }); // end $('#blue-box').click
         ///// END BOX LISTENERS ////////////////////////////////////////////////////////////////////////////////////////
+
         $('#reset-button').click(function (event) {
             event.preventDefault();
             $('.box').toggleClass('bg-color-none');
@@ -107,7 +114,8 @@
             } //end randomBoxID
 
             let randomID = $(`#${randomBoxID()}`);
-            console.log(randomID.selector);
+            sequenceArray.push(randomID.selector);
+            console.log("Sequence Array: " + sequenceArray);
 
             setTimeout(function () {
                 randomID.css('opacity', '0.25').css('border', '1px solid black');
