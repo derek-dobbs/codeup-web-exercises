@@ -75,7 +75,7 @@
             }, 5000);
         } // end flashSequence
 
-        // flashSequence();
+        flashSequence();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // this code will produce a console log every second
         // when count >= max, the interval is cancelled, and the logging will stop
@@ -110,45 +110,23 @@
             $('#reset-button').css('display', 'none');
         });
 
-        function randomColor() {
+        //function randomBoxID will return a randomly chosen box id name
+        function randomBoxID() {
+            // randomNumber() will generate a number between the min (inclusive) and max (inclusive).
             function randomNumber(min, max) {
                 min = Math.ceil(min);
                 max = Math.floor(max);
                 return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
-            }
+            }// end randomNumber()
 
-            let colorArray = ['green', 'red', 'yellow', 'blue'];
+            //The following line of code creates a node(is this the correct terminology?) of all divs with the class of box and turns it into an array with the name of boxArray.
+            let boxArray = $( ".box" ).toArray();
 
-            return colorArray[randomNumber(0, colorArray.length -1)];
-        }
+            return boxArray[randomNumber(0, boxArray.length - 1)].id;
 
-        function randomSequence () {
-            let newArray = [];
+        } //end randomBox
 
-            for (let i = 0; i < 4; i++) {
-                newArray.push(randomColor());
-            }
-
-            return newArray;
-        }
-
-        // console.log(randomSequence());
-
-        let boxArray = $( ".box" ).toArray();
-        let newBoxArray = [];
-
-        for (let i = 0; i < boxArray.length; i++) {
-            newBoxArray.push(boxArray[i].id);
-        }
-
-        console.log(newBoxArray);
-
-        // console.log(boxArray[0]);
-        // console.log(boxArray[0].id);
-        
-        function randomBox() {
-            
-        }
+        console.log(randomBoxID());
 
     }); //end $(document).ready
 })();
