@@ -12,22 +12,38 @@ h1 {
     margin: 1em;
 }
 
-#green-box {
-    background-color: green;
+.green-box {
+    background-color: lightgreen;
 }
 
-#red-box {
-    background-color: red;
+.red-box {
+    background-color: lightcoral;
 }
 
-#yellow-box {
-    background-color: yellow;
+.yellow-box {
+    background-color: lightyellow;
 }
 
-#blue-box {
-    background-color: blue;
+.blue-box {
+    background-color: lightblue;
 }
 
-.bg-color-none {
+.bg-color-white {
     background-color: white !important;
+}
+
+.bg-color-green {
+   background-color: green !important;
+}
+
+.bg-color-red {
+    background-color: red !important;
+}
+
+.bg-color-yellow {
+    background-color: yellow !important;
+}
+
+.bg-color-blue {
+    background-color: blue !important;
 }

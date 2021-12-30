@@ -34,39 +34,42 @@
             $('.button').css('visibility', 'hidden');
             $('h1').css('visibility', 'hidden');
             setTimeout(function () {
-                $('#green-box').toggleClass('bg-color-none');
+                $('#green-box').addClass('bg-color-green');
             },1000);
 
             setTimeout(function () {
-                $('#green-box').toggleClass('bg-color-none');
+                $('#green-box').removeClass('bg-color-green');
             },1500);
 
             setTimeout(function () {
-                $('#red-box').toggleClass('bg-color-none');
+                $('#red-box').addClass('bg-color-red');
             },2000);
 
             setTimeout(function () {
-                $('#red-box').toggleClass('bg-color-none');
+                $('#red-box').removeClass('bg-color-red');
             },2500);
 
             setTimeout(function () {
-                $('#blue-box').toggleClass('bg-color-none');
+                $('#blue-box').addClass('bg-color-blue');
             },3000);
 
             setTimeout(function () {
-                $('#blue-box').toggleClass('bg-color-none');
+                $('#blue-box').removeClass('bg-color-blue');
             },3500);
 
             setTimeout(function () {
-                $('#yellow-box').toggleClass('bg-color-none');
+                $('#yellow-box').addClass('bg-color-yellow');
             },4000);
 
             setTimeout(function () {
-                $('#yellow-box').toggleClass('bg-color-none');
+                $('#yellow-box').removeClass('bg-color-yellow');
             },4500);
 
             setTimeout(function () {
-                $('.box').toggleClass('bg-color-none');
+                $('#green-box').addClass('bg-color-green');
+                $('#red-box').addClass('bg-color-red');
+                $('#yellow-box').addClass('bg-color-yellow');
+                $('#blue-box').addClass('bg-color-blue');
             }, 5000);
 
             setTimeout(function () {
@@ -97,6 +100,12 @@
 
         $('#start-button').click(function (event) {
             event.preventDefault();
+
+            $('#green-box').removeClass('bg-color-green');
+            $('#red-box').removeClass('bg-color-red');
+            $('#yellow-box').removeClass('bg-color-yellow');
+            $('#blue-box').removeClass('bg-color-blue');
+
             $('#round-display').css('display', 'block');
             $('#start-button').css('display', 'none');
             $('#reset-button').css('display', 'block');
@@ -105,6 +114,12 @@
 
         $('#reset-button').click(function (event) {
             event.preventDefault();
+
+            $('#green-box').removeClass('bg-color-green');
+            $('#red-box').removeClass('bg-color-red');
+            $('#yellow-box').removeClass('bg-color-yellow');
+            $('#blue-box').removeClass('bg-color-blue');
+
             $('#round-display').css('display', 'none');
             $('#start-button').css('display', 'block');
             $('#reset-button').css('display', 'none');
