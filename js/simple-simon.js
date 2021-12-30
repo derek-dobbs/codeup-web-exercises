@@ -114,7 +114,7 @@
             } //end randomBoxID
 
             let randomID = $(`#${randomBoxID()}`);
-            sequenceArray.push(randomID.selector);
+            sequenceArray.push(randomID.attr('id'));
             console.log("Sequence Array: " + sequenceArray);
 
             setTimeout(function () {
@@ -154,9 +154,24 @@
                 }
             }, interval);
 
+            function isMatch() {
+                for (let i = 0; i < sequenceArray.length;) {
+                    if (clickSequence[i] === sequenceArray[i]) {
+                        i++;
+                    }else {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
             setTimeout(function () {
-                $('#round-display').css('display', 'none');
-                $('#game-over').css('display', 'block');
+                if (isMatch()) {
+                    alert("Match!");
+                }else {
+                    $('#round-display').css('display', 'none');
+                    $('#game-over').css('display', 'block');
+                }
             }, 10000);
         }// end randomSequence()
 /////// END RANDOM SEQUENCE /////////////////////////////////////////////////////////////////////////////////////////////////
