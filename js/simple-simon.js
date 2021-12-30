@@ -9,23 +9,31 @@
         $('#reset-button').css('display', 'none');
 
         $('.box').toggleClass('bg-color-none');
-
-        $('#green-box').click(function () {
-            alert("Green box was clicked");
+        ///// BOX LISTENERS ////////////////////////////////////////////////////////////////////////////////////////////
+        $('#green-box').click(function (event) {
+            // alert("Green box was clicked");
+            let id = $(this).attr('id');
+            console.log(id);
         }); // end $('#green-box').click
 
         $('#red-box').click(function () {
-            alert("Red box was clicked");
+            // alert("Red box was clicked");
+            let id = $(this).attr('id');
+            console.log(id);
         }); // end $('#red-box').click
 
         $('#yellow-box').click(function () {
-            alert("Yellow box was clicked");
+            // alert("Yellow box was clicked");
+            let id = $(this).attr('id');
+            console.log(id);
         }); // end $('#yellow-box').click
 
         $('#blue-box').click(function () {
-            alert("Blue box was clicked");
+            // alert("Blue box was clicked");
+            let id = $(this).attr('id');
+            console.log(id);
         }); // end $('#blue-box').click
-
+        ///// END BOX LISTENERS ////////////////////////////////////////////////////////////////////////////////////////
         $('#reset-button').click(function (event) {
             event.preventDefault();
             $('.box').toggleClass('bg-color-none');
@@ -80,7 +88,7 @@
             }, 5000);
         } // end startScreenSequence
 
-        startScreenSequence();
+        // startScreenSequence();
 /////// RANDOM BOX /////////////////////////////////////////////////////////////////////////////////////////////////////
         function randomBox() {
             //function randomBoxID will return a randomly chosen box id name
@@ -141,7 +149,7 @@
             setTimeout(function () {
                 $('#round-display').css('display', 'none');
                 $('#game-over').css('display', 'block');
-            }, 8000)
+            }, 10000);
         }// end randomSequence()
 /////// END RANDOM SEQUENCE /////////////////////////////////////////////////////////////////////////////////////////////////
         $('#start-button').click(function (event) {
@@ -172,6 +180,6 @@
             $('#round-display').css('display', 'none');
             $('#start-button').css('display', 'block');
             $('#reset-button').css('display', 'none');
-        });
+        });// end reset-button.click
     }); //end $(document).ready
 })();// end IIFE
