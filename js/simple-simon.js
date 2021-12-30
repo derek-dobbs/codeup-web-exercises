@@ -78,26 +78,58 @@
             }, 5000);
         } // end startScreenSequence
 
-        startScreenSequence();
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // this code will produce a console log every second
-        // when count >= max, the interval is cancelled, and the logging will stop
+        // startScreenSequence();
+/////// RANDOM BOX /////////////////////////////////////////////////////////////////////////////////////////////////////
+        function randomBox() {
+            //function randomBoxID will return a randomly chosen box id name
+            function randomBoxID() {
+                // randomNumber() will generate a number between the min (inclusive) and max (inclusive).
+                function randomNumber(min, max) {
+                    min = Math.ceil(min);
+                    max = Math.floor(max);
+                    return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+                }// end randomNumber()
 
-        // var count = 0;
-        // var max = 10;
-        // var interval = 1000; // interval time in milliseconds
-        //
-        // var intervalId = setInterval(function () {
-        //     if (count >= max) {
-        //         clearInterval(intervalId);
-        //         console.log('All done');
-        //     } else {
-        //         count++;
-        //         console.log('Repeating this line ' + count);
-        //     }
-        // }, interval);
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                //The following line of code creates a node(is this the correct terminology?) of all divs with the class of box and turns it into an array with the name of boxArray.
+                let boxArray = $( ".box" ).toArray();
 
+                return boxArray[randomNumber(0, boxArray.length - 1)].id;
+            } //end randomBoxID
+
+            let randomID = $(`#${randomBoxID()}`);
+            setTimeout(function () {
+                //The following line of code randomly chooses a box and changes its opacity to 1
+                randomID.css('opacity', '1');
+            },1000);
+
+            setTimeout(function () {
+                //The following line of code randomly chooses a box and changes its opacity to 1
+                randomID.css('opacity', '0.25');
+            },2000);
+        } //end randomBox()
+/////// END RANDOM BOX /////////////////////////////////////////////////////////////////////////////////////////////////
+
+/////// RANDOM SEQUENCE /////////////////////////////////////////////////////////////////////////////////////////////////
+        function randomSequence() {
+
+// this code will produce a console log every second
+// when count >= max, the interval is cancelled, and the logging will stop
+
+            var count = 0;
+            var max = 3;
+            var interval = 1000; // interval time in milliseconds
+
+            var intervalId = setInterval(function () {
+                if (count >= max) {
+                    clearInterval(intervalId);
+                    console.log('All done');
+                } else {
+                    count++;
+                    randomBox();
+                }
+            }, interval);
+        }
+/////// END RANDOM SEQUENCE /////////////////////////////////////////////////////////////////////////////////////////////////
         $('#start-button').click(function (event) {
             event.preventDefault();
 
@@ -111,10 +143,7 @@
             $('#reset-button').css('display', 'block');
             $('.box').toggleClass('bg-color-none');
 
-            setTimeout(function () {
-                //The following line of code randomly chooses a box and changes its opacity to 1
-                $(`#${randomBoxID()}`).css('opacity', '1');
-            },1000)
+            randomSequence();
         }); // end $('#start-button').click
 
         $('#reset-button').click(function (event) {
@@ -129,23 +158,5 @@
             $('#start-button').css('display', 'block');
             $('#reset-button').css('display', 'none');
         });
-
-        //function randomBoxID will return a randomly chosen box id name
-        function randomBoxID() {
-            // randomNumber() will generate a number between the min (inclusive) and max (inclusive).
-            function randomNumber(min, max) {
-                min = Math.ceil(min);
-                max = Math.floor(max);
-                return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
-            }// end randomNumber()
-
-            //The following line of code creates a node(is this the correct terminology?) of all divs with the class of box and turns it into an array with the name of boxArray.
-            let boxArray = $( ".box" ).toArray();
-
-            return boxArray[randomNumber(0, boxArray.length - 1)].id;
-
-        } //end randomBoxID
-
-        // console.log(randomBoxID());
     }); //end $(document).ready
 })();
