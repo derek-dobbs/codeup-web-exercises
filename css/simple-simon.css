@@ -12,38 +12,58 @@ h1 {
     margin: 1em;
 }
 
-.green-box {
-    background-color: lightgreen;
+/*.green-box {*/
+/*    background-color: lightgreen;*/
+/*}*/
+
+/*.red-box {*/
+/*    background-color: lightcoral;*/
+/*}*/
+
+/*.yellow-box {*/
+/*    background-color: lightyellow;*/
+/*}*/
+
+/*.blue-box {*/
+/*    background-color: lightblue;*/
+/*}*/
+
+/*.bg-color-white {*/
+/*    background-color: white !important;*/
+/*}*/
+
+/*.bg-color-green {*/
+/*   background-color: green !important;*/
+/*}*/
+
+/*.bg-color-red {*/
+/*    background-color: red !important;*/
+/*}*/
+
+/*.bg-color-yellow {*/
+/*    background-color: yellow !important;*/
+/*}*/
+
+/*.bg-color-blue {*/
+/*    background-color: blue !important;*/
+/*}*/
+
+#green-box {
+    background-color: green;
+    opacity: 0.25;
 }
 
-.red-box {
-    background-color: lightcoral;
+#red-box {
+    background-color: red;
+    opacity: 0.25;
 }
 
-.yellow-box {
-    background-color: lightyellow;
+#yellow-box {
+    background-color: yellow;
+    opacity: 0.25;
 }
 
-.blue-box {
-    background-color: lightblue;
-}
-
-.bg-color-white {
-    background-color: white !important;
-}
-
-.bg-color-green {
-   background-color: green !important;
-}
-
-.bg-color-red {
-    background-color: red !important;
-}
-
-.bg-color-yellow {
-    background-color: yellow !important;
-}
-
-.bg-color-blue {
-    background-color: blue !important;
+#blue-box {
+    background-color: blue;
+    opacity: 0.25;
 }

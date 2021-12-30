@@ -34,42 +34,42 @@
             $('.button').css('visibility', 'hidden');
             $('h1').css('visibility', 'hidden');
             setTimeout(function () {
-                $('#green-box').addClass('bg-color-green');
+                $('#green-box').css('opacity', '1');
             },1000);
 
             setTimeout(function () {
-                $('#green-box').removeClass('bg-color-green');
+                $('#green-box').css('opacity', '0.25');
             },1500);
 
             setTimeout(function () {
-                $('#red-box').addClass('bg-color-red');
+                $('#red-box').css('opacity', '1');
             },2000);
 
             setTimeout(function () {
-                $('#red-box').removeClass('bg-color-red');
+                $('#red-box').css('opacity', '0.25');
             },2500);
 
             setTimeout(function () {
-                $('#blue-box').addClass('bg-color-blue');
+                $('#blue-box').css('opacity', '1');
             },3000);
 
             setTimeout(function () {
-                $('#blue-box').removeClass('bg-color-blue');
+                $('#blue-box').css('opacity', '0.25');
             },3500);
 
             setTimeout(function () {
-                $('#yellow-box').addClass('bg-color-yellow');
+                $('#yellow-box').css('opacity', '1');
             },4000);
 
             setTimeout(function () {
-                $('#yellow-box').removeClass('bg-color-yellow');
+                $('#yellow-box').css('opacity', '0.25');
             },4500);
 
             setTimeout(function () {
-                $('#green-box').addClass('bg-color-green');
-                $('#red-box').addClass('bg-color-red');
-                $('#yellow-box').addClass('bg-color-yellow');
-                $('#blue-box').addClass('bg-color-blue');
+                $('#green-box').css('opacity', '1');
+                $('#red-box').css('opacity', '1');
+                $('#yellow-box').css('opacity', '1');
+                $('#blue-box').css('opacity', '1');
             }, 5000);
 
             setTimeout(function () {
@@ -101,24 +101,29 @@
         $('#start-button').click(function (event) {
             event.preventDefault();
 
-            $('#green-box').removeClass('bg-color-green');
-            $('#red-box').removeClass('bg-color-red');
-            $('#yellow-box').removeClass('bg-color-yellow');
-            $('#blue-box').removeClass('bg-color-blue');
+            $('#green-box').css('opacity', '0.25');
+            $('#red-box').css('opacity', '0.25');
+            $('#yellow-box').css('opacity', '0.25');
+            $('#blue-box').css('opacity', '0.25');
 
             $('#round-display').css('display', 'block');
             $('#start-button').css('display', 'none');
             $('#reset-button').css('display', 'block');
             $('.box').toggleClass('bg-color-none');
+
+            setTimeout(function () {
+                //The following line of code randomly chooses a box and changes its opacity to 1
+                $(`#${randomBoxID()}`).css('opacity', '1');
+            },1000)
         }); // end $('#start-button').click
 
         $('#reset-button').click(function (event) {
             event.preventDefault();
 
-            $('#green-box').removeClass('bg-color-green');
-            $('#red-box').removeClass('bg-color-red');
-            $('#yellow-box').removeClass('bg-color-yellow');
-            $('#blue-box').removeClass('bg-color-blue');
+            $('#green-box').css('opacity', '1');
+            $('#red-box').css('opacity', '1');
+            $('#yellow-box').css('opacity', '1');
+            $('#blue-box').css('opacity', '1');
 
             $('#round-display').css('display', 'none');
             $('#start-button').css('display', 'block');
@@ -139,12 +144,8 @@
 
             return boxArray[randomNumber(0, boxArray.length - 1)].id;
 
-        } //end randomBox
+        } //end randomBoxID
 
-        console.log(randomBoxID());
-
-        //The following line of code randomly chooses a box and changes its background color to hotpink
-        $(`#${randomBoxID()}`).css('background-color', 'hotpink');
-
+        // console.log(randomBoxID());
     }); //end $(document).ready
 })();
