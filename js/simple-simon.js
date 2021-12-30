@@ -34,35 +34,35 @@
             $('.button').css('visibility', 'hidden');
             $('h1').css('visibility', 'hidden');
             setTimeout(function () {
-                $('#green-box').css('opacity', '1');
+                $('#green-box').css('opacity', '1').css('border', '5px solid black');
             },1000);
 
             setTimeout(function () {
-                $('#green-box').css('opacity', '0.25');
+                $('#green-box').css('opacity', '0.25').css('border', '1px solid black');
             },1500);
 
             setTimeout(function () {
-                $('#red-box').css('opacity', '1');
+                $('#red-box').css('opacity', '1').css('border', '5px solid black');
             },2000);
 
             setTimeout(function () {
-                $('#red-box').css('opacity', '0.25');
+                $('#red-box').css('opacity', '0.25').css('border', '1px solid black');
             },2500);
 
             setTimeout(function () {
-                $('#blue-box').css('opacity', '1');
+                $('#blue-box').css('opacity', '1').css('border', '5px solid black');
             },3000);
 
             setTimeout(function () {
-                $('#blue-box').css('opacity', '0.25');
+                $('#blue-box').css('opacity', '0.25').css('border', '1px solid black');
             },3500);
 
             setTimeout(function () {
-                $('#yellow-box').css('opacity', '1');
+                $('#yellow-box').css('opacity', '1').css('border', '5px solid black');
             },4000);
 
             setTimeout(function () {
-                $('#yellow-box').css('opacity', '0.25');
+                $('#yellow-box').css('opacity', '0.25').css('border', '1px solid black');
             },4500);
 
             setTimeout(function () {
@@ -78,7 +78,7 @@
             }, 5000);
         } // end startScreenSequence
 
-        // startScreenSequence();
+        startScreenSequence();
 /////// RANDOM BOX /////////////////////////////////////////////////////////////////////////////////////////////////////
         function randomBox() {
             //function randomBoxID will return a randomly chosen box id name
