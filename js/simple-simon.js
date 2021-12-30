@@ -75,7 +75,25 @@
             }, 5000);
         } // end flashSequence
 
-        flashSequence();
+        // flashSequence();
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // this code will produce a console log every second
+        // when count >= max, the interval is cancelled, and the logging will stop
+
+        // var count = 0;
+        // var max = 10;
+        // var interval = 1000; // interval time in milliseconds
+        //
+        // var intervalId = setInterval(function () {
+        //     if (count >= max) {
+        //         clearInterval(intervalId);
+        //         console.log('All done');
+        //     } else {
+        //         count++;
+        //         console.log('Repeating this line ' + count);
+        //     }
+        // }, interval);
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         $('#start-button').click(function (event) {
             event.preventDefault();
@@ -114,6 +132,23 @@
             return newArray;
         }
 
-        console.log(randomSequence());
+        // console.log(randomSequence());
+
+        let boxArray = $( ".box" ).toArray();
+        let newBoxArray = [];
+
+        for (let i = 0; i < boxArray.length; i++) {
+            newBoxArray.push(boxArray[i].id);
+        }
+
+        console.log(newBoxArray);
+
+        // console.log(boxArray[0]);
+        // console.log(boxArray[0].id);
+        
+        function randomBox() {
+            
+        }
+
     }); //end $(document).ready
 })();
