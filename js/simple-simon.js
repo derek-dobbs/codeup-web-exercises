@@ -97,15 +97,22 @@
             } //end randomBoxID
 
             let randomID = $(`#${randomBoxID()}`);
+            console.log(randomID.selector);
+
             setTimeout(function () {
-                //The following line of code randomly chooses a box and changes its opacity to 1
-                randomID.css('opacity', '1');
-            },1000);
+                randomID.css('opacity', '0.25').css('border', '1px solid black');
+            }, 500);
 
             setTimeout(function () {
                 //The following line of code randomly chooses a box and changes its opacity to 1
-                randomID.css('opacity', '0.25');
+                randomID.css('opacity', '1').css('border', '5px solid black');
+
             },2000);
+
+            setTimeout(function () {
+                //The following line of code randomly chooses a box and changes its opacity to 1
+                randomID.css('opacity', '0.25').css('border', '1px solid black');
+            },2500);
         } //end randomBox()
 /////// END RANDOM BOX /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -122,7 +129,7 @@
             var intervalId = setInterval(function () {
                 if (count >= max) {
                     clearInterval(intervalId);
-                    console.log('All done');
+                    // console.log('All done');
                 } else {
                     count++;
                     randomBox();
