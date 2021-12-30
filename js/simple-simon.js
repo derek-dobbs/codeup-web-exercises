@@ -30,7 +30,7 @@
             $('.box').toggleClass('bg-color-none');
         }); // end $('#reset-button').click
 
-        function flashSequence () {
+        function startScreenSequence () {
             $('.button').css('visibility', 'hidden');
             $('h1').css('visibility', 'hidden');
             setTimeout(function () {
@@ -76,9 +76,9 @@
                 $('h1').css('visibility', 'visible');
                 $('.button').css('visibility', 'visible');
             }, 5000);
-        } // end flashSequence
+        } // end startScreenSequence
 
-        flashSequence();
+        startScreenSequence();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // this code will produce a console log every second
         // when count >= max, the interval is cancelled, and the logging will stop
@@ -142,6 +142,9 @@
         } //end randomBox
 
         console.log(randomBoxID());
+
+        //The following line of code randomly chooses a box and changes its background color to hotpink
+        $(`#${randomBoxID()}`).css('background-color', 'hotpink');
 
     }); //end $(document).ready
 })();
